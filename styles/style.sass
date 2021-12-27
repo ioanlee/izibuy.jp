@@ -1,2 +1,282 @@
+//1920  220/280
+//1600  200/280
+//1440  200/280
+//1024  160/220
+
+$brown: #E1BBA5
+$lightbrown: #f6ebe4
+$grey: #BDBDBD
+$purple: #8C3E7D
+$blue: #2E6E9F
+    
+@import elements/_reset
+@import elements/_header
+@import elements/_footer
+
 @import pages/_catalog
 @import pages/_item
+
+html
+    scroll-behavior: smooth
+    font-family: Tahoma, Verdana, Arial
+
+    body
+        box-sizing: border-box
+        min-height: 100vh
+        display: flex
+        flex-direction: column
+        max-width: 1920px
+        margin: auto
+
+        .wrapper
+            display: flex
+            height: inherit
+
+            .sidebar
+                width: 300px
+                height: 100%
+                position: fixed
+                background: $lightbrown        
+                border: 2px solid $brown
+                border-width: 0 2px
+                display: flex
+                flex-direction: column
+                padding: 70px 0 0 18px
+                overflow-y: scroll
+                &::-webkit-scrollbar
+                    width: 0
+
+                *
+                    margin: 0 auto
+
+                input[type=search]
+                    color: $brown
+                    border: 3px solid $brown
+                    border-radius: 0px 15px 15px 0px
+                    font-size: 21px
+                    line-height: 25px
+                    width: 230px                            //
+                    min-height: 50px                               //
+                    // padding-right: 33px
+                    outline: none
+                    &::placeholder
+                        color: $brown
+                    &:focus
+                        // outline: none
+
+                .catalog
+                    display: flex
+                    flex-direction: column
+                    width: 100%
+                    font-size: 21px
+                    line-height: 25px
+                    margin-top: 40px
+                    transition: .5s
+                    &::-webkit-details-marker
+                        display: none
+
+                    
+
+
+                    // *:hover
+                        // box-shadow: inset -80px 0 0 0 $brown
+                        // transition: .1s
+                        // // box-shadow: inset -800px 0 0 0 $brown
+
+                    summary
+                        list-style: none
+                        padding: 8px
+                        transition: .2s
+                        box-shadow: inset 0 0 0 0 $brown
+                        // &[open]
+                        //     content: "Развернуть каталог"
+                        &::-webkit-details-marker
+                            display: none
+                        &::after
+                            content: "Развернуть каталог"
+                            // padding: 8px
+                        &:hover
+                            box-shadow: inset -80px 0 0 0 $brown
+                            transition: .1s
+                    &[open] > summary
+                        box-shadow: inset -300px 0 0 0 $brown
+                        &::after
+                            content: "Свернуть каталог"
+
+                    .catalog-item
+                        color: black
+                        text-decoration: none
+                        padding: 9px
+                        box-shadow: inset 0 0 0 0 $brown
+                        transition: .4s
+                        user-select: none
+
+                        &:hover
+                            box-shadow: inset -80px 0 0 0 $brown
+                            transition: .1s
+                            // box-shadow: inset -800px 0 0 0 $brown
+
+            & > div
+                display: flex
+                flex-direction: column
+                width: 100%
+                height: 100%
+                margin-left: 300px
+                padding: 0 40px 40px
+
+                header
+                    height: 150px
+                    width: 100%
+                    display: flex
+                    padding: 20px 0
+                    
+                    *
+                        // margin: auto 0
+
+                    .logo
+                        width: 220px
+                        margin-right: 40px
+                        margin-top: auto
+                        height: 50px
+
+                    div
+                        display: flex
+                        flex-direction: column
+                        width: 100%
+                        margin-top: auto
+                        gap: 20px
+
+                        nav
+                            display: flex
+                            justify-content: space-between
+
+                            a
+                                color: black
+                                text-decoration: none
+                                font-size: 17px
+                                margin: auto 0
+
+                                &:not(:last-of-type)
+                                    margin-right: 20px
+                                &:hover
+                                    opacity: .7
+                            
+                            .currency-select
+                                margin-left: auto
+                        
+                        div
+                            display: flex
+                            flex-direction: row
+                            width: 100%
+                            
+                            input[type=search]
+                                color: $brown
+                                border: 3px solid $brown
+                                border-radius: 0px 15px 15px 0px
+                                font-size: 21px
+                                line-height: 25px
+                                // width: 230px                            //
+                                min-height: 50px                               //
+                                padding: 0 10px
+                                outline: none
+                                width: 100%
+                                &::placeholder
+                                    color: $brown
+                                &:focus
+                                    // outline: none
+
+                            .favorite
+                                min-width: 50px
+                                height: 50px
+                                border: 2px solid $grey
+                                border-radius: 25px
+                                background: url(/images/icons/icon-favorites.svg) no-repeat center center
+
+                            .profile
+                                min-width: 50px
+                                height: 50px
+                                border: 2px solid $purple
+                                border-radius: 25px
+                                background: url(/images/icons/icon-profile.svg) no-repeat bottom center
+                                
+                                
+                                
+                            .profile, .favorite    
+                                &:hover                                    
+                                    background-color: $brown
+                                    border-color: $brown
+
+                main
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: space-between
+                    gap: 20px
+                    // height: 100vh      //
+
+                    h1
+                        font-size: 34px
+                        line-height: 41px//120%
+
+                    .item
+                        display: flex
+                        position: relative
+                        flex-direction: column
+                        width: 220px
+                        height: 280px
+                        border: 2px solid $brown
+                        border-radius: 15px 15px 0px 0px
+                        // overflow: hidden
+                        cursor: pointer
+                        @media screen and( max-width: 1600px)
+                            width: 200px
+                            height: 280px
+                        @media screen and( max-width: 1440px)
+                            width: 200px
+                            height: 280px
+                        @media screen and( max-width: 1024px)
+                            width: 160px    
+                            height: 220px
+
+                        .item-image
+                            background: url(/images/img-item.jpg) no-repeat center
+                            background-size: cover
+                            width: 100%
+                            height: 165px
+                            transition: .2s
+                            border-radius: 15px 15px 0px 0px
+                                
+                        .item-description
+                            width: 100%
+                            height: 66px
+                            margin: auto
+                            padding: 4px 8px
+                            font-size: 17px
+                            line-height: 129%
+                            overflow: hidden
+                            text-overflow: ellipsis     //
+
+
+                        .item-price
+                            color: $purple
+                            background: $brown
+                            border-radius: 0px 5px 0px 0px
+                            padding: 8px 16px
+                            font-size: 19px
+                            margin: auto auto 0 0
+
+                            &::after
+                                content: ' ₽'
+
+                        .item-preview
+                            width: 100px//780px
+                            height: 100px//600px
+                            // display: none
+                            opacity: 0
+                            position: absolute
+                            background-color: red
+                            transition: .3s
+
+                        &:hover .item-preview
+                            display: block
+                            opacity: 1
+                            z-index: 10
