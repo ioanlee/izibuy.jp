@@ -1,81 +1,107 @@
-header
+.header
     height: 150px
     width: 100%
     display: flex
+    flex-direction: column
     padding: 20px 0
+    position: sticky
+    top: 0
+    background-color: white
+    z-index: 10
     
-    *
-        // margin: auto 0
-
-    .logo
-        width: 220px
-        margin-right: 40px
-        margin-top: auto
-        height: 50px
-
-    div
+    nav
         display: flex
-        flex-direction: column
-        width: 100%
-        margin-top: auto
-        gap: 20px
-
-        nav
-            display: flex
-            justify-content: space-between
-
-            a
-                color: black
-                text-decoration: none
-                font-size: 17px
-                margin: auto 0
-
-                &:not(:last-of-type)
-                    margin-right: 20px
-                &:hover
-                    opacity: .7
-            
-            .currency-select
-                margin-left: auto
+        justify-content: space-around
+        margin: 0 auto
+        padding-bottom: 35px
         
-        div
-            display: flex
-            flex-direction: row
-            width: 100%
+        a
+            color: black
+            font-size: 17px
+            margin: auto 0
+
+            &:not(:last-of-type)
+                margin-right: 40px
+            &:hover
+                opacity: .7
             
-            input[type=search]
+        .currency-select
+            margin-left: auto
+
+    .header__sticky-bar
+        display: flex
+        justify-content: space-between
+
+        .logo
+            width: 25%
+            margin-right: 10%
+            height: 55px
+            display: block
+
+        input[type=search]
+            color: $brown
+            border: 3px solid $brown
+            border-radius: 0px 15px 15px 0px
+            font-size: 21px
+            line-height: 25px
+            min-height: 50px
+            padding: 0 10px
+            outline: none
+            width: 100%
+            &::placeholder
                 color: $brown
-                border: 3px solid $brown
-                border-radius: 0px 15px 15px 0px
-                font-size: 21px
-                line-height: 25px
-                // width: 230px                            //
-                min-height: 50px                               //
-                padding: 0 10px
-                outline: none
-                width: 100%
-                &::placeholder
-                    color: $brown
-                &:focus
-                    // outline: none
+            &:focus
+                // outline: none
 
-            .favorite
-                min-width: 50px
-                height: 50px
-                border: 2px solid $grey
-                border-radius: 25px
-                background: url(/images/icons/icon-favorites.svg) no-repeat center center
+        .favorite
+            min-width: 50px
+            height: 50px
+            border: 2px solid $grey
+            border-radius: 25px
+            background-size: 50px 50px
+            background-color: $brown
+            border-color: $brown
+            border-radius: 50%
+            padding: 14px 9px 11px 11px
+            margin: 0 2%
+            svg
+                fill: $purple
+                stroke: $purple
 
-            .profile
-                min-width: 50px
-                height: 50px
-                border: 2px solid $purple
-                border-radius: 25px
-                background: url(/images/icons/icon-profile.svg) no-repeat bottom center
-                
-                
-                
-            .profile, .favorite    
-                &:hover                                    
-                    background-color: $brown
-                    border-color: $brown
+            &:hover                                    
+                background-color: $brown
+                border-color: $blue
+                svg
+                    fill: $blue
+                    stroke: $blue
+
+            &:active
+                border-color: $purple
+                svg
+                    fill: $purple
+                    stroke: $purple
+
+        .profile
+            min-width: 50px
+            height: 50px
+            border: 2px solid $purple
+            border-radius: 25px
+            background-color: #fff
+            background-size: 50px 50px                
+            border-radius: 50%
+            padding: 9px 10px 8px 10px
+            svg
+                fill: $purple
+
+            &:hover
+                background-color: $brown
+                border-color: $blue
+                svg
+                    fill: $blue
+
+            &:active
+                border-color: $purple
+                svg
+                    fill: $purple
+
+   
