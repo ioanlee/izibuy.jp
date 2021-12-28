@@ -1,0 +1,83 @@
+.sidebar
+    width: 300px
+    height: 100%
+    position: fixed
+    background: $lightbrown        
+    border: 2px solid $brown
+    border-width: 0 2px
+    display: flex
+    flex-direction: column
+    padding: 70px 0 0 18px
+    overflow-y: scroll
+    &::-webkit-scrollbar
+        width: 0
+
+    *
+        margin: 0 auto
+
+    input[type=search]
+        color: $brown
+        border: 3px solid $brown
+        border-radius: 0px 15px 15px 0px
+        font-size: 21px
+        line-height: 25px
+        width: 230px                            //
+        min-height: 50px                               //
+        // padding-right: 33px
+        outline: none
+        &::placeholder
+            color: $brown
+        &:focus
+            // outline: none
+
+    .catalog
+        display: flex
+        flex-direction: column
+        width: 100%
+        font-size: 21px
+        line-height: 25px
+        margin-top: 40px
+        transition: .5s
+        &::-webkit-details-marker
+            display: none
+
+        
+
+
+        // *:hover
+            // box-shadow: inset -80px 0 0 0 $brown
+            // transition: .1s
+            // // box-shadow: inset -800px 0 0 0 $brown
+
+        summary
+            list-style: none
+            padding: 8px
+            transition: .2s
+            box-shadow: inset 0 0 0 0 $brown
+            // &[open]
+            //     content: "Развернуть каталог"
+            &::-webkit-details-marker
+                display: none
+            &::after
+                content: "Развернуть каталог"
+                // padding: 8px
+            &:hover
+                box-shadow: inset -80px 0 0 0 $brown
+                transition: .1s
+        &[open] > summary
+            box-shadow: inset -300px 0 0 0 $brown
+            &::after
+                content: "Свернуть каталог"
+
+        .catalog-item
+            color: black
+            text-decoration: none
+            padding: 9px
+            box-shadow: inset 0 0 0 0 $brown
+            transition: .4s
+            user-select: none
+
+            &:hover
+                box-shadow: inset -80px 0 0 0 $brown
+                transition: .1s
+                // box-shadow: inset -800px 0 0 0 $brown
