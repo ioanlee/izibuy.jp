@@ -383,20 +383,40 @@ header div div .profile:hover, header div div .favorite:hover {
   content: ' ₽';
 }
 
-.item .item-preview {
-  width: 100px;
-  height: 100px;
-  opacity: 0;
-  position: absolute;
-  background-color: red;
-  -webkit-transition: .3s;
-  transition: .3s;
+.preview .preview-card {
+  padding: 20px;
+  border: solid red;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  z-index: 10;
+  width: 780px;
+  height: 600px;
+  background-color: white;
 }
 
-.item:hover .item-preview {
-  display: block;
-  opacity: 1;
-  z-index: 10;
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pagination a {
+  color: #757575;
+  font-size: 14px;
+  line-height: 150%;
+  text-decoration: none;
+}
+
+.pagination a:hover {
+  color: black;
+}
+
+.pagination a:not(:last-of-type)::after {
+  content: ">";
+  margin: 0 5px;
 }
 
 html {
