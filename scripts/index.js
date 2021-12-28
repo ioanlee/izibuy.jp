@@ -1,12 +1,9 @@
-console.log('hello')
+function elementLoader() {
+    $('.item').load('../elements/item.html');
+    $('header').load('../elements/header.html');
+    $('.sidebar').load('../elements/sidebar.html');
+}
 
 $(function() {
-    $('.item').load('../elements/item.html');
+    elementLoader();
 });
-
-function showPreview() {
-    window.onmousemove = function (e) {
-        document.getElementById('item-preview').style.top = (e.y - 300 + 20) + 'px';
-        document.getElementById('item-preview').style.left = (e.x - 300 + 20) + 'px';
-    };
-}
