@@ -8,10 +8,12 @@
 
 @import pages/_catalog
 @import pages/_item
+@import pages/_carousel
+@import pages/_fonts
 
 html
     scroll-behavior: smooth
-    font-family: Tahoma, Verdana, Arial
+    font-family: "KievitPro-Regular", "Arial", sans-serif
 
     body
         box-sizing: border-box
@@ -21,6 +23,11 @@ html
         max-width: 1920px
         margin: auto
 
+        img
+            max-width: 100%
+            height: auto
+            display: block
+
         .wrapper
             display: flex
             height: inherit
@@ -29,6 +36,7 @@ html
                 display: flex
                 flex-direction: column
                 width: 100%
+                max-width: 1480px
                 height: 100%
                 margin-left: 300px
                 padding: 0 40px 40px
