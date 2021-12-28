@@ -50,9 +50,87 @@ input {
   border-radius: 0;
 }
 
+.carousel {
+  position: relative;
+  width: 100%;
+  padding-bottom: 2em;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.carousel .carousel__item {
+  background: #E1BBA5;
+  color: #ffffff;
+  display: none;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.carousel .carousel__item p {
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 20px;
+  color: #ffff;
+  letter-spacing: 0.42em;
+  background-color: #8C3E7D;
+  display: block;
+  width: 978px;
+  margin: 0 auto;
+  padding: 0.5em 0;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  border-radius: 5px 5px 0px 0px;
+}
+
+@media screen and (max-width: 1440px) {
+  .carousel .carousel__item p {
+    width: 642px;
+    font-size: 25px;
+    line-height: 15px;
+    letter-spacing: 0.35em;
+  }
+}
+
+.carousel .carousel__item--selected {
+  display: block;
+}
+
+.carousel .carousel__nav {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.carousel .carousel__button {
+  width: 11px;
+  height: 11px;
+  display: inline-block;
+  border: 2px solid #E1BBA5;
+  border-radius: 50%;
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+.carousel .carousel__button--selected {
+  background: #8C3E7D;
+  border: none;
+}
+
+@font-face {
+  font-family: "KievitPro-Regular";
+  src: url("./fonts/KievitPro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 html {
   scroll-behavior: smooth;
-  font-family: Tahoma, Verdana, Arial;
+  font-family: "KievitPro-Regular", "Arial", sans-serif;
 }
 
 html body {
@@ -68,6 +146,12 @@ html body {
           flex-direction: column;
   max-width: 1920px;
   margin: auto;
+}
+
+html body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 html body .wrapper {
@@ -213,6 +297,7 @@ html body .wrapper > div {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  max-width: 1480px;
   height: 100%;
   margin-left: 300px;
   padding: 0 40px 40px;
