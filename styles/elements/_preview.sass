@@ -1,0 +1,152 @@
+.preview
+    display: none
+
+    .preview-card
+        padding: 20px
+        position: fixed
+        left: 50%
+        top: 50%
+        transform: translate3d(-50%,-50%,0)
+        z-index: 10
+        width: 780px
+        height: 600px
+        background-color: white
+        cursor: auto
+
+        h1
+            color: $purple
+            font-size: 25px
+            line-height: 30px
+            margin-bottom: 20px
+
+        .content
+            display: flex
+            gap: 20px
+            margin-bottom: 20px
+
+            .gallery
+                width: 350px
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+
+                .selected-image
+                    width: 100%
+                    height: 260px
+                    background: url(/images/img-item.jpg)
+                    margin-bottom: 20px
+
+                .images
+                    display: flex
+                    gap: 12px
+
+                    .image
+                        border: solid red
+                        width: 50px
+                        height: 50px
+                    
+                    .selected
+                        border: solid $blue
+
+
+            .specs
+                width: 50%
+                font-size: 17px
+                line-height: 100%
+
+                .spec                    
+                    display: flex
+                    justify-content: space-between
+                    padding: 5px 0
+                
+                    span
+                        // line-height: 10px
+                    
+                    .data
+                        width: 160px
+                    
+                hr
+                    visibility: hidden
+
+        .buttons
+            display: flex
+            gap: 20px
+            // margin-top: auto                             // не работает
+            
+            div
+                display: flex
+                width: 350px
+
+            button.add-to-favorites
+                margin: auto
+                position: relative
+                color: $purple
+                font-size: 17px
+                line-height: 130%
+                background: none
+                border: none
+                cursor: pointer
+                text-decoration: underline
+
+                &::before
+                    content: url(/images/icons/icon_favorites_purple.svg)
+                    transform: translateY(-50%)
+                    position: absolute
+                    right: 100%
+                    top: 50%
+                    
+
+                &:hover
+                    opacity: .8
+
+                &:active
+                    opacity: .7
+
+
+            button.place-a-bet
+                background-color: $purple
+                color: white
+                padding: 15px 25px
+                border-radius: 5px
+                font-size: 17px
+                line-height: 20px
+                border: none
+                transition: .15s
+
+                &:hover
+                    background-color: $blue
+
+    #overlay
+        position: fixed
+        opacity: 0
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-color: #00000004
+        pointer-events: none
+    
+    #overlay.active
+        opacity: 1
+
+/* or 120% */
+//     position: fixed
+    // left: 0
+    // top: 0        // transform: translate3d(-50%,-50%,0)
+    // width: 100%
+    // height: 100%
+    // border: solid red
+    
+    // .overlay
+    //     background-color: #000000
+    //     opacity: .1
+//     // display: none
+//     opacity: 0
+//     position: absolute
+//     background-color: red
+//     transition: .3s
+
+// &:hover .item-preview
+//     display: block
+//     opacity: 1
+//     z-index: 10

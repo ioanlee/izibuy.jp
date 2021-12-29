@@ -198,10 +198,6 @@ input {
   padding: 9px 10px 8px 10px;
 }
 
-#app-header .header__sticky-bar .profile svg {
-  fill: #8C3E7D;
-}
-
 #app-header .header__sticky-bar .profile:hover {
   background-color: #E1BBA5;
   border-color: #2E6E9F;
@@ -216,6 +212,10 @@ input {
 }
 
 #app-header .header__sticky-bar .profile:active svg {
+  fill: #8C3E7D;
+}
+
+#app-header .header__sticky-bar .profile svg {
   fill: #8C3E7D;
 }
 
@@ -384,13 +384,31 @@ input {
 }
 
 .item .item-image {
-  background: url(/images/img-item.jpg) no-repeat center;
+  background: url(/images/img_item_thumbnail.jpg) no-repeat center;
   background-size: cover;
+  position: relative;
   width: 100%;
   height: 165px;
   -webkit-transition: .2s;
   transition: .2s;
   border-radius: 15px 15px 0px 0px;
+}
+
+.item .item-image:hover .item-preview-button {
+  background: url(/images/icons/icon_preview.svg) no-repeat;
+  background-size: 100%;
+}
+
+.item .item-image .item-preview-button {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 35px;
+  height: 35px;
+}
+
+.item .item-image .item-preview-button:active {
+  background-image: url(/images/icons/icon_preview_click.svg);
 }
 
 .item .item-description {
@@ -417,22 +435,6 @@ input {
   content: ' ₽';
 }
 
-.item .item-preview {
-  width: 100px;
-  height: 100px;
-  opacity: 0;
-  position: absolute;
-  background-color: red;
-  -webkit-transition: .3s;
-  transition: .3s;
-}
-
-.item:hover .item-preview {
-  display: block;
-  opacity: 1;
-  z-index: 10;
-}
-
 #product-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -443,6 +445,199 @@ input {
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 20px;
+}
+
+.preview {
+  display: none;
+}
+
+.preview .preview-card {
+  padding: 20px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  z-index: 10;
+  width: 780px;
+  height: 600px;
+  background-color: white;
+  cursor: auto;
+}
+
+.preview .preview-card h1 {
+  color: #8C3E7D;
+  font-size: 25px;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+
+.preview .preview-card .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.preview .preview-card .content .gallery {
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.preview .preview-card .content .gallery .selected-image {
+  width: 100%;
+  height: 260px;
+  background: url(/images/img-item.jpg);
+  margin-bottom: 20px;
+}
+
+.preview .preview-card .content .gallery .images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+}
+
+.preview .preview-card .content .gallery .images .image {
+  border: solid red;
+  width: 50px;
+  height: 50px;
+}
+
+.preview .preview-card .content .gallery .images .selected {
+  border: solid #2E6E9F;
+}
+
+.preview .preview-card .content .specs {
+  width: 50%;
+  font-size: 17px;
+  line-height: 100%;
+}
+
+.preview .preview-card .content .specs .spec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5px 0;
+}
+
+.preview .preview-card .content .specs .spec .data {
+  width: 160px;
+}
+
+.preview .preview-card .content .specs hr {
+  visibility: hidden;
+}
+
+.preview .preview-card .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.preview .preview-card .buttons div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 350px;
+}
+
+.preview .preview-card .buttons button.add-to-favorites {
+  margin: auto;
+  position: relative;
+  color: #8C3E7D;
+  font-size: 17px;
+  line-height: 130%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.preview .preview-card .buttons button.add-to-favorites::before {
+  content: url(/images/icons/icon_favorites_purple.svg);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute;
+  right: 100%;
+  top: 50%;
+}
+
+.preview .preview-card .buttons button.add-to-favorites:hover {
+  opacity: .8;
+}
+
+.preview .preview-card .buttons button.add-to-favorites:active {
+  opacity: .7;
+}
+
+.preview .preview-card .buttons button.place-a-bet {
+  background-color: #8C3E7D;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  font-size: 17px;
+  line-height: 20px;
+  border: none;
+  -webkit-transition: .15s;
+  transition: .15s;
+}
+
+.preview .preview-card .buttons button.place-a-bet:hover {
+  background-color: #2E6E9F;
+}
+
+.preview #overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00000004;
+  pointer-events: none;
+}
+
+.preview #overlay.active {
+  opacity: 1;
+}
+
+/* or 120% */
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
+}
+
+.pagination a {
+  color: #757575;
+  font-size: 14px;
+  line-height: 150%;
+  text-decoration: none;
+}
+
+.pagination a:hover {
+  color: black;
+}
+
+.pagination a:not(:last-of-type)::after {
+  content: ">";
+  margin: 0 5px;
 }
 
 .carousel {
@@ -539,7 +734,7 @@ html body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 1920px;
+  max-width: 1600px;
   margin: auto;
 }
 
@@ -558,6 +753,7 @@ html body .wrapper {
   display: -ms-flexbox;
   display: flex;
   height: inherit;
+  width: 100%;
 }
 
 html body .wrapper > div {
@@ -569,7 +765,6 @@ html body .wrapper > div {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  max-width: 1480px;
   height: 100%;
   margin-left: 300px;
   padding: 0 40px 40px;

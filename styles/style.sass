@@ -4,6 +4,8 @@
 @import elements/_sidebar
 @import elements/_item
 @import elements/_product-container
+@import elements/_preview
+@import elements/_pagination
 
 @import pages/_catalog
 @import pages/_item
@@ -19,8 +21,9 @@ html
         min-height: 100vh
         display: flex
         flex-direction: column
-        max-width: 1920px
+        max-width: 1600px
         margin: auto
+        // justify-content: center
 
         a
             text-decoration: none
@@ -33,12 +36,13 @@ html
         .wrapper
             display: flex
             height: inherit
+            width: 100%
 
             & > div
                 display: flex
                 flex-direction: column
                 width: 100%
-                max-width: 1480px
+                // max-width: 1400px
                 height: 100%
                 margin-left: 300px
                 padding: 0 40px 40px
@@ -48,7 +52,6 @@ html
                     // flex-wrap: wrap
                     // justify-content: space-between
                     // gap: 20px
-                    // height: 100vh      //
 
                     h1
                         font-size: 34px
