@@ -50,23 +50,12 @@ input {
   border-radius: 0;
 }
 
-header {
+#app-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   height: 150px;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 20px 0;
-}
-
-header .logo {
-  width: 220px;
-  margin-right: 40px;
-  margin-top: auto;
-  height: 50px;
-}
-
-header div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,51 +63,66 @@ header div {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
-  margin-top: auto;
-  gap: 20px;
+  padding: 20px 0;
+  background-color: white;
+  z-index: 10;
 }
 
-header div nav {
+#app-header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0 auto;
+  padding-bottom: 35px;
+}
+
+#app-header nav a {
+  color: black;
+  font-size: 17px;
+  margin: auto 0;
+}
+
+#app-header nav a:first-child {
+  margin-left: auto;
+}
+
+#app-header nav a:not(:last-of-type) {
+  margin-right: 40px;
+}
+
+#app-header nav a:hover {
+  opacity: .7;
+}
+
+#app-header nav .currency-select {
+  margin-left: auto;
+}
+
+#app-header .header__sticky-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-header div nav a {
-  color: black;
-  text-decoration: none;
-  font-size: 17px;
-  margin: auto 0;
+#app-header .header__sticky-bar .logo {
+  width: 22%;
+  margin-right: 5%;
+  display: block;
 }
 
-header div nav a:not(:last-of-type) {
-  margin-right: 20px;
-}
-
-header div nav a:hover {
-  opacity: .7;
-}
-
-header div nav .currency-select {
-  margin-left: auto;
-}
-
-header div div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+#app-header .header__sticky-bar .logo img {
   width: 100%;
 }
 
-header div div input[type=search] {
+#app-header .header__sticky-bar input[type=search] {
   color: #E1BBA5;
   border: 3px solid #E1BBA5;
   border-radius: 0px 15px 15px 0px;
@@ -127,44 +131,92 @@ header div div input[type=search] {
   min-height: 50px;
   padding: 0 10px;
   outline: none;
-  width: 100%;
+  width: 95%;
 }
 
-header div div input[type=search]::-webkit-input-placeholder {
+#app-header .header__sticky-bar input[type=search]::-webkit-input-placeholder {
   color: #E1BBA5;
 }
 
-header div div input[type=search]:-ms-input-placeholder {
+#app-header .header__sticky-bar input[type=search]:-ms-input-placeholder {
   color: #E1BBA5;
 }
 
-header div div input[type=search]::-ms-input-placeholder {
+#app-header .header__sticky-bar input[type=search]::-ms-input-placeholder {
   color: #E1BBA5;
 }
 
-header div div input[type=search]::placeholder {
+#app-header .header__sticky-bar input[type=search]::placeholder {
   color: #E1BBA5;
 }
 
-header div div .favorite {
+#app-header .header__sticky-bar .favorite {
   min-width: 50px;
   height: 50px;
-  border: 2px solid #BDBDBD;
+  border: 1px solid #BDBDBD;
   border-radius: 25px;
-  background: url(/images/icons/icon_favorites.svg) no-repeat center center;
+  background-size: 50px 50px;
+  background-color: #fff;
+  border-color: #757575;
+  border-radius: 50%;
+  padding: 14px 9px 11px 11px;
+  margin: 0 2%;
 }
 
-header div div .profile {
+#app-header .header__sticky-bar .favorite svg {
+  fill: white;
+  stroke: #757575;
+}
+
+#app-header .header__sticky-bar .favorite:hover {
+  background-color: #E1BBA5;
+  border-color: #2E6E9F;
+}
+
+#app-header .header__sticky-bar .favorite:hover svg {
+  fill: #2E6E9F;
+  stroke: #2E6E9F;
+}
+
+#app-header .header__sticky-bar .favorite:active {
+  border-color: #8C3E7D;
+}
+
+#app-header .header__sticky-bar .favorite:active svg {
+  fill: #8C3E7D;
+  stroke: #8C3E7D;
+}
+
+#app-header .header__sticky-bar .profile {
   min-width: 50px;
   height: 50px;
   border: 2px solid #8C3E7D;
   border-radius: 25px;
-  background: url(/images/icons/icon_profile.svg) no-repeat bottom center;
+  background-color: #fff;
+  background-size: 50px 50px;
+  border-radius: 50%;
+  padding: 9px 10px 8px 10px;
 }
 
-header div div .profile:hover, header div div .favorite:hover {
+#app-header .header__sticky-bar .profile:hover {
   background-color: #E1BBA5;
-  border-color: #E1BBA5;
+  border-color: #2E6E9F;
+}
+
+#app-header .header__sticky-bar .profile:hover svg {
+  fill: #2E6E9F;
+}
+
+#app-header .header__sticky-bar .profile:active {
+  border-color: #8C3E7D;
+}
+
+#app-header .header__sticky-bar .profile:active svg {
+  fill: #8C3E7D;
+}
+
+#app-header .header__sticky-bar .profile svg {
+  fill: #8C3E7D;
 }
 
 .sidebar {
@@ -382,6 +434,18 @@ header div div .profile:hover, header div div .favorite:hover {
 
 .item .item-price::after {
   content: ' ₽';
+}
+
+#product-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 20px;
 }
 
 .preview {
@@ -675,6 +739,10 @@ html body {
   margin: auto;
 }
 
+html body a {
+  text-decoration: none;
+}
+
 html body img {
   max-width: 100%;
   height: auto;
@@ -701,20 +769,6 @@ html body .wrapper > div {
   height: 100%;
   margin-left: 300px;
   padding: 0 40px 40px;
-}
-
-html body .wrapper > div main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 30px;
-  -webkit-column-gap: 20px;
-          column-gap: 20px;
 }
 
 html body .wrapper > div main h1 {
