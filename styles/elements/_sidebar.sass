@@ -1,83 +1,193 @@
 .sidebar
-    width: 300px
-    height: 100%
-    position: fixed
-    background: $lightbrown        
-    border: 2px solid $brown
-    border-width: 0 2px
-    display: flex
     flex-direction: column
-    padding: 70px 0 0 18px
+    border-width: 0 2px
+    background: $lightbrown
     overflow-y: scroll
+    position: fixed
+    display: flex
+    padding: 70px 0 0 18px
+    height: 100%
+    border: 2px solid $brown
+    width: 300px
+    gap: 40px
+    & > *:last-child
+        margin-bottom: 300px
     &::-webkit-scrollbar
         width: 0
 
-    *
-        margin: 0 auto
-
     input[type=search]
-        color: $brown
-        border: 3px solid $brown
         border-radius: 0px 15px 15px 0px
-        font-size: 21px
+        padding-left: 9px
         line-height: 25px
-        width: 230px                            //
-        min-height: 50px                               //
-        // padding-right: 33px
+        min-height: 50px
+        font-size: 21px
         outline: none
+        border: 3px solid $brown
+        margin: 0
+        width: 90%
         &::placeholder
             color: $brown
-        &:focus
-            // outline: none
 
     .catalog
-        display: flex
         flex-direction: column
-        width: 100%
-        font-size: 21px
         line-height: 25px
-        margin-top: 40px
         transition: .5s
+        font-size: 21px
+        display: flex
+        height: fit-content
+        width: 100%
         &::-webkit-details-marker
             display: none
 
-        
-
-
-        // *:hover
-            // box-shadow: inset -80px 0 0 0 $brown
-            // transition: .1s
-            // // box-shadow: inset -800px 0 0 0 $brown
-
         summary
-            list-style: none
-            padding: 8px
-            transition: .2s
+            line-height: 120%
             box-shadow: inset 0 0 0 0 $brown
-            // &[open]
-            //     content: "Развернуть каталог"
+            list-style: none
+            transition: .2s
+            font-size: 25px
+            padding: 8px
+            color: $purple
             &::-webkit-details-marker
                 display: none
             &::after
                 content: "Развернуть каталог"
-                // padding: 8px
             &:hover
                 box-shadow: inset -80px 0 0 0 $brown
                 transition: .1s
+
         &[open] > summary
             box-shadow: inset -300px 0 0 0 $brown
             &::after
                 content: "Свернуть каталог"
 
         .catalog-item
-            color: black
             text-decoration: none
-            padding: 9px
+            user-select: none
             box-shadow: inset 0 0 0 0 $brown
             transition: .4s
-            user-select: none
-
+            padding: 9px
+            color: black
             &:hover
                 box-shadow: inset -80px 0 0 0 $brown
                 transition: .1s
-                // box-shadow: inset -800px 0 0 0 $brown
+            &:last-of-type
+                margin-bottom: 20px
+
+    .filters
+        flex-direction: column
+        padding: 0 9px
+        display: flex
+        width: 95%
+        gap: 10px
+
+        h2
+            line-height: 120%
+            font-size: 25px
+            color: #363636
+
+        h3
+            font-weight: bold
+            line-height: 110%
+            margin-top: 20px
+            font-size: 17px
+
+        select
+            border-radius: 5px
+            font-size: 17px
+            height: 50px
+            border: 3px solid $brown
+            color: $darkgrey
+
+        .number-inputs
+            justify-content: space-between
+            margin-bottom: 10px
+            display: flex
+            width: 100%
+
+            input[type=number]
+                border-radius: 5px
+                text-align: center
+                font-size: 17px
+                height: 50px
+                border: 3px solid $brown
+                color: $darkgrey
+                width: 100px
+                &::-webkit-textfield-decoration-container, &::-webkit-inner-spin-button
+                    -webkit-appearance: none
+
+        .double-range-input
+            position: relative
+            height: 20px
+
+            input[type=range]
+                background-color: $brown
+                visibility: hidden
+                position: absolute
+                z-index: 0
+                height: 15px
+                right: -2px
+                width: 100%
+                &::-webkit-slider-runnable-track
+                    pointer-events: none
+                    appearance: none
+                &::-webkit-slider-thumb
+                    pointer-events: auto
+                    border-radius: 10px
+                    visibility: visible
+                    background: $brown
+                    appearance: none
+                    height: 20px
+                    width: 20px
+                    &:hover
+                        transform: scale(1.1)
+                &::before, &::after
+                    line-height: 130%
+                    font-size: 17px
+                    position: absolute
+                    color: $darkgrey
+                    top: 10px
+                &::before
+                    content: '2000'
+                    left: 0
+                &::after
+                    content: '11 500'
+                    right: 0
+
+            hr
+                background: $brown
+                position: absolute
+                border: 1px solid $brown
+                width: 100%
+
+        .checkboxes
+            .checkbox-row
+                padding: 5px 0
+                display: flex
+
+                input[type=checkbox]
+                    border-radius: 3px
+                    background: white
+                    position: relative
+                    margin: 0 10px 0 0
+                    border: solid $brown
+                    cursor: pointer
+                    height: 30px
+                    width: 30px
+                    &:checked::after
+                        border-color: green
+                        font-weight: bold
+                        transform: translate3d(-50%,-50%,0)
+                        font-size: 22px
+                        position: absolute
+                        content: '✓'
+                        color: $purple
+                        left: 50%
+                        top: 50%
+                
+                label[for=checkboxes]
+                    margin: auto 0
+                    color: $darkgrey
+            
+            
+
+            
