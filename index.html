@@ -75,6 +75,22 @@
         <div>
             <div id="app-header"><my-header></my-header></div>
             <main>
+                <!-- <div class="popups">
+                    <div class="popup popup--login">
+                        <form>
+                            <p class="form-title">Вход в профиль</p>
+                            <input type="text" placeholder="E-mail или телефон">
+                            <a href="#">Зарегистрироваться</a>
+                            <input type="password" placeholder="Пароль">
+                            <a href="#">Восстановить пароль</a>
+                            <input type="checkbox" id="unsafe-pc" checked name="unsafe-pc" value="">
+                            <label for="unsafe-pc">Чужой компьютер</label>
+                            <button type="submit">Войти</button>
+                            <a href="#">Войти через Google</a>
+                            <a href="#">Войти через Facebook</a>
+                        </form>
+                    </div>
+                </div> -->
                 <section class="carousel">
                     <div class="carousel__item">
                         <img src="./images/slider/socks1920.jpg" width="1397" height="437" alt="3 пары ног в разноцветных носках,мужские,женские и ребенка">
@@ -89,7 +105,9 @@
                         <p>Танки грязи не боятся</p>
                     </div>
                 </section>
-                <div id="product-container">
+                <div id="product-container"> 
+                    <product-item></product-item>
+                    <product-item></product-item>                    
                     <product-item></product-item>
                     <product-item></product-item>
                     <product-item></product-item>
@@ -98,16 +116,18 @@
                     <product-item></product-item>
                     <product-item></product-item>
                     <product-item></product-item>
+                    <large-banner></large-banner>
+                    <product-item></product-item>
+                    <product-item></product-item>
+                    <product-item></product-item>
+                    <product-item></product-item>                    
                     <product-item></product-item>
                     <product-item></product-item>
                     <product-item></product-item>
                     <product-item></product-item>
                     <product-item></product-item>
                     <product-item></product-item>
-                    <product-item></product-item>
-                    <product-item></product-item>
-                    <product-item></product-item>
-                    <product-item></product-item>
+                    <medium-banner></medium-banner>
                     <product-item></product-item>
                     <product-item></product-item>
                     <product-item></product-item>
@@ -122,9 +142,6 @@
             </main>
         </div>
     </div>
-    <script src="./scripts/carousel.js"></script>
-    <script src="./scripts/my-header.js"></script>
-    <script src="./scripts/product-item.js"></script>
-    <script src="./scripts/sidebar.js"></script>
+    <script src="./scripts/main.js" type="module"></script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+.banners-wrapper
+    display: flex
+    flex-wrap: nowrap
+    flex-direction: row
+    justify-content: space-between
+    gap: 20px
+
+    .banner
+        background-color: $brown
+        padding-bottom: 20px
+        position: relative        
+
+        p
+            position: absolute
+            background-color: $purple
+            bottom: 0
+            width: 90%
+            text-transform: uppercase
+            font-size: 36px
+            line-height: 20px
+            color: #ffff
+            letter-spacing: 0.42em
+            display: block            
+            margin: 0 auto
+            padding: 0.5em 0
+            text-align: center
+            left: 50%
+            transform: translate(-50%)
+            border-radius: 5px 5px 0px 0px
+            @media screen and (max-width: 1440px)                
+                font-size: 25px
+                line-height: 15px
+                letter-spacing: 0.35em   
