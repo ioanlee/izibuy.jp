@@ -4,23 +4,25 @@
     left: 0
     right: 0
     bottom: 0
-    z-index: 3    
-    background-color: black
-    opacity: 0.7
-    display: none
+    z-index: 100  
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, 0.8)
+    transition: opacity 0.3s ease
+
 
 .popup
-    display: none
+    //display: none
     background-color: white
-    padding: 40px
+    padding: 50px 80px
     border: 0.5px solid rgba(0, 0, 0, 0.5)
     box-sizing: border-box
-    border-radius: 5px
+    border-radius: 10px
     position: absolute
     left: 50%
     top: 550px
     transform: translate(-50%, -50%)
-    width: 420px
+    min-width: 480px
     z-index: 4
     @media screen and (max-width: 320px)
         max-width: 320px
@@ -32,9 +34,13 @@
 
         input
             padding: 5% 2%
-            border: 3px solid #363636
+            border: 3px solid #BDBDBD
             box-sizing: border-box
             border-radius: 5px
+
+            &:focus
+                border: 3px solid #363636
+                outline: none
 
         button
             background: $purple
@@ -53,3 +59,75 @@
         .form-title
             font-size: 25px
             line-height: 30px
+
+        .help-link
+            font-size: 17px
+            line-height: 22px
+            text-decoration-line: underline
+            color: $purple
+            padding-left: 20px
+
+.close-button
+    border: none
+    background: none
+    &::before,
+    &::after 
+        content: ""
+        position: absolute
+        top: 25px
+        right: 15px
+        width: 24px
+        height: 4px
+        background-color: $purple
+        cursor: pointer
+    
+    &::before 
+        transform: rotate(45deg)
+        box-shadow: none
+    
+    &::after 
+        transform: rotate(-45deg)
+
+
+.popup--login
+    .social-login-button
+        font-size: 17px
+        line-height: 20px
+        text-align: center
+        text-transform: uppercase
+        padding: 14px 
+        color: $purple
+        border: 1px solid $purple
+        box-sizing: border-box
+        border-radius: 5px
+
+    .unsafe-pc
+        padding: 20px 0        
+        label
+            position: relative
+            padding-left: 40px
+            cursor: pointer
+            &::before
+                position: absolute
+                content: ""
+                width: 32px
+                height: 32px
+                border-radius: 5px
+                border: 2px solid #757575
+                left: 0
+                top: -28%
+
+            &::after
+                position: absolute
+                content: ""
+                background-repeat: no-repeat
+                left: 0
+                width: 30px
+                height: 30px
+                top: 0
+                left: 2px
+        input
+            display: none
+            &:checked + label
+                &::after
+                    background-image: url(../images/icons/icon-checked.svg)
