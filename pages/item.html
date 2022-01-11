@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <aside id="sidebar-container"><sidebar></sidebar></aside>
+        <div>
+            <header id="app-header"><my-header></my-header></header>
+            <main>
+                <div class="bread-crumbs">
+                    <a href="#">Компьютеры</a>
+                    <a href="#">Ноутбуки</a>
+                </div>
+                <section class="product">
+                    <h1>[XX44]Windows11 or Windows10[ASUS GL752VW]Core i7-6700HQ/ новый товар SSD 240GB/GTX 960M/ память 16GB/Web камера /Office2019/BluRay</h1>
+                    <div class="product-photos">                        
+                            <img src="../images/img-item.jpg" alt="full" class="current"></img>                      
+                        <div class="thumbnails-wrapper">
+                            <img src="../images/img-item.jpg" alt="laptop" class="thumb"></img>
+                            <img src="../images/item/item3.jpg" alt="keyboard" class="thumb"></img>
+                            <img src="../images/item/item4.jpg" alt="parameters" class="thumb"></img>
+                            <img src="../images/item/item1.jpg" alt="left side" class="thumb"></img>
+                            <img src="../images/item/item2.jpg" alt="right side" class="thumb"></img>
+                            <img src="../images/item/item5.jpg" alt="right side" class="thumb"></img>
+                        </div>
+                    </div>
+                    <div class="product-desc">
+                        <div class="text-content">
+                            <table>
+                                <tr>
+                                    <th>Начало торгов (Jpn):</th>
+                                    <td>
+                                        <span>2021-10-13 10:44:13</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Конец торгов (Jpn):</th>
+                                    <td>
+                                        <span>2021-10-13 10:44:13</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Количество:</th>
+                                    <td>
+                                        <span>1 шт.</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Состояние товара:</th>
+                                    <td>
+                                        <span>б/у</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Раннее завершение:</th>
+                                    <td>
+                                        <span>есть</span>
+                                    </td>
+                                </tr>                                
+                                <tr>
+                                    <th>Авто продление:</th>
+                                    <td>
+                                        <span>есть</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Стартовая цена:</th>
+                                    <td>
+                                        <span>12 000 i</span>
+                                    </td>
+                                </tr>                                
+                                <tr>
+                                    <th>Число ставок:</th>
+                                    <td>
+                                        <span>24</span>
+                                    </td>
+                                </tr>                                
+                                <tr>
+                                    <th>Текущая ставка:</th>
+                                    <td>
+                                        <span>35 000 i</span>
+                                    </td>
+                                </tr>                                
+                                <tr>
+                                    <th>Блиц цена:</th>
+                                    <td>
+                                        <span>42 000 i</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Осталось времени:</th>
+                                    <td>
+                                        <span>6 час 30 мин</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <img class="logo" src="../images/logos/yahoo.svg" alt="Yahoo logo" height="30" width="160">
+                        <button type="button" class="button make-bet">Сделать ставку</button>
+                        <button type="button" class="button add-favs">Добавить в избранное</button>
+                    </div>
+                    <div class="product-details">
+                        <p>
+                            Ноутбук в отличном состоянии, установлена Windows 10 и пакет стандартных программ. 
+                            Процессор Intel ® Core ™ 11-го поколения. 
+                            Сертификат защиты от синего света и мерцания TÜV Rheinland. Сенсорный 2К-экран FullView с полезной площадью 90%.
+                            11 часов автономной работы и компактная зарядка HUAWEI SuperCharge
+                        </p>
+                        <img src="../images/item/details-image.jpg" height="470" width="830" alt="product details photo">
+                    </div>
+                </section>
+                <section class="similar-goods">
+                    <h2>Похожие товары</h2>
+                    <div class="product-container">
+                        <product-item></product-item>
+                        <product-item></product-item>                    
+                        <product-item></product-item>
+                        <product-item></product-item>
+                    </div>
+                </section>
+                <section class="viewed-goods">
+                    <h2>Ранее вы смотрели</h2>
+                    <div class="product-container">
+                        <product-item></product-item>
+                        <product-item></product-item>                    
+                        <product-item></product-item>
+                        <product-item></product-item>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="../scripts/main.js" type="module"></script>
+</body>
+</html>

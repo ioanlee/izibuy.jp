@@ -608,7 +608,7 @@ input, select {
   content: ' ₽';
 }
 
-#product-container {
+.product-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -935,6 +935,132 @@ input, select {
 .popup form .form-title {
   font-size: 25px;
   line-height: 30px;
+}
+
+.product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.product h1 {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.product .product-photos {
+  border-radius: 7px;
+  max-width: 650px;
+  width: 50%;
+}
+
+.product .thumbnails-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.product .current {
+  width: 100%;
+  max-height: 485px;
+  margin: auto;
+}
+
+.product .thumb {
+  width: 83px;
+  height: 83px;
+  margin-top: 30px;
+}
+
+.product .product-desc {
+  margin: 0 auto;
+}
+
+.product .product-desc table {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  text-align: left;
+  border-spacing: 15px;
+  border-collapse: separate;
+}
+
+.product .product-desc table th {
+  margin-right: 20px;
+}
+
+.product .product-desc .logo {
+  margin: 30px 0;
+}
+
+.product .product-desc .add-favs {
+  border: none;
+  background: none;
+  color: #8C3E7D;
+  padding: 5px 0;
+  text-decoration: underline;
+  font-size: 17px;
+  line-height: 22px;
+  padding-left: 35px;
+  cursor: pointer;
+  background-image: url("../images/icons/icon_favorites_purple.svg");
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+.product .product-desc .add-favs:hover {
+  background-image: url("../images/icons/icon_favorites_blue.svg");
+  background-size: 30px 30px;
+  color: #2E6E9F;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.product .product-desc .make-bet {
+  border: none;
+  border-radius: 5px;
+  background-color: #8C3E7D;
+  color: white;
+  font-size: 17px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 18px 22px;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.product .product-desc .make-bet:hover {
+  background-color: #2E6E9F;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-box-shadow: 0 5px #E1BBA5;
+          box-shadow: 0 5px #E1BBA5;
+}
+
+.product .product-details {
+  padding-top: 80px;
+  font-size: 17px;
+  line-height: 20px;
+}
+
+.product .product-details p {
+  margin-bottom: 30px;
+  max-width: 60%;
 }
 
 .carousel {

@@ -64,4 +64,4 @@ Vue.component('medium-banner', {
     }
 })
 
-new Vue({ el: '#product-container' })
+new Vue({ el: '.product-container' })
