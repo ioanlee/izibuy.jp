@@ -1,0 +1,93 @@
+.product
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+    h1
+        width: 100%
+        margin-bottom: 40px
+
+    .product-photos 
+        border-radius: 7px
+        max-width: 650px        
+        width: 50%
+
+    .thumbnails-wrapper
+        width: 100%
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+
+    .current
+        width: 100%
+        max-height: 485px
+        margin: auto
+        
+    .thumb 
+        width: 83px
+        height: 83px
+        margin-top: 30px
+    
+    .product-desc
+        margin: 0 auto
+
+        table
+            font-style: normal
+            font-weight: normal
+            font-size: 17px
+            text-align: left            
+            border-spacing: 15px
+            border-collapse: separate
+
+            th
+                margin-right: 20px
+
+        .logo
+            margin: 30px 0
+        
+        .add-favs
+            border: none
+            background: none
+            color: $purple
+            padding: 5px 0
+            text-decoration: underline
+            font-size: 17px
+            line-height: 22px
+            padding-left: 35px
+            cursor: pointer
+            background-image: url("../images/icons/icon_favorites_purple.svg")
+            background-repeat: no-repeat
+            background-position: left
+            &:hover
+                background-image: url("../images/icons/icon_favorites_blue.svg")
+                background-size: 30px 30px
+                color: $blue
+                transition: 0.3s
+
+        .make-bet
+            border: none
+            border-radius: 5px
+            background-color: $purple
+            color: white
+            font-size: 17px
+            line-height: 20px
+            text-align: center
+            text-transform: uppercase
+            padding: 18px 22px
+            cursor: pointer
+            display: block
+            margin-bottom: 20px
+            &:hover
+                background-color: $blue
+                transition: 0.3s
+                transform: translateY(-5px)
+                box-shadow: 0 5px #E1BBA5
+
+    .product-details
+        padding-top: 80px
+        font-size: 17px
+        line-height: 20px
+
+        p
+            margin-bottom: 30px
+            max-width: 60%
