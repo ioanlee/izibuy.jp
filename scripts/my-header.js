@@ -1,5 +1,7 @@
+import {eventBus} from '../scripts/main.js'
+
 Vue.component('my-header', {
-    template: ` <div class="header">
+    template: ` <div class="header">                    
                     <nav>
                         <a href="">О компании</a>
                         <a href="">Оплата</a>
@@ -39,7 +41,10 @@ Vue.component('my-header', {
                         </a>
                     </div>     
                 </div>               
-` 
+`,
+    methods: {
+        
+    }
 })
 
 new Vue({ el: '#app-header' })
