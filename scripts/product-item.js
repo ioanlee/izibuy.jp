@@ -1,10 +1,10 @@
 Vue.component('product-item', {
     template: `
-    <div class="item">
+    <a href="../pages/item.html" class="item">
         <div class="item-image"><img src="" alt=""></div>
         <p class="item-description">Одиночный усилитель Mazda 6V6 в хорошем состоянии/Одиночный усилитель Mazda 6V6 в хорошем состоянии</p>
         <span class="item-price">6 824</span>
-    </div>
+    </a>
 `
 })
 
@@ -64,4 +64,4 @@ Vue.component('medium-banner', {
     }
 })
 
-new Vue({ el: '.product-container' })
+new Vue({ el: '#product' })

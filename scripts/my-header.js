@@ -26,7 +26,7 @@ Vue.component('my-header', {
                         </a>
                     </nav>
                     <div class="header__sticky-bar">
-                        <a class="logo" href="#"><img src="./images/logos/logo_izibuy.svg" alt="Логотип"></a>
+                        <a class="logo" href="/"><img src="../images/logos/logo_izibuy.svg" alt="Логотип"></a>
                         <input type="search" name="" id="" placeholder="найти">
                         <a class="favorite" href="">
                             <svg width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
