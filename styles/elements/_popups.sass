@@ -1,4 +1,9 @@
-.overlay    
+#loginPopup,
+#remindPassPopup,
+#registrationPopup
+    display: none
+
+.overlay
     position: fixed
     top: 0px
     left: 0
@@ -11,8 +16,7 @@
     transition: opacity 0.3s ease
 
 
-.popup
-    //display: none
+.popup    
     background-color: white
     padding: 50px 80px
     border: 0.5px solid rgba(0, 0, 0, 0.5)
@@ -101,7 +105,38 @@
         box-sizing: border-box
         border-radius: 5px
 
-    .unsafe-pc
+    .unsafe-pc    
+        padding: 20px 0        
+        label
+            position: relative
+            padding-left: 40px
+            cursor: pointer
+            &::before
+                position: absolute
+                content: ""
+                width: 32px
+                height: 32px
+                border-radius: 5px
+                border: 2px solid #757575
+                left: 0
+                top: -28%
+
+            &::after
+                position: absolute
+                content: ""
+                background-repeat: no-repeat
+                left: 0
+                width: 30px
+                height: 30px
+                top: 0
+                left: 2px
+        input
+            display: none
+            &:checked + label
+                &::after
+                    background-image: url(../images/icons/icon-checked.svg)
+
+.no-robot
         padding: 20px 0        
         label
             position: relative

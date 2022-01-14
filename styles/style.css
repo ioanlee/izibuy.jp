@@ -865,6 +865,12 @@ input, select {
   }
 }
 
+#loginPopup,
+#remindPassPopup,
+#registrationPopup {
+  display: none;
+}
+
 .overlay {
   position: fixed;
   top: 0px;
@@ -1031,6 +1037,46 @@ input, select {
 }
 
 .popup--login .unsafe-pc input:checked + label::after {
+  background-image: url(../images/icons/icon-checked.svg);
+}
+
+.no-robot {
+  padding: 20px 0;
+}
+
+.no-robot label {
+  position: relative;
+  padding-left: 40px;
+  cursor: pointer;
+}
+
+.no-robot label::before {
+  position: absolute;
+  content: "";
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  border: 2px solid #757575;
+  left: 0;
+  top: -28%;
+}
+
+.no-robot label::after {
+  position: absolute;
+  content: "";
+  background-repeat: no-repeat;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  left: 2px;
+}
+
+.no-robot input {
+  display: none;
+}
+
+.no-robot input:checked + label::after {
   background-image: url(../images/icons/icon-checked.svg);
 }
 

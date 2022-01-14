@@ -5,13 +5,13 @@
 //     // $('.preview').load('../elements/preview.html');
 // }
 
-$(function() {
-    // elementLoader();//       deprecated
-});
+// $(function() {
+//     // elementLoader();//       deprecated
+// });
 
-function openPreview() {
-    // $(#show).style="display: block;"
-}
+// function openPreview() {
+//     // $(#show).style="display: block;"
+// }
 
 function updateNumbers() {
     document.getElementById('number-max').value = document.getElementById('range-max').value
