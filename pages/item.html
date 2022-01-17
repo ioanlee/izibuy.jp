@@ -14,7 +14,9 @@
         <div>
             <header id="app-header"><my-header></my-header></header>
             <main>
-                <div id="popup-container"><my-popup></my-popup></div>
+                <div id="loginPopup"><login-popup></login-popup></div>
+                <div id="remindPassPopup"><remind-password-popup></remind-password-popup></div>
+                <div id="betPopup"><bet-popup></bet-popup></div>
                 <div class="bread-crumbs">
                     <a href="#">Компьютеры</a>
                     <a href="#">Ноутбуки</a>
@@ -106,8 +108,8 @@
                             </table>
                         </div>
                         <img class="logo" src="../images/logos/yahoo.svg" alt="Yahoo logo" height="30" width="160">
-                        <button type="button" class="button make-bet">Сделать ставку</button>
-                        <button type="button" class="button add-favs">Добавить в избранное</button>
+                        <button type="button" class="button make-bet" id="make-bet">Сделать ставку</button>
+                        <button type="button" class="add-favs">Добавить в избранное</button>
                     </div>
                     <div class="product-details">
                         <p>
@@ -151,5 +153,6 @@
         </div>
     </div>
     <script src="../scripts/main.js" type="module"></script>
+    <script src="../scripts/bet.js"></script>
 </body>
 </html>

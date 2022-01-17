@@ -1,6 +1,7 @@
 #loginPopup,
 #remindPassPopup,
-#registrationPopup
+#registrationPopup,
+#betPopup
     display: none
 
 .overlay
@@ -26,7 +27,7 @@
     left: 50%
     top: 550px
     transform: translate(-50%, -50%)
-    min-width: 480px
+    width: 480px
     z-index: 4
     @media screen and (max-width: 320px)
         max-width: 320px
@@ -104,6 +105,10 @@
         border: 1px solid $purple
         box-sizing: border-box
         border-radius: 5px
+        &:hover
+            transition: 0.3s
+            transform: translateY(-5px)
+            box-shadow: 0 5px #E1BBA5
 
     .unsafe-pc    
         padding: 20px 0        
@@ -166,3 +171,7 @@
             &:checked + label
                 &::after
                     background-image: url(../images/icons/icon-checked.svg)
+
+.popup--bet
+    p
+        color: #757575

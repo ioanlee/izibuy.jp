@@ -7,7 +7,7 @@
     border: 2px solid $brown
     border-radius: 15px 15px 0px 0px
     color: #000
-    // overflow: hidden
+    overflow: hidden
     cursor: pointer
     @media screen and( max-width: 1600px)
         width: 200px
@@ -18,6 +18,11 @@
     @media screen and( max-width: 1024px)
         width: 160px    
         height: 220px
+    &:hover
+        color: $purple
+    &:hover .fav
+        display: block
+        
 
     .item-image
         background: url(/images/img_item_thumbnail.jpg) no-repeat center
@@ -27,6 +32,26 @@
         height: 165px
         transition: .2s
         border-radius: 15px 15px 0px 0px
+        &:hover               
+            transform: scale(1.1)
+ 
+        .zoom
+            display: none
+            position: absolute
+            width: 50px
+            height: 50px
+            background-image: url(/images/icons/icon_zoom.svg)
+            background-repeat: no-repeat
+            top: 33%
+            left: 40%
+            &:hover
+                width: 70px
+                height: 70px
+                background-image: url(/images/icons/icon_zoom-hover.svg)
+                transition: 0.2s
+
+        &:hover .zoom
+            display: block
 
         &:hover .item-preview-button
             background: url(/images/icons/icon_preview.svg) no-repeat
@@ -51,7 +76,10 @@
         font-size: 17px
         line-height: 129%
         overflow: hidden
-        text-overflow: ellipsis     //
+        text-overflow: ellipsis
+        &:hover
+            color: $blue
+            text-decoration: underline
 
 
     .item-price
@@ -65,3 +93,31 @@
 
         &::after
             content: ' ₽'
+
+    .fav        
+        display: none
+        border: none
+        background: none
+        color: $purple
+        cursor: pointer
+        background-image: url("../images/icons/icon_favorites_purple.svg")
+        background-repeat: no-repeat
+        width: 30px
+        height: 30px
+        background-position: center
+        &:hover
+            background-image: url("../images/icons/icon_favorites_blue.svg")
+            transition: 0.3s
+            transform: translateY(-5px)
+            box-shadow: 0 3px #E1BBA5
+            border: 1px solid $blue
+            border-radius: 3px
+    .added 
+        background-image: url("../images/icons/icons_favorites_purple_fill.svg")
+        display: block
+        &:hover
+            background-image: url("../images/icons/icons_favorites_purple_fill.svg")
+    .price-wrapper
+        display: flex
+        align-items: center
+        padding-right: 10px

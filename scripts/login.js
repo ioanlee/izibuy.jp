@@ -13,7 +13,7 @@ Vue.component('login-popup', {
                     <input type="checkbox" id="unsafe-pc" checked name="unsafe-pc" value="" required>
                     <label for="unsafe-pc">Чужой компьютер</label>
                 </span>
-                <button type="submit">Войти</button>
+                <button class="button" type="submit">Войти</button>
                 <a class="social-login-button" href="#">Войти через Google</a>
                 <a class="social-login-button" href="#">Войти через Facebook</a>
             </form>                        
@@ -31,7 +31,7 @@ Vue.component('login-popup', {
                     <input type="checkbox" id="no-robot" checked name="no-robot" value="">
                     <label for="no-robot">Я не робот</label>
                 </span>
-                <button type="submit">Зарегистрироваться</button>
+                <button class="button" type="submit">Зарегистрироваться</button>
                 <p>Уже есть акаунт?<a href="#" @click="registerActive = !registerActive">Войти</a></p>
             </form>           
         </div>

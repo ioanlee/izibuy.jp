@@ -1,11 +1,23 @@
 Vue.component('product-item', {
     template: `
-    <a href="../pages/item.html" class="item">
-        <div class="item-image"><img src="" alt=""></div>
+    <a  class="item">
+        <div class="item-image">
+            <img src="" alt="">
+            <div class="zoom"></div>
+        </div>
         <p class="item-description">Одиночный усилитель Mazda 6V6 в хорошем состоянии/Одиночный усилитель Mazda 6V6 в хорошем состоянии</p>
-        <span class="item-price">6 824</span>
+        <span class="price-wrapper">
+            <span class="item-price">6 824</span>
+            <button class="fav" @click="addToFavs"></button>
+        </span>
+        
     </a>
-`
+`,
+    methods: {
+        addToFavs: function() {
+            this.$el.querySelector('.fav').classList.toggle('added')
+        }
+    }
 })
 
 Vue.component('large-banner', {
