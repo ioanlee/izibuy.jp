@@ -10,14 +10,13 @@
     left: 0
     right: 0
     bottom: 0
-    z-index: 100  
+    z-index: 100
     width: 100%
     height: 100%
     background-color: rgba(0, 0, 0, 0.8)
     transition: opacity 0.3s ease
 
-
-.popup    
+.popup
     background-color: white
     padding: 50px 80px
     border: 0.5px solid rgba(0, 0, 0, 0.5)
@@ -25,10 +24,18 @@
     border-radius: 10px
     position: absolute
     left: 50%
-    top: 550px
+    top: 50%
+    left: 50%
     transform: translate(-50%, -50%)
     width: 480px
     z-index: 4
+    animation: 0.7s slideDown
+    @keyframes slideDown
+        0%
+            transform: translate(-50%,-100%)
+        100%
+           transform: translate(-50%, -50%)
+
     @media screen and (max-width: 320px)
         max-width: 320px
 
@@ -58,8 +65,7 @@
             text-transform: uppercase
             border: none
             border-radius: 5px
-            cursor: pointer       
-                            
+            cursor: pointer
 
         .form-title
             font-size: 25px
@@ -76,7 +82,7 @@
     border: none
     background: none
     &::before,
-    &::after 
+    &::after
         content: ""
         position: absolute
         top: 25px
@@ -85,14 +91,11 @@
         height: 4px
         background-color: $purple
         cursor: pointer
-    
-    &::before 
+    &::before
         transform: rotate(45deg)
         box-shadow: none
-    
-    &::after 
+    &::after
         transform: rotate(-45deg)
-
 
 .popup--login
     .social-login-button
@@ -100,7 +103,7 @@
         line-height: 20px
         text-align: center
         text-transform: uppercase
-        padding: 14px 
+        padding: 14px
         color: $purple
         border: 1px solid $purple
         box-sizing: border-box
@@ -110,8 +113,8 @@
             transform: translateY(-5px)
             box-shadow: 0 5px #E1BBA5
 
-    .unsafe-pc    
-        padding: 20px 0        
+    .unsafe-pc
+        padding: 20px 0
         label
             position: relative
             padding-left: 40px
@@ -142,35 +145,34 @@
                     background-image: url(../images/icons/icon-checked.svg)
 
 .no-robot
-        padding: 20px 0        
-        label
-            position: relative
-            padding-left: 40px
-            cursor: pointer
-            &::before
-                position: absolute
-                content: ""
-                width: 32px
-                height: 32px
-                border-radius: 5px
-                border: 2px solid #757575
-                left: 0
-                top: -28%
-
+    padding: 20px 0
+    label
+        position: relative
+        padding-left: 40px
+        cursor: pointer
+        &::before
+            position: absolute
+            content: ""
+            width: 32px
+            height: 32px
+            border-radius: 5px
+            border: 2px solid #757575
+            left: 0
+            top: -28%
+        &::after
+            position: absolute
+            content: ""
+            background-repeat: no-repeat
+            left: 0
+            width: 30px
+            height: 30px
+            top: 0
+            left: 2px
+    input
+        display: none
+        &:checked + label
             &::after
-                position: absolute
-                content: ""
-                background-repeat: no-repeat
-                left: 0
-                width: 30px
-                height: 30px
-                top: 0
-                left: 2px
-        input
-            display: none
-            &:checked + label
-                &::after
-                    background-image: url(../images/icons/icon-checked.svg)
+                background-image: url(../images/icons/icon-checked.svg)
 
 .popup--bet
     p

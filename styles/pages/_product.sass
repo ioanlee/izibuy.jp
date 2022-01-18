@@ -2,14 +2,16 @@
     display: flex
     justify-content: space-between
     flex-wrap: wrap
+    .close-button
+        display: none
 
     h1
         width: 100%
         margin-bottom: 40px
 
-    .product-photos 
+    .product-photos
         border-radius: 7px
-        max-width: 650px        
+        max-width: 650px
         width: 50%
         display: flex
         flex-direction: column
@@ -26,19 +28,19 @@
         width: 100%
         max-height: 485px
         margin: auto
-        
-    .thumb 
+
+    .thumb
         width: 83px
         height: 83px
-    
+
     .product-desc
         margin: 0 auto
-        
+        position: relative
         table
             font-style: normal
             font-weight: normal
             font-size: 17px
-            text-align: left            
+            text-align: left
             border-spacing: 15px
             border-collapse: separate
 
@@ -48,14 +50,14 @@
         .logo
             margin: 30px 0
 
-    .product-details
-        padding: 80px 0 40px 0
-        font-size: 17px
-        line-height: 20px
+.product-details
+    padding: 80px 0 40px 0
+    font-size: 17px
+    line-height: 20px
 
-        p
-            margin-bottom: 30px
-            max-width: 60%
+    p
+        margin-bottom: 30px
+        max-width: 60%
 
 .similar-goods,
 .viewed-goods
@@ -102,3 +104,43 @@
         background-size: 30px 30px
         color: $blue
         transition: 0.3s
+
+.product-thumb
+    width: 780px
+    background-color: white
+    border: 1px solid #E1BBA5
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2)
+    z-index: 1
+    display: none
+    position: fixed
+    top: 50%
+    left: 50%
+    padding: 20px
+    transform: translateX(-50%) translateY(-50%)
+    padding: 20px
+    animation-duration: 0.6s
+    animation-name: slidein
+    @keyframes slidein
+        0%
+            transform: rotate(190deg) translateX(-50%) translateY(-50%)
+        100%
+            transform: rotate(360deg) translateX(-50%) translateY(-50%)
+  
+    .product-title
+        font-size: 25px
+        margin-bottom: 20px
+    .logo
+        display: none
+    .product-photos
+        height: 329px
+    .current
+        height: 260px
+    .thumb
+        width: 49px
+        height: 49px
+    .add-favs
+        position: absolute
+        left: -335px
+        bottom: 10px
+    .close-button
+        display: block

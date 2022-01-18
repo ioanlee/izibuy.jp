@@ -14,7 +14,7 @@ Vue.component('bet-popup', {
         </div>
     </div>
 ` ,
-    data: function() {
+    data: function () {
         return {
 
         }
@@ -27,9 +27,3 @@ Vue.component('bet-popup', {
 })
 
 new Vue({ el: '#betPopup' })
-
-const makeBet = function() {
-    document.getElementById('betPopup').style.display = 'block'
-}
-
-document.getElementById('make-bet').addEventListener('click', makeBet)

@@ -7,7 +7,7 @@
     border: 2px solid $brown
     border-radius: 15px 15px 0px 0px
     color: #000
-    overflow: hidden
+    //overflow: hidden
     cursor: pointer
     @media screen and( max-width: 1600px)
         width: 200px
@@ -16,25 +16,24 @@
         width: 200px
         height: 280px
     @media screen and( max-width: 1024px)
-        width: 160px    
+        width: 160px
         height: 220px
     &:hover
-        color: $purple
+        a
+            color: $purple
     &:hover .fav
         display: block
-        
 
     .item-image
-        background: url(/images/img_item_thumbnail.jpg) no-repeat center
-        background-size: cover
         position: relative
         width: 100%
-        height: 165px
+        max-height: 150px
         transition: .2s
         border-radius: 15px 15px 0px 0px
-        &:hover               
+        overflow: hidden
+        &:hover img
             transform: scale(1.1)
- 
+
         .zoom
             display: none
             position: absolute
@@ -65,9 +64,9 @@
             width: 35px
             height: 35px
 
-            &:active                
+            &:active
                 background-image: url(/images/icons/icon_preview_click.svg)
-            
+
     .item-description
         width: 100%
         height: 66px
@@ -77,10 +76,10 @@
         line-height: 129%
         overflow: hidden
         text-overflow: ellipsis
+        color: black
         &:hover
             color: $blue
             text-decoration: underline
-
 
     .item-price
         font-family: "Tahoma", "Arial", sans-serif
@@ -94,7 +93,7 @@
         &::after
             content: ' ₽'
 
-    .fav        
+    .fav
         display: none
         border: none
         background: none
@@ -112,7 +111,7 @@
             box-shadow: 0 3px #E1BBA5
             border: 1px solid $blue
             border-radius: 3px
-    .added 
+    .added
         background-image: url("../images/icons/icons_favorites_purple_fill.svg")
         display: block
         &:hover

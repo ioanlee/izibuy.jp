@@ -1,21 +1,31 @@
+import '../scripts/product-mini.js'
+
 Vue.component('product-item', {
     template: `
-    <a  class="item">
-        <div class="item-image">
-            <img src="" alt="">
-            <div class="zoom"></div>
+    <div class="item">
+        <div class="product-thumb">
+            <div id="product-info">
+                <product-mini></product-mini>
+            </div>
         </div>
-        <p class="item-description">Одиночный усилитель Mazda 6V6 в хорошем состоянии/Одиночный усилитель Mazda 6V6 в хорошем состоянии</p>
+        <div class="item-image">
+            <img src="/images/img_item_thumbnail.jpg" alt="">
+            <div class="zoom" @click="thumb"></div>
+        </div>
+        <a href="pages/item.html" class="item-description">Одиночный усилитель Mazda 6V6 в хорошем состоянии/Одиночный усилитель Mazda 6V6 в хорошем состоянии</a>
         <span class="price-wrapper">
             <span class="item-price">6 824</span>
             <button class="fav" @click="addToFavs"></button>
         </span>
         
-    </a>
+    </div>
 `,
     methods: {
-        addToFavs: function() {
+        addToFavs: function () {
             this.$el.querySelector('.fav').classList.toggle('added')
+        },
+        thumb: function () {
+            this.$el.querySelector('.product-thumb').style.display = "block"
         }
     }
 })
@@ -31,15 +41,15 @@ Vue.component('large-banner', {
 
 `,
     data() {
-        return {            
+        return {
             items: [
-                {                
-                description: 'Рыбное место',
-                img: './images/banners/fish.jpg'
+                {
+                    description: 'Рыбное место',
+                    img: './images/banners/fish.jpg'
                 },
                 {
-                description: 'Все для похода',
-                img: './images/banners/hike.jpg'
+                    description: 'Все для похода',
+                    img: './images/banners/hike.jpg'
                 }
             ]
         }
@@ -57,19 +67,19 @@ Vue.component('medium-banner', {
 
 `,
     data() {
-        return {            
+        return {
             items: [
-                {                
-                description: 'Часы',
-                img: './images/banners/watch.jpg'
+                {
+                    description: 'Часы',
+                    img: './images/banners/watch.jpg'
                 },
                 {
-                description: 'Ноутбуки',
-                img: './images/banners/laptop.jpg'
+                    description: 'Ноутбуки',
+                    img: './images/banners/laptop.jpg'
                 },
                 {
-                description: 'Косметика',
-                img: './images/banners/asian-girl.jpg'  
+                    description: 'Косметика',
+                    img: './images/banners/asian-girl.jpg'
                 }
             ]
         }
