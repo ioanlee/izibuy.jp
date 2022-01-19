@@ -66,10 +66,9 @@ header
             min-width: 50px
             height: 50px
             border: 1px solid $grey
-            border-radius: 25px
-            background-size: 50px 50px
+            border-radius: 25px            
             background-color: #fff
-            border-color: #757575
+            border-color: #BDBDBD
             border-radius: 50%
             padding: 14px 9px 11px 11px
             margin: 0 2%
@@ -89,17 +88,25 @@ header
                 svg
                     fill: $purple
                     stroke: $purple
+        .cart
+            display: none
+            margin: 0 2%
+            margin-left: 0
+            border: 2px solid #BDBDBD
+            border-radius: 50%
+            padding: 10px 10px 9px 5px
+            width: 50px
+            height: 50px
 
         .profile
             min-width: 50px
             height: 50px
             border: 2px solid $purple
             border-radius: 25px
-            background-color: #fff
-            background-size: 50px 50px                
+            background-color: #fff             
             border-radius: 50%
             padding: 9px 10px 8px 10px
-
+            cursor: pointer
             &:hover
                 background-color: $brown
                 border-color: $blue
@@ -114,5 +121,53 @@ header
             svg
                 fill: $purple
 
+        .profile--pageOn
+            border-color: $purple
+
+        .cart--active, .favorite--active
+            background-color: $brown
+            border: 2px solid $brown
+            position: relative
+            &:hover
+                border: 2px solid $blue
+                svg
+                    path
+                        stroke: $blue
+
+            &::after
+                width: 13px
+                height: 13px
+                position: absolute
+                content: ""
+                background-color: #EB5757
+                border: 2px solid white
+                border-radius: 50%
+                right: -1px
+                bottom: -5px
+
+            svg
+                path
+                    stroke: $purple
+
+        .cart--pageOn, .favorite--pageOn
+            border: 2px solid $purple
+
+    .loginOn 
+        .profile
+            background-color: $brown
+            border-color: none
+            svg
+                fill: $purple
+        .cart
+            display: block
+            svg
+                path
+                    
+        .favorite
+            background-color: $brown
+            border: 2px solid $brown
+            svg
+                fill: $purple
+                stroke: $purple
 
 

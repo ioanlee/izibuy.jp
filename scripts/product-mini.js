@@ -7,7 +7,7 @@ Vue.component('product-mini', {
             <div class="full-wrapper">
                 <img src="../images/img-item.jpg" alt="full" class="current"></img>
             </div>                                               
-            <div class="thumbnails-wrapper">
+            <div class="thumbnails-wrapper" @click.stopPropagation="showFull">
                 <img src="../images/img-item.jpg" alt="laptop" class="thumb"></img>
                 <img src="../images/item/item3.jpg" alt="keyboard" class="thumb"></img>
                 <img src="../images/item/item4.jpg" alt="parameters" class="thumb"></img>
@@ -99,6 +99,17 @@ Vue.component('product-mini', {
         },
         closeModal() {
             this.$el.parentNode.parentNode.style.display = "none"
+        },
+        showFull() {
+            let current = this.$el.querySelector('.current');
+            let photos = this.$el.getElementsByClassName('thumb');
+            for (let i = 0; i < photos.length; i++) {
+                photos[i].addEventListener('click', display);
+            }
+            function display() {
+                let ph = this.getAttribute('src');
+                current.setAttribute('src', ph);
+            }
         }
     },
     export: {

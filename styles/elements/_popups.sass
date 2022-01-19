@@ -81,6 +81,10 @@
 .close-button
     border: none
     background: none
+    &:hover
+        &::before,
+        &::after
+            background-color: $blue    
     &::before,
     &::after
         content: ""

@@ -6,5 +6,5 @@ import './login.js'
 import '../scripts/item.js'
 import '../scripts/remindPass.js'
 import '../scripts/product-mini.js'
-
+import '../scripts/index.js'
 

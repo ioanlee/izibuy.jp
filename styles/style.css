@@ -159,9 +159,8 @@ header .header__sticky-bar .favorite {
   height: 50px;
   border: 1px solid #BDBDBD;
   border-radius: 25px;
-  background-size: 50px 50px;
   background-color: #fff;
-  border-color: #757575;
+  border-color: #BDBDBD;
   border-radius: 50%;
   padding: 14px 9px 11px 11px;
   margin: 0 2%;
@@ -191,15 +190,26 @@ header .header__sticky-bar .favorite:active svg {
   stroke: #8C3E7D;
 }
 
+header .header__sticky-bar .cart {
+  display: none;
+  margin: 0 2%;
+  margin-left: 0;
+  border: 2px solid #BDBDBD;
+  border-radius: 50%;
+  padding: 10px 10px 9px 5px;
+  width: 50px;
+  height: 50px;
+}
+
 header .header__sticky-bar .profile {
   min-width: 50px;
   height: 50px;
   border: 2px solid #8C3E7D;
   border-radius: 25px;
   background-color: #fff;
-  background-size: 50px 50px;
   border-radius: 50%;
   padding: 9px 10px 8px 10px;
+  cursor: pointer;
 }
 
 header .header__sticky-bar .profile:hover {
@@ -223,6 +233,67 @@ header .header__sticky-bar .profile svg {
   fill: #8C3E7D;
 }
 
+header .header__sticky-bar .profile--pageOn {
+  border-color: #8C3E7D;
+}
+
+header .header__sticky-bar .cart--active, header .header__sticky-bar .favorite--active {
+  background-color: #E1BBA5;
+  border: 2px solid #E1BBA5;
+  position: relative;
+}
+
+header .header__sticky-bar .cart--active:hover, header .header__sticky-bar .favorite--active:hover {
+  border: 2px solid #2E6E9F;
+}
+
+header .header__sticky-bar .cart--active:hover svg path, header .header__sticky-bar .favorite--active:hover svg path {
+  stroke: #2E6E9F;
+}
+
+header .header__sticky-bar .cart--active::after, header .header__sticky-bar .favorite--active::after {
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  content: "";
+  background-color: #EB5757;
+  border: 2px solid white;
+  border-radius: 50%;
+  right: -1px;
+  bottom: -5px;
+}
+
+header .header__sticky-bar .cart--active svg path, header .header__sticky-bar .favorite--active svg path {
+  stroke: #8C3E7D;
+}
+
+header .header__sticky-bar .cart--pageOn, header .header__sticky-bar .favorite--pageOn {
+  border: 2px solid #8C3E7D;
+}
+
+header .loginOn .profile {
+  background-color: #E1BBA5;
+  border-color: none;
+}
+
+header .loginOn .profile svg {
+  fill: #8C3E7D;
+}
+
+header .loginOn .cart {
+  display: block;
+}
+
+header .loginOn .favorite {
+  background-color: #E1BBA5;
+  border: 2px solid #E1BBA5;
+}
+
+header .loginOn .favorite svg {
+  fill: #8C3E7D;
+  stroke: #8C3E7D;
+}
+
 .sidebar {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -240,6 +311,7 @@ header .header__sticky-bar .profile svg {
   border: 2px solid #E1BBA5;
   width: 300px;
   gap: 40px;
+  scrollbar-width: none;
 }
 
 .sidebar > *:last-child {
@@ -393,6 +465,7 @@ header .header__sticky-bar .profile svg {
   height: 50px;
   border: 3px solid #E1BBA5;
   color: #757575;
+  background-color: white;
 }
 
 .sidebar .filters .number-inputs {
@@ -707,6 +780,19 @@ header .header__sticky-bar .profile svg {
   padding: 30px 0 70px 0;
 }
 
+.product-container .sub-category {
+  width: 100%;
+  font-size: 25px;
+  line-height: 30px;
+  color: #8C3E7D;
+  margin-bottom: 40px;
+}
+
+.product-container .sub-category:hover {
+  color: #2E6E9F;
+  text-decoration: underline;
+}
+
 .preview {
   display: none;
 }
@@ -928,7 +1014,7 @@ header .header__sticky-bar .profile svg {
   bottom: 0;
   width: 90%;
   text-transform: uppercase;
-  font-size: 36px;
+  font-size: 35px;
   line-height: 20px;
   color: #ffff;
   letter-spacing: 0.42em;
@@ -944,8 +1030,8 @@ header .header__sticky-bar .profile svg {
 
 @media screen and (max-width: 1440px) {
   .banners-wrapper .banner p {
-    font-size: 25px;
-    line-height: 15px;
+    font-size: 18px;
+    line-height: 14px;
     letter-spacing: 0.35em;
   }
 }
@@ -1073,6 +1159,10 @@ header .header__sticky-bar .profile svg {
 .close-button {
   border: none;
   background: none;
+}
+
+.close-button:hover::before, .close-button:hover::after {
+  background-color: #2E6E9F;
 }
 
 .close-button::before, .close-button::after {
@@ -1398,8 +1488,8 @@ header .header__sticky-bar .profile svg {
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
   padding: 20px;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
   -webkit-animation-name: slidein;
           animation-name: slidein;
 }
