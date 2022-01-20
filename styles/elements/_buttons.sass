@@ -1,0 +1,83 @@
+.showMore
+    border: 1px solid $purple
+    box-sizing: border-box
+    border-radius: 5px
+    font-size: 17px
+    line-height: 20px
+    text-align: center
+    text-transform: uppercase
+    padding: 15px 30px
+    min-width: 770px
+    margin: 0 auto
+    color: $purple
+    background-color: white
+    cursor: pointer
+    &:hover
+        transition: 0.3s
+        transform: translateY(-5px)
+        box-shadow: 0 5px #E1BBA5
+        border: 1px solid $blue
+        color: $blue
+
+
+.close-button
+    border: none
+    background: none
+    &:hover
+        &::before,
+        &::after
+            background-color: $blue    
+    &::before,
+    &::after
+        content: ""
+        position: absolute
+        top: 25px
+        right: 15px
+        width: 24px
+        height: 4px
+        background-color: $purple
+        cursor: pointer
+    &::before
+        transform: rotate(45deg)
+        box-shadow: none
+    &::after
+        transform: rotate(-45deg)
+
+.button
+    border: none
+    border-radius: 5px
+    background-color: $purple
+    color: white
+    font-size: 17px
+    line-height: 20px
+    text-align: center
+    text-transform: uppercase
+    padding: 18px 22px
+    cursor: pointer
+    display: block
+
+    &:hover
+        background-color: $blue
+        transition: 0.3s
+        transform: translateY(-5px)
+        box-shadow: 0 5px #E1BBA5
+
+.add-favs
+    border: none
+    background: none
+    color: $purple
+    padding: 5px 0
+    text-decoration: underline
+    font-size: 17px
+    line-height: 22px
+    padding-left: 35px
+    margin-top: 20px
+    cursor: pointer
+    background-image: url("../images/icons/icon_favorites_purple.svg")
+    background-repeat: no-repeat
+    background-position: left
+    &:hover
+        background-image: url("../images/icons/icon_favorites_blue.svg")
+        background-size: 30px 30px
+        color: $blue
+        transition: 0.3s

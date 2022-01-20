@@ -7,7 +7,7 @@ Vue.component('product-mini', {
             <div class="full-wrapper">
                 <img src="../images/img-item.jpg" alt="full" class="current"></img>
             </div>                                               
-            <div class="thumbnails-wrapper" @click.stopPropagation="showFull">
+            <div class="thumbnails-wrapper" @click.stopPropagation="display">
                 <img src="../images/img-item.jpg" alt="laptop" class="thumb"></img>
                 <img src="../images/item/item3.jpg" alt="keyboard" class="thumb"></img>
                 <img src="../images/item/item4.jpg" alt="parameters" class="thumb"></img>
@@ -89,10 +89,15 @@ Vue.component('product-mini', {
             </div>
             <img class="logo" src="../images/logos/yahoo.svg" alt="Yahoo logo" height="30" width="160">
             <button type="button" class="button make-bet" @click="makeBet">Сделать ставку</button>
-            <button type="button" class="add-favs">Добавить в избранное</button>
+            <button type="button" class="add-favs" @click="addToFavs">Добавить в избранное</button>
         </div>
     </div>
 `,
+    data: function() {
+        return {
+
+        }
+    },
     methods: {
         makeBet() {
             document.getElementById('betPopup').style.display = 'block'
@@ -100,15 +105,18 @@ Vue.component('product-mini', {
         closeModal() {
             this.$el.parentNode.parentNode.style.display = "none"
         },
-        showFull() {
+        display() {
             let current = this.$el.querySelector('.current');
-            let photos = this.$el.getElementsByClassName('thumb');
-            for (let i = 0; i < photos.length; i++) {
-                photos[i].addEventListener('click', display);
-            }
-            function display() {
-                let ph = this.getAttribute('src');
-                current.setAttribute('src', ph);
+            let ph = event.target.getAttribute('src');
+            current.setAttribute('src', ph);
+        },
+        addToFavs() {
+            this.$el.querySelector('.add-favs').classList.toggle('added')
+            const headerFavoriteIcon = document.querySelector('#favorite-icon')
+            if (headerFavoriteIcon.classList.contains('favorite--active')) {
+                return
+            } else {
+                headerFavoriteIcon.classList.add('favorite--active')
             }
         }
     },

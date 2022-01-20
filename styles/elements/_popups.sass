@@ -78,29 +78,6 @@
             color: $purple
             padding-left: 20px
 
-.close-button
-    border: none
-    background: none
-    &:hover
-        &::before,
-        &::after
-            background-color: $blue    
-    &::before,
-    &::after
-        content: ""
-        position: absolute
-        top: 25px
-        right: 15px
-        width: 24px
-        height: 4px
-        background-color: $purple
-        cursor: pointer
-    &::before
-        transform: rotate(45deg)
-        box-shadow: none
-    &::after
-        transform: rotate(-45deg)
-
 .popup--login
     .social-login-button
         font-size: 17px

@@ -37,10 +37,10 @@ Vue.component('login-popup', {
         </div>
     </div>
 ` ,
-    data: function() {
+    data: function () {
         return {
-          registerActive : false  
-        }   
+            registerActive: false
+        }
     },
     methods: {
         closeModal: function () {

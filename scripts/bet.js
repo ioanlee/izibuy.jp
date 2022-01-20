@@ -9,7 +9,7 @@ Vue.component('bet-popup', {
                 <p>Ставка будет повышаться автоматически</p>
                 <input type="number" placeholder="Снайперская ставка">
                 <p>Ставка автоматически разместится в последнюю минуту аукциона</p>
-                <button type="submit" class="button">Сделать ставку</button> 
+                <button type="submit" class="button" @click.prevent="addToCart">Сделать ставку</button> 
             </form>         
         </div>
     </div>
@@ -23,7 +23,18 @@ Vue.component('bet-popup', {
         closeModal: function () {
             document.getElementById('betPopup').style.display = 'none'
         },
+        addToCart() {
+            const headerCartIcon = document.querySelector('#cart-icon')
+            if (headerCartIcon.classList.contains('cart--active')) {
+                document.getElementById('betPopup').style.display = 'none'
+            } else {
+                headerCartIcon.classList.add('cart--active')
+                document.getElementById('betPopup').style.display = 'none'
+            }
+        }
     }
 })
 
 new Vue({ el: '#betPopup' })
+
+//В кнопке сделать ставку заменить click на submit, чтобы значок на корзину навешивался по успешно сделанной ставке и отправленных данных на сервер

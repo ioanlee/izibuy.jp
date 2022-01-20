@@ -7,4 +7,5 @@ import '../scripts/item.js'
 import '../scripts/remindPass.js'
 import '../scripts/product-mini.js'
 import '../scripts/index.js'
+import '../scripts/adresses.js'
 

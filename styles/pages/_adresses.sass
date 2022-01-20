@@ -1,0 +1,36 @@
+.adresses-title
+    margin: 50px 0
+
+.adress-row
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin: 30px 0
+    font-size: 25px
+    line-height: 30px
+    color: $purple
+    p
+        text-decoration: underline
+        text-decoration-style: dotted
+        &:hover
+            color: $blue
+            text-decoration: none
+            cursor: pointer
+    button
+        background-color: white
+        color: $purple
+        border: 1px solid $purple
+        border-radius: 5px
+        padding: 10px 30px
+        cursor: pointer
+        text-transform: uppercase
+        &:hover
+            transition: 0.3s
+            transform: translateY(-5px)
+            box-shadow: 0 5px #E1BBA5
+    hr
+        width: 100%
+        background-color: $brown
+        height: 1px
+        border: none
+        margin-top: 40px
