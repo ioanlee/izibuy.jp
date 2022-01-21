@@ -1362,6 +1362,78 @@ header .loginOn .favorite svg {
   color: #757575;
 }
 
+.popup--adress, .popup--adress-edit {
+  width: 617px;
+}
+
+.popup--adress p, .popup--adress-edit p {
+  font-size: 25px;
+  line-height: 30px;
+  color: #363636;
+}
+
+.popup--adress form, .popup--adress-edit form {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.popup--adress select, .popup--adress-edit select {
+  border: 3px solid #BDBDBD;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  height: 53px;
+  width: 100%;
+}
+
+.popup--adress select option, .popup--adress-edit select option {
+  max-width: 100%;
+}
+
+.popup--adress #index, .popup--adress #building, .popup--adress-edit #index, .popup--adress-edit #building {
+  width: 30%;
+}
+
+.popup--adress #city, .popup--adress #apartment, .popup--adress-edit #city, .popup--adress-edit #apartment {
+  width: 65%;
+}
+
+.popup--adress #street, .popup--adress-edit #street {
+  width: 100%;
+}
+
+.popup--adress button, .popup--adress-edit button {
+  width: 54%;
+  margin-top: 30px;
+}
+
+.popup--adress .reset-button, .popup--adress-edit .reset-button {
+  color: #8C3E7D;
+  border: 1px solid #8C3E7D;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  background-color: white;
+  width: 40%;
+}
+
+.popup--adress .reset-button:hover, .popup--adress-edit .reset-button:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-box-shadow: 0 5px #E1BBA5;
+          box-shadow: 0 5px #E1BBA5;
+}
+
+.popup--adress .close-button, .popup--adress-edit .close-button {
+  width: 0px;
+}
+
 .bread-crumbs {
   padding: 20px 0;
 }

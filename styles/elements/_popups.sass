@@ -158,3 +158,44 @@
 .popup--bet
     p
         color: #757575
+
+.popup--adress, .popup--adress-edit
+    width: 617px
+    p
+        font-size: 25px
+        line-height: 30px
+        color: #363636
+        
+    form
+        flex-direction: row
+        flex-wrap: wrap
+    select
+        border: 3px solid #BDBDBD
+        box-sizing: border-box
+        border-radius: 5px
+        height: 53px
+        width: 100%
+        option
+            max-width: 100%
+    #index, #building
+        width: 30%
+    #city, #apartment
+        width: 65%
+    #street
+        width: 100%
+    button
+        width: 54%
+        margin-top: 30px
+    .reset-button
+        color: $purple
+        border: 1px solid $purple
+        box-sizing: border-box
+        border-radius: 5px
+        background-color: white
+        width: 40%
+        &:hover
+            transition: 0.3s
+            transform: translateY(-5px)
+            box-shadow: 0 5px #E1BBA5
+    .close-button
+        width: 0px
