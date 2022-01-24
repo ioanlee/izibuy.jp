@@ -67,7 +67,7 @@ Vue.component('adresses-list', {
             this.adresses.splice(index, 1);
         },
         addAdress: function () {
-            let newAdress = { position: `${this.index} , ${this.country.value} , г. ${this.city} , ул ${this.street} , д. ${this.building} , кв. ${this.apartment}` }
+            let newAdress = { position: `${this.index} , ${this.country} , г. ${this.city} , ул ${this.street} , д. ${this.building} , кв. ${this.apartment}` }
             this.adresses.push(newAdress)
         },
         editAdress: function (index) {

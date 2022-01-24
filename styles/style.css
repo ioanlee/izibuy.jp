@@ -691,6 +691,43 @@ header .loginOn .favorite svg {
   color: #757575;
 }
 
+.sidebar-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 25px;
+  line-height: 30px;
+}
+
+.sidebar-nav a {
+  color: black;
+  padding: 12px;
+}
+
+.sidebar-nav a:hover {
+  -webkit-box-shadow: inset -80px 0 0 0 #e1bba5;
+          box-shadow: inset -80px 0 0 0 #e1bba5;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #2E6E9F;
+  text-decoration: underline;
+  background-color: #ecd1bfce;
+}
+
+.sidebar-nav p {
+  color: #757575;
+  margin-bottom: 20px;
+}
+
+.sidebar-nav .active-tab {
+  background-color: #E1BBA5;
+  color: #8C3E7D;
+}
+
 .item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1569,6 +1606,89 @@ header .loginOn .favorite svg {
   transition: 0.3s;
 }
 
+.tracking-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 0;
+}
+
+.tracking-item .thumbnail-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  grid-gap: 47px;
+  padding: 20px 0;
+}
+
+.tracking-item .thumbnail-wrapper p {
+  font-size: 25px;
+  line-height: 30px;
+  color: #8C3E7D;
+  margin-bottom: 85px;
+}
+
+.tracking-item .thumbnail-wrapper .price {
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 18px;
+  text-align: center;
+  color: #363636;
+}
+
+.tracking-item .tracking-status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 150px;
+  min-height: 100px;
+  background-color: rgba(225, 187, 165, 0.4);
+  color: black;
+  font-family: "Tahoma", "Arial", sans-serif;
+  font-weight: bold;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20px;
+}
+
+.tracking-item .tracking-status button {
+  margin-left: auto;
+}
+
+.tracking-item table {
+  text-align: left;
+  width: 100%;
+  font-family: "Tahoma", "Arial", sans-serif;
+  margin-top: 20px;
+  border-spacing: 0 10px;
+  border-collapse: inherit;
+  margin-bottom: 20px;
+}
+
+.tracking-item table th {
+  color: #757575;
+}
+
+.tracking-item hr {
+  width: 100%;
+}
+
 .product {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1876,13 +1996,6 @@ header .loginOn .favorite svg {
   transition: 0.3s;
 }
 
-.profile-form hr {
-  background-color: #E1BBA5;
-  height: 1px;
-  border: none;
-  margin-top: 40px;
-}
-
 .profile-form a {
   color: #8C3E7D;
   text-decoration: underline;
@@ -1893,6 +2006,12 @@ header .loginOn .favorite svg {
 .profile-form a:hover {
   color: #2E6E9F;
   text-decoration: none;
+}
+
+hr {
+  background-color: #E1BBA5;
+  height: 1px;
+  border: none;
 }
 
 .adresses-title {
@@ -1953,6 +2072,64 @@ header .loginOn .favorite svg {
   margin-top: 40px;
 }
 
+.balance table {
+  text-align: left;
+  font-size: 17px;
+  line-height: 18px;
+  color: #363636;
+  font-weight: bold;
+  margin-bottom: 40px;
+  font-family: "Tahoma", "Arial", sans-serif;
+}
+
+.balance table .auction {
+  color: #8C3E7D;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.balance table span {
+  margin-left: 20px;
+}
+
+.payments-history h2 {
+  font-size: 25px;
+  line-height: 30px;
+  margin: 50px 0;
+}
+
+.payments-history table {
+  border-collapse: inherit;
+  font-family: "Tahoma", "Arial", sans-serif;
+}
+
+.payments-history table td {
+  min-width: 100px;
+  vertical-align: middle;
+}
+
+.payments-history table th {
+  min-width: 100px;
+  vertical-align: middle;
+  color: #757575;
+}
+
+.payments-history table tr {
+  height: 46px;
+}
+
+.payments-history table tr:nth-child(odd) {
+  background-color: rgba(225, 187, 165, 0.4);
+}
+
+.payments-history table .good-name a {
+  color: #8C3E7D;
+}
+
+.payments-history table .good-name a:hover {
+  color: #2E6E9F;
+}
+
 html {
   scroll-behavior: smooth;
   font-family: "KievitPro-Regular", "Arial", sans-serif;
@@ -1971,6 +2148,10 @@ html body {
           flex-direction: column;
   max-width: 1600px;
   margin: auto;
+}
+
+html body .title {
+  margin-top: 30px;
 }
 
 html body a {

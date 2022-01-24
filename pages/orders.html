@@ -14,15 +14,19 @@
 <body>
     <div class="wrapper">
         <aside id="sidebar-container">
-            <sidebar-profile></sidebar-profile>
+            <sidebar-short-sorting></sidebar-short-sorting>
         </aside>
         <div>
             <header id="app-header">
                 <my-header></my-header>
             </header>
-            <main id="app">
-                <h1 class="adresses-title">Адреса доставки</h1>
-                <adresses-list></adresses-list>
+            <main>
+                <h1 class="title">Заказы</h1>
+                <section id="tracking-container">
+                    <tracking-item></tracking-item>
+                    <tracking-item></tracking-item>
+                    <tracking-item></tracking-item>
+                </section>
             </main>
         </div>
     </div>

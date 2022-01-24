@@ -100,4 +100,93 @@ Vue.component('sidebar-no-sorting', {
 `
 })
 
+Vue.component('sidebar-short-sorting', {
+    template: `
+            <div class="sidebar">
+                <input type="search" name="" id="" placeholder="найти в каталоге">
+                <details class="catalog" open>
+                    <summary class="catalog-summary"></summary>
+                    <a class="catalog-item" href="../pages/catalog.html">Компьютеры</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Электроника, AV-камеры</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Бытовая техника</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Игры и игрушки</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Музыка</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Книги и журналы</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Хобби и рукоделие</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Антиквариат</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Спорт и отдых</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Авто и мото</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Аксессуары и часы</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Здоровье и красота</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Дом и интерьер</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Домашние питомцы</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Бизнес и офис</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Цветы и растения</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Детские товары</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Знаменитости</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Аниме и манга</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Мода</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Благотворительность</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Другое</a>
+                </details>
+                <div class="filters">
+                    <h2>Фильтр</h2>
+                    <select name="" id="">
+                        <option value="">Все</option>
+                        <option value="">Фильтр 1</option>
+                        <option value="">Фильтр 2</option>
+                        <option value="">Фильтр 3</option>
+                    </select>
+                    <h2>Сортировка</h2>
+                    <select name="" id="">
+                        <option value="">Сначала актуальные</option>
+                        <option value="">Фильтр 1</option>
+                        <option value="">Фильтр 2</option>
+                        <option value="">Фильтр 3</option>
+                    </select>
+                </div>
+            </div>
+`
+})
+
+Vue.component('sidebar-profile', {
+    template: `
+            <div class="sidebar">
+                <input type="search" name="" id="" placeholder="найти в каталоге">
+                <details class="catalog" open>
+                    <summary class="catalog-summary"></summary>
+                    <a class="catalog-item" href="../pages/catalog.html">Компьютеры</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Электроника, AV-камеры</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Бытовая техника</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Игры и игрушки</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Музыка</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Книги и журналы</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Хобби и рукоделие</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Антиквариат</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Спорт и отдых</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Авто и мото</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Аксессуары и часы</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Здоровье и красота</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Дом и интерьер</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Домашние питомцы</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Бизнес и офис</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Цветы и растения</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Детские товары</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Знаменитости</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Аниме и манга</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Мода</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Благотворительность</a>
+                    <a class="catalog-item" href="../pages/catalog.html">Другое</a>
+                </details>
+                <div class="sidebar-nav">                            
+                    <p>Личный кабинет</p>
+                    <a href="../pages/orders.html">Заказы</a>
+                    <a class="active-tab" href="../pages/payments.html">Платежи (85 000р)</a>
+                    <a href="../pages/adresses.html">Адреса доставки (2)</a>
+                    <a href="../pages/profile.html">Личная информация</a>                    
+                </div>
+            </div>
+`
+})
+
 new Vue({ el: '#sidebar-container' })

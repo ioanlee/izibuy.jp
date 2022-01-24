@@ -8,4 +8,4 @@ import '../scripts/remindPass.js'
 import '../scripts/product-mini.js'
 import '../scripts/index.js'
 import '../scripts/adresses.js'
-
+import '../scripts/tracking-item.js'
