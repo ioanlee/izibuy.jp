@@ -2,9 +2,9 @@ Vue.component('tracking-item', {
     template: `
     <div class="tracking-item">
             <div class="thumbnail-wrapper">
-                <img src="../images/img_item_thumbnail.jpg" height="" width="" alt="">
+                <img src="../images/img-item.jpg" height="160" width="170" alt="">
                 <span>
-                    <p>[XX44]Windows11 or Windows10[ASUS GL752VW]Core i7-6700HQ/ новый товар SSD 240GB/GTX 960M/ память 16GB/Web камера /Office2019/BluRay</p>
+                    <a href="../pages/item.html">[XX44]Windows11 or Windows10[ASUS GL752VW]Core i7-6700HQ/ новый товар SSD 240GB/GTX 960M/ память 16GB/Web камера /Office2019/BluRay</a>
                     <span class="price">74 000 Р</span>
                 </span>
             </div>

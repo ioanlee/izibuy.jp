@@ -1,11 +1,9 @@
-import '../scripts/carousel.js'
 import '../scripts/my-header.js'
 import '../scripts/product-item.js'
 import '../scripts/sidebar.js'
-import './login.js'
-import '../scripts/item.js'
+import '../scripts/login.js'
 import '../scripts/remindPass.js'
 import '../scripts/product-mini.js'
 import '../scripts/index.js'
-import '../scripts/adresses.js'
-import '../scripts/tracking-item.js'
+
+

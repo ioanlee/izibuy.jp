@@ -14,25 +14,32 @@
 <body>
     <div class="wrapper">
         <aside id="sidebar-container">
-            <sidebar-profile></sidebar-profile>
+            <sidebar-short-sorting></sidebar-short-sorting>
         </aside>
         <div>
             <header id="app-header">
                 <my-header></my-header>
             </header>
-            <main id="app">
+            <main>
+                <div id="betPopup">
+                    <bet-popup></bet-popup>
+                </div>
                 <div id="loginPopup">
                     <login-popup></login-popup>
                 </div>
                 <div id="remindPassPopup">
                     <remind-password-popup></remind-password-popup>
                 </div>
-                <h1 class="adresses-title">Адреса доставки</h1>
-                <adresses-list></adresses-list>
+                <h1 class="title">Избранное</h1>
+                <section id="favorite-container">
+                    <favorite-item></favorite-item>
+                    <favorite-item></favorite-item>                    
+                </section>
             </main>
         </div>
     </div>
-    <script src="../scripts/adresses.js" type="module"></script>
+    <script src="../scripts/bet.js"></script>
+    <script src="../scripts/favorite-item.js"></script>
     <script src="../scripts/main.js" type="module"></script>
 </body>
 

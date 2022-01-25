@@ -4,7 +4,7 @@ Vue.component('product-item', {
     template: `
     <div class="item">
         <div class="product-thumb">
-            <div id="product-info">
+            <div class="product-info">
                 <product-mini></product-mini>
             </div>
         </div>

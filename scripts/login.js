@@ -14,8 +14,8 @@ Vue.component('login-popup', {
                     <label for="unsafe-pc">Чужой компьютер</label>
                 </span>
                 <button class="button" type="submit">Войти</button>
-                <a class="social-login-button" href="#">Войти через Google</a>
-                <a class="social-login-button" href="#">Войти через Facebook</a>
+                <a class="white-button" href="#">Войти через Google</a>
+                <a class="white-button" href="#">Войти через Facebook</a>
             </form>                        
         </div>
 

@@ -1,8 +1,13 @@
 #loginPopup,
 #remindPassPopup,
 #registrationPopup,
-#betPopup
+#betPopup,
+#checkout-order-container
     display: none
+    .popup--bet,
+    .popup--max-bet,
+    .popup--sniper-bet
+        display: none
 
 .overlay
     position: fixed
@@ -34,7 +39,7 @@
         0%
             transform: translate(-50%,-100%)
         100%
-           transform: translate(-50%, -50%)
+            transform: translate(-50%, -50%)
 
     @media screen and (max-width: 320px)
         max-width: 320px
@@ -54,19 +59,6 @@
                 border: 3px solid #363636
                 outline: none
 
-        button
-            background: $purple
-            color: #fff
-            text-align: center
-            padding: 5%
-            font-size: 17px
-            font-weight: normal
-            line-height: 20px
-            text-transform: uppercase
-            border: none
-            border-radius: 5px
-            cursor: pointer
-
         .form-title
             font-size: 25px
             line-height: 30px
@@ -79,21 +71,6 @@
             padding-left: 20px
 
 .popup--login
-    .social-login-button
-        font-size: 17px
-        line-height: 20px
-        text-align: center
-        text-transform: uppercase
-        padding: 14px
-        color: $purple
-        border: 1px solid $purple
-        box-sizing: border-box
-        border-radius: 5px
-        &:hover
-            transition: 0.3s
-            transform: translateY(-5px)
-            box-shadow: 0 5px #E1BBA5
-
     .unsafe-pc
         padding: 20px 0
         label
@@ -158,6 +135,15 @@
 .popup--bet
     p
         color: #757575
+.popup--max-bet,
+.popup--sniper-bet
+    input
+        max-width: 120px
+        margin: 0 auto
+    p
+        font-family: "Tahoma", "Arial", sans-serif
+    .form-title
+        font-family: "KievitPro-Regular", "Arial", sans-serif
 
 .popup--adress, .popup--adress-edit
     width: 617px
@@ -165,7 +151,7 @@
         font-size: 25px
         line-height: 30px
         color: #363636
-        
+
     form
         flex-direction: row
         flex-wrap: wrap
@@ -199,3 +185,33 @@
             box-shadow: 0 5px #E1BBA5
     .close-button
         width: 0px
+
+.popup--checkout-order
+    a
+        margin: 20px 0
+        &:hover
+            color: $blue
+    input
+        display: none
+    label
+        position: relative
+        padding-left: 40px
+        &::before
+            position: absolute
+            content: ""
+            width: 30px
+            height: 30px
+            border: 1px solid black
+            border-radius: 50%
+            left: 0
+    input:checked + label
+        &::after
+            position: absolute
+            content: ""
+            width: 15px
+            height: 15px
+            border-radius: 50%
+            left: 8px
+            bottom: 9px
+            background-color: $purple
+

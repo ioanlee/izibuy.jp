@@ -100,7 +100,9 @@ Vue.component('product-mini', {
     },
     methods: {
         makeBet() {
-            document.getElementById('betPopup').style.display = 'block'
+            let betPopup = document.getElementById('betPopup')
+            betPopup.style.display = 'block'
+            betPopup.querySelector('.popup--bet').style.display = "block"
         },
         closeModal() {
             this.$el.parentNode.parentNode.style.display = "none"
@@ -125,4 +127,4 @@ Vue.component('product-mini', {
     }
 })
 
-new Vue({ el: '#product-info' })
+new Vue({ el: '.product-info' })

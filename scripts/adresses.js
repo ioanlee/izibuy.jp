@@ -1,10 +1,9 @@
 Vue.component('adresses-list', {
     template: `
-    <div>
-        
+    <div>        
         <span class="adress-row" v-for="(adress, index) in adresses">
             <p @click="adressEditActive = true"> {{ adress.position }} </p>
-            <button type="button" @click="deleteAdress(index)">Удалить</button>
+            <button type="button" @click="deleteAdress(index)" class="white-button">Удалить</button>
             <hr>
         </span>
         <button type="button" class="button" @click="adressActive = true">Добавить адрес</button>
@@ -23,7 +22,7 @@ Vue.component('adresses-list', {
                 <input id="building" v-model="building" type="text" placeholder="Дом/Корпус/Строение" autocomplete="on">
                 <input id="apartment" v-model="apartment" type="text" placeholder="Квартира" autocomplete="on">
                 <button type="submit" @click.prevent="addAdress" class="button">Добавить</button>
-                <button type="reset" class="reset-button">Отменить</button>
+                <button type="reset" class="reset-button white-button">Отменить</button>
             </form>
         </div>
         <div v-if="adressEditActive" class="popup popup--adress-edit">
@@ -41,7 +40,7 @@ Vue.component('adresses-list', {
                 <input id="building" v-model="building" type="text" placeholder="Дом/Корпус/Строение" autocomplete="on">
                 <input id="apartment" v-model="apartment" type="text" placeholder="Квартира" autocomplete="on">
                 <button type="submit" @click.prevent="editAdress" class="button">Сохранить</button>
-                <button type="reset" class="reset-button">Отменить</button>
+                <button type="reset" class="reset-button white-button">Отменить</button>
             </form>
         </div>
     </div>
