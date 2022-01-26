@@ -1,15 +1,17 @@
-.carousel 
+.carousel
     position: relative
     width: 100%
     padding-bottom: 2em
     border-radius: 10px 10px 0px 0px
 
-    .carousel__item 
+    .carousel__item
         background: $brown
         color: #ffffff
         display: none
         position: relative
         padding-bottom: 15px
+        img
+            width: 100%
 
         p
             text-transform: uppercase
@@ -32,28 +34,27 @@
                 width: 642px
                 font-size: 25px
                 line-height: 15px
-                letter-spacing: 0.35em    
+                letter-spacing: 0.35em
 
-    .carousel__item--selected 
-        display: block    
+    .carousel__item--selected
+        display: block
 
-    .carousel__nav 
+    .carousel__nav
         width: 100%
         position: absolute
         bottom: 0
         left: 0
-        text-align: center    
+        text-align: center
 
-    .carousel__button 
+    .carousel__button
         width: 11px
         height: 11px
         display: inline-block
         border: 2px solid $brown
         border-radius: 50%
         margin: 0 15px
-        cursor: pointer    
+        cursor: pointer
 
-    .carousel__button--selected 
+    .carousel__button--selected
         background: $purple
         border: none
-    

@@ -39,8 +39,8 @@ Vue.component('cart-item', {
             <a href="../pages/item.html">[XX44]Windows11 or Windows10[ASUS GL752VW]Core i7-6700HQ/ новый товар SSD 240GB/GTX 960M/ память 16GB/Web камера /Office2019/BluRay</a>
             <div class="button-wrapper">
                 <span>Текущая ставка: 62 000р (Моя)</span>
-                <button type="button" class="bet-link" @click="makeMaxBet">Максимальная ставка: 70 000р</button>
-                <button type="button" class="bet-link" @click="makeSniperBet">Снайперская ставка: 72 000р</button>
+                <button type="button" class="text-button" @click="makeMaxBet">Максимальная ставка: 70 000р</button>
+                <button type="button" class="text-button" @click="makeSniperBet">Снайперская ставка: 72 000р</button>
             </div>
         </div>
         <hr>

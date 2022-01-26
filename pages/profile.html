@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
     <title>Document</title>
     <script src="../scripts/vue.min.js"></script>
     <script src="../scripts/index.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper">
-        <aside id="sidebar-container">
-            <sidebar-profile></sidebar-profile>
-        </aside>
-        <div>
-            <header id="app-header">
-                <my-header></my-header>
-            </header>
-            <main>
-                <div id="loginPopup">
-                    <login-popup></login-popup>
-                </div>
-                <div id="remindPassPopup">
-                    <remind-password-popup></remind-password-popup>
-                </div>
-                <h1 class="profile-title">Личная информация</h1>
-                <form class="profile-form" method="post" action="#">
-                    <fieldset>
-                        <input type="text" placeholder="Фамилия">
-                        <input type="text" placeholder="Имя">
-                        <input type="text" placeholder="Отчество">
-                    </fieldset>
-                    <fieldset>
-                        <input type="email" placeholder="E-mail">
-                        <input type="telephone" placeholder="Моб.телефон">
-                    </fieldset>
-                    <input type="password" placeholder="Пароль">
-                    <a id="change-password-link" href="">Сменить пароль</a>
-                    <hr>
-                    <button type="submit">Сохранить</button>
-                </form>
-            </main>
-        </div>
+      <aside id="sidebar-container">
+        <sidebar-profile></sidebar-profile>
+      </aside>
+      <div>
+        <header id="app-header">
+          <my-header></my-header>
+        </header>
+        <main>
+          <div id="loginPopup">
+            <login-popup></login-popup>
+          </div>
+          <div id="remindPassPopup">
+            <remind-password-popup></remind-password-popup>
+          </div>
+          <h1 class="profile-title">Личная информация</h1>
+          <form class="profile-form" method="post" action="#">
+            <fieldset>
+              <input type="text" placeholder="Фамилия" />
+              <input type="text" placeholder="Имя" />
+              <input type="text" placeholder="Отчество" />
+            </fieldset>
+            <fieldset>
+              <input type="email" placeholder="E-mail" />
+              <input type="telephone" placeholder="Моб.телефон" />
+            </fieldset>
+            <input type="password" placeholder="Пароль" />
+            <buton id="change-password-link" class="text-button"
+              >Сменить пароль</buton
+            >
+            <hr />
+            <button type="submit">Сохранить</button>
+          </form>
+        </main>
+      </div>
     </div>
+    <script src="../scripts/profile.js" type="module"></script>
     <script src="../scripts/main.js" type="module"></script>
-</body>
-
+  </body>
 </html>

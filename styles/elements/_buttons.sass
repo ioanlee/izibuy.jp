@@ -19,14 +19,13 @@
         border: 1px solid $blue
         color: $blue
 
-
 .close-button
     border: none
     background: none
     &:hover
         &::before,
         &::after
-            background-color: $blue    
+            background-color: $blue
     &::before,
     &::after
         content: ""
@@ -98,3 +97,16 @@
         transition: 0.3s
         transform: translateY(-5px)
         box-shadow: 0 5px #e1bba5
+
+.text-button
+    border: none
+    background: none
+    color: #8C3E7D
+    text-decoration: underline
+    -webkit-text-decoration-style: dotted
+    text-decoration-style: dotted
+    cursor: pointer
+    font-size: 17px
+    line-height: 22px
+    &:hover
+        color: $blue

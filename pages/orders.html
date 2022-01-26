@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
     <title>Document</title>
     <script src="../scripts/vue.min.js"></script>
     <script src="../scripts/index.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper">
-        <aside id="sidebar-container">
-            <sidebar-short-sorting></sidebar-short-sorting>
-        </aside>
-        <div>
-            <header id="app-header">
-                <my-header></my-header>
-            </header>
-            <main>
-                <div id="loginPopup">
-                    <login-popup></login-popup>
-                </div>
-                <div id="remindPassPopup">
-                    <remind-password-popup></remind-password-popup>
-                </div>
-                <h1 class="title">Заказы</h1>
-                <section id="tracking-container">
-                    <tracking-item></tracking-item>
-                    <tracking-item></tracking-item>
-                    <tracking-item></tracking-item>
-                </section>
-            </main>
-        </div>
+      <aside id="sidebar-container">
+        <sidebar-short-sorting></sidebar-short-sorting>
+      </aside>
+      <div>
+        <header id="app-header">
+          <my-header></my-header>
+        </header>
+        <main>
+          <div id="loginPopup">
+            <login-popup></login-popup>
+          </div>
+          <div id="remindPassPopup">
+            <remind-password-popup></remind-password-popup>
+          </div>
+          <h1 class="title">Заказы</h1>
+          <section id="tracking-container">
+            <tracking-item></tracking-item>
+            <tracking-item></tracking-item>
+            <tracking-item></tracking-item>
+          </section>
+        </main>
+      </div>
     </div>
     <script src="../scripts/tracking-item.js"></script>
     <script src="../scripts/main.js" type="module"></script>
-</body>
-
+  </body>
 </html>

@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
     <title>Document</title>
     <script src="../scripts/vue.min.js"></script>
     <script src="../scripts/index.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper">
-        <aside id="sidebar-container">
-            <sidebar-profile></sidebar-profile>
-        </aside>
-        <div>
-            <header id="app-header">
-                <my-header></my-header>
-            </header>
-            <main id="app">
-                <div id="loginPopup">
-                    <login-popup></login-popup>
-                </div>
-                <div id="remindPassPopup">
-                    <remind-password-popup></remind-password-popup>
-                </div>
-                <h1 class="adresses-title">Адреса доставки</h1>
-                <adresses-list></adresses-list>
-            </main>
-        </div>
+      <aside id="sidebar-container">
+        <sidebar-profile></sidebar-profile>
+      </aside>
+      <div>
+        <header id="app-header">
+          <my-header></my-header>
+        </header>
+        <main id="app">
+          <div id="loginPopup">
+            <login-popup></login-popup>
+          </div>
+          <div id="remindPassPopup">
+            <remind-password-popup></remind-password-popup>
+          </div>
+          <h1 class="adresses-title">Адреса доставки</h1>
+          <adresses-list></adresses-list>
+        </main>
+      </div>
     </div>
     <script src="../scripts/adresses.js" type="module"></script>
     <script src="../scripts/main.js" type="module"></script>
-</body>
-
+  </body>
 </html>

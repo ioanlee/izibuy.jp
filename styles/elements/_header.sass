@@ -1,22 +1,22 @@
 header
     position: sticky
     top: 0
+    z-index: 100
 
     .header
-    height: 150px
-    width: 100%
-    display: flex
-    flex-direction: column
-    padding: 20px 0
-    background-color: white
-    z-index: 10
-    
+        height: 150px
+        width: 100%
+        display: flex
+        flex-direction: column
+        padding: 20px 0
+        background-color: white
+
     nav
         display: flex
         justify-content: space-around
         margin: 0 auto
         padding-bottom: 35px
-        
+
         a
             color: black
             font-size: 17px
@@ -29,7 +29,7 @@ header
                 margin-right: 40px
             &:hover
                 opacity: .7
-            
+
         .currency-select
             margin-left: auto
 
@@ -39,8 +39,9 @@ header
         align-items: center
         position: relative
         .logo
-            width: 22%
-            margin-right: 5%
+            width: 24%
+            min-width: 160px
+            margin-right: 1%
             //height: 55px
             display: block
 
@@ -56,7 +57,7 @@ header
             min-height: 50px
             padding: 0 10px
             outline: none
-            width: 95%
+            width: 100%
             &::placeholder
                 color: $brown
             &:focus
@@ -66,17 +67,28 @@ header
             min-width: 50px
             height: 50px
             border: 1px solid $grey
-            border-radius: 25px            
+            border-radius: 25px
             background-color: #fff
             border-color: #BDBDBD
             border-radius: 50%
             padding: 14px 9px 11px 11px
             margin: 0 2%
+            @media screen and (max-width: 1440px)
+                height: 40px
+                width: 40px
+                padding: 0
+                min-width: 40px
+                svg
+                    display: block
+                    margin: auto auto
+                    margin-top: 25%
+                    height: 18px
+                    width: 20px
             svg
                 fill: white
                 stroke: #757575
 
-            &:hover                                    
+            &:hover
                 background-color: $brown
                 border-color: $blue
                 svg
@@ -97,16 +109,37 @@ header
             padding: 10px 10px 9px 5px
             width: 50px
             height: 50px
+            @media screen and (max-width: 1440px)
+                height: 40px
+                width: 40px
+                padding: 0
+                svg
+                    display: block
+                    margin: 0 auto
+                    margin-top: 21%
+                    height: 19px
+                    width: 36px
 
         .profile
             min-width: 50px
             height: 50px
             border: 2px solid $purple
             border-radius: 25px
-            background-color: #fff             
+            background-color: #fff
             border-radius: 50%
             padding: 9px 10px 8px 10px
             cursor: pointer
+            @media screen and (max-width: 1440px)
+                height: 40px
+                width: 40px
+                padding: 0
+                min-width: 40px
+                svg
+                    display: block
+                    margin: auto auto
+                    margin-top: 20%
+                    height: 30px
+                    width: 20px
             &:hover
                 background-color: $brown
                 border-color: $blue
@@ -177,8 +210,8 @@ header
 
         .cart--pageOn, .favorite--pageOn
             border: 2px solid $purple
-        
-        .user-nav            
+
+        .user-nav
             position: absolute
             bottom: -312px
             right: 0
@@ -206,8 +239,7 @@ header
         .user-nav--opened
             display: flex
 
-
-    .loginOn 
+    .loginOn
         .profile
             background-color: $brown
             border-color: none
@@ -217,12 +249,10 @@ header
             display: block
             svg
                 path
-                    
+
         .favorite
             background-color: $brown
             border: 2px solid $brown
             svg
                 fill: $purple
                 stroke: $purple
-
-

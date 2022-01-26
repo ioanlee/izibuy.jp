@@ -21,8 +21,13 @@
     .thumbnails-wrapper
         width: 100%
         display: flex
-        justify-content: space-between
         flex-wrap: wrap
+        img
+            margin: 5px 12px 0 0
+        @media screen and (min-width: 1600px)
+            justify-content: space-between
+            img
+                margin: 0
 
     .current
         width: 100%
@@ -86,7 +91,7 @@
             transform: rotate(190deg) translateX(-50%) translateY(-50%)
         100%
             transform: rotate(360deg) translateX(-50%) translateY(-50%)
-  
+
     .product-title
         font-size: 25px
         margin-bottom: 20px

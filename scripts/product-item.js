@@ -12,7 +12,7 @@ Vue.component('product-item', {
             <img src="/images/img_item_thumbnail.jpg" alt="">
             <div class="zoom" @click="thumb"></div>
         </div>
-        <a href="../pages/item.html" class="item-description">Одиночный усилитель Mazda 6V6 в хорошем состоянии/Одиночный усилитель Mazda 6V6 в хорошем состоянии</a>
+        <a href="../pages/item.html" class="item-description">Одиночный усилитель Mazda 6V6 в хорошем состоянии</a>
         <span class="price-wrapper">
             <span class="item-price">6 824</span>
             <button class="fav" @click="addToFavs"></button>

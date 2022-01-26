@@ -1,7 +1,7 @@
 Vue.component('sidebar', {
     template: `
             <div class="sidebar">
-                <input type="search" name="" id="" placeholder="найти в каталоге">
+                <input type="search" name="" id="" placeholder="найти">
                 <details class="catalog" open>
                     <summary class="catalog-summary"></summary>
                     <a class="catalog-item" href="../pages/catalog.html">Компьютеры</a>
@@ -70,7 +70,7 @@ Vue.component('sidebar', {
 Vue.component('sidebar-no-sorting', {
     template: `
             <div class="sidebar">
-                <input type="search" name="" id="" placeholder="найти в каталоге">
+                <input type="search" name="" id="" placeholder="найти">
                 <details class="catalog" open>
                     <summary class="catalog-summary"></summary>
                     <a class="catalog-item" href="../pages/catalog.html">Компьютеры</a>
@@ -103,7 +103,7 @@ Vue.component('sidebar-no-sorting', {
 Vue.component('sidebar-short-sorting', {
     template: `
             <div class="sidebar">
-                <input type="search" name="" id="" placeholder="найти в каталоге">
+                <input type="search" name="" id="" placeholder="найти">
                 <details class="catalog" open>
                     <summary class="catalog-summary"></summary>
                     <a class="catalog-item" href="../pages/catalog.html">Компьютеры</a>
