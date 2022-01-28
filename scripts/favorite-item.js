@@ -1,5 +1,5 @@
-Vue.component('favorite-item', {
-    template: `
+Vue.component("favorite-item", {
+  template: `
     <div class="favorite-item">
         <div class="thumbnail-wrapper">
             <img src="../images/img-item.jpg" height="160" width="170" alt="">
@@ -17,19 +17,17 @@ Vue.component('favorite-item', {
         </div>
         <hr>
     </div>
-` ,
-    data: function () {
-        return {
-
-        }
+`,
+  data: function () {
+    return {};
+  },
+  methods: {
+    makeBet() {
+      let betPopup = document.getElementById("betPopup");
+      betPopup.style.display = "block";
+      betPopup.querySelector(".popup--bet").style.display = "block";
     },
-    methods: {
-        makeBet() {
-            let betPopup = document.getElementById('betPopup')
-            betPopup.style.display = 'block'
-            betPopup.querySelector('.popup--bet').style.display = "block"
-        }
-    }
-})
+  },
+});
 
-new Vue({ el: '#favorite-container' })
+new Vue({ el: "#favorite-container" });

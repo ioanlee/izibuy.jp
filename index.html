@@ -12,8 +12,8 @@
 
   <body>
     <div class="wrapper">
-      <aside id="sidebar-container">
-        <sidebar-no-sorting></sidebar-no-sorting>
+      <aside id="sidebar-container" class="sidebar">
+        <sidebar-catalog></sidebar-catalog>
       </aside>
       <div>
         <header id="app-header">
@@ -30,7 +30,7 @@
             <bet-popup></bet-popup>
           </div>
           <section class="carousel">
-            <div class="carousel__item">
+            <div class="carousel__item fade">
               <img
                 src="./images/slider/socks1920.jpg"
                 width="1397"
@@ -39,7 +39,7 @@
               />
               <p>Самое тёплое только для вас</p>
             </div>
-            <div class="carousel__item">
+            <div class="carousel__item fade">
               <img
                 src="./images/slider/woman1920.jpg"
                 width="1397"
@@ -48,7 +48,7 @@
               />
               <p>Главная ценность - время</p>
             </div>
-            <div class="carousel__item">
+            <div class="carousel__item fade">
               <img
                 src="./images/slider/tank1920.jpg"
                 width="1397"
@@ -56,6 +56,11 @@
                 alt="Кадр из компьютерной игры с советским танком"
               />
               <p>Танки грязи не боятся</p>
+            </div>
+            <div style="text-align:center">
+              <span class="dot active" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
             </div>
           </section>
           <div id="product" class="product-container">

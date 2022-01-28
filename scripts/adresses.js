@@ -1,5 +1,5 @@
-Vue.component('adresses-list', {
-    template: `
+Vue.component("adresses-list", {
+  template: `
     <div>        
         <span class="adress-row" v-for="(adress, index) in adresses">
             <p @click="adressEditActive = true"> {{ adress.position }} </p>
@@ -44,38 +44,48 @@ Vue.component('adresses-list', {
             </form>
         </div>
     </div>
-` ,
-    data: function () {
-        return {
-            adresses: [
-                { position: '690000, Россия, г. Владивосток, ул Нейбута, д. 17, кв. 168' },
-                { position: '690015, Россия, г. Владивосток, ул Надибаидзе, д. 125, кв. 1956' }
-            ],
-            adressActive: false,
-            adressEditActive: false,
-            index: null,
-            country: null,
-            city: null,
-            street: null,
-            building: null,
-            apartment: null,
-        }
+`,
+  data: function () {
+    return {
+      adresses: [
+        {
+          position:
+            "690000, Россия, г. Владивосток, ул Нейбута, д. 17, кв. 168",
+        },
+        {
+          position:
+            "690015, Россия, г. Владивосток, ул Надибаидзе, д. 125, кв. 1956",
+        },
+      ],
+      adressActive: false,
+      adressEditActive: false,
+      index: null,
+      country: null,
+      city: null,
+      street: null,
+      building: null,
+      apartment: null,
+    };
+  },
+  methods: {
+    deleteAdress: function (index) {
+      this.adresses.splice(index, 1);
     },
-    methods: {
-        deleteAdress: function (index) {
-            this.adresses.splice(index, 1);
-        },
-        addAdress: function () {
-            let newAdress = { position: `${this.index} , ${this.country} , г. ${this.city} , ул ${this.street} , д. ${this.building} , кв. ${this.apartment}` }
-            this.adresses.push(newAdress)
-        },
-        editAdress: function (index) {
-            let editedAdress = { position: `${this.index} , ${this.country} , г. ${this.city} , ул ${this.street} , д. ${this.building} , кв. ${this.apartment}` }
-            this.adresses.splice(index, 1, editedAdress);
-        }
-    }
-})
+    addAdress: function () {
+      let newAdress = {
+        position: `${this.index} , ${this.country} , г. ${this.city} , ул ${this.street} , д. ${this.building} , кв. ${this.apartment}`,
+      };
+      this.adresses.push(newAdress);
+    },
+    editAdress: function (index) {
+      let editedAdress = {
+        position: `${this.index} , ${this.country} , г. ${this.city} , ул ${this.street} , д. ${this.building} , кв. ${this.apartment}`,
+      };
+      this.adresses.splice(index, 1, editedAdress);
+    },
+  },
+});
 
-new Vue({ el: '#app' })
+new Vue({ el: "#app" });
 
 // у кнопок формы заменить click  на submit чтобы данные уходили на сервер

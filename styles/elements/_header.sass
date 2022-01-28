@@ -11,11 +11,13 @@ header
         padding: 20px 0
         background-color: white
 
+
     nav
         display: flex
         justify-content: space-around
         margin: 0 auto
         padding-bottom: 35px
+
 
         a
             color: black
@@ -129,6 +131,9 @@ header
             border-radius: 50%
             padding: 9px 10px 8px 10px
             cursor: pointer
+            svg
+                margin: 0 auto
+                display: block
             @media screen and (max-width: 1440px)
                 height: 40px
                 width: 40px
@@ -137,7 +142,7 @@ header
                 svg
                     display: block
                     margin: auto auto
-                    margin-top: 20%
+                    margin-top: 26%
                     height: 30px
                     width: 20px
             &:hover
@@ -154,8 +159,13 @@ header
             svg
                 fill: $purple
 
+        .profile--loginOn
+            background-color: $brown
+            border: 2px solid $brown
+            svg
+                fill: $purple
         .profile--pageOn
-            border-color: $purple
+            border: 2px solid $purple
 
         .favorite--active
             background-color: $brown
@@ -166,7 +176,6 @@ header
                 svg
                     path
                         stroke: $blue
-
             &::after
                 width: 13px
                 height: 13px
@@ -177,7 +186,6 @@ header
                 border-radius: 50%
                 right: -1px
                 bottom: -5px
-
             svg
                 fill: $purple
                 path
@@ -192,7 +200,6 @@ header
                 svg
                     path
                         stroke: $blue
-
             &::after
                 width: 13px
                 height: 13px
@@ -203,13 +210,23 @@ header
                 border-radius: 50%
                 right: -1px
                 bottom: -5px
-
             svg
                 path
                     stroke: $purple
 
-        .cart--pageOn, .favorite--pageOn
+        .cart--pageOn 
             border: 2px solid $purple
+            background-color: $brown
+            svg
+                path
+                    stroke: $purple
+
+        .favorite--pageOn
+            border: 2px solid $purple
+            background-color: $brown
+            svg
+                fill: $purple
+                stroke: $purple
 
         .user-nav
             position: absolute
@@ -240,19 +257,14 @@ header
             display: flex
 
     .loginOn
-        .profile
-            background-color: $brown
-            border-color: none
-            svg
-                fill: $purple
         .cart
             display: block
             svg
                 path
 
-        .favorite
-            background-color: $brown
-            border: 2px solid $brown
-            svg
-                fill: $purple
-                stroke: $purple
+        // .favorite
+        //     background-color: $brown
+        //     border: 2px solid $brown
+        //     svg
+        //         fill: $purple
+        //         stroke: $purple

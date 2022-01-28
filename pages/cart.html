@@ -12,8 +12,9 @@
 
   <body>
     <div class="wrapper">
-      <aside id="sidebar-container">
-        <sidebar-short-sorting></sidebar-short-sorting>
+      <aside id="sidebar-container" class="sidebar">
+        <sidebar-catalog></sidebar-catalog>
+        <sidebar-cut-filters></sidebar-cut-filters>
       </aside>
       <div>
         <header id="app-header">
@@ -43,6 +44,7 @@
         </main>
       </div>
     </div>
+    <script src="../scripts/cart-pageOn.js" type="module"></script>
     <script src="../scripts/bet.js" type="module"></script>
     <script src="../scripts/checkout-order.js" type="module"></script>
     <script src="../scripts/cart-item.js" type="module"></script>

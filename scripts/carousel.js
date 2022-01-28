@@ -1,37 +1,51 @@
-document.querySelectorAll(".carousel").forEach((carousel) => {
-    const items = carousel.querySelectorAll(".carousel__item");
-    const buttonsHtml = Array.from(items, () => {
-      return `<span class="carousel__button"></span>`;
-    });
+let slideIndex = 0;
+let slideIndexCurrent = 0;
+showSlides();
+
+function currentSlide(n) {
+  showSlidesCurrent(slideIndexCurrent = n);
+}
+
+function currentSlide(n) {
+  showSlidesCurrent(slideIndexCurrent = n);
+}
+
+function showSlidesCurrent(n) {
   
-    carousel.insertAdjacentHTML(
-      "beforeend",
-      `
-          <div class="carousel__nav">
-              ${buttonsHtml.join("")}
-          </div>
-      `
-    );
-  
-    const buttons = carousel.querySelectorAll(".carousel__button");
-  
-    buttons.forEach((button, i) => {
-      button.addEventListener("click", () => {
-        // un-select all the items
-        items.forEach((item) =>
-          item.classList.remove("carousel__item--selected")
-        );
-        buttons.forEach((button) =>
-          button.classList.remove("carousel__button--selected")
-        );
-  
-        items[i].classList.add("carousel__item--selected");
-        button.classList.add("carousel__button--selected");
-      });
-    });
-  
-    // Select the first item on page load
-    items[0].classList.add("carousel__item--selected");
-    buttons[0].classList.add("carousel__button--selected");
-  });
-  
+  let i;
+  let slides = document.getElementsByClassName("carousel__item");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndexCurrent = 1}   
+
+  if (n < 0) {slideIndexCurrent = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndexCurrent-1].style.display = "block";  
+  dots[slideIndexCurrent-1].className += " active";
+  slideIndexCurrent++;
+}
+
+function showSlides() {
+
+  let i;
+  let slides = document.getElementsByClassName("carousel__item");
+  let dots = document.getElementsByClassName("dot");
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+
+  setTimeout(showSlides, 5000); // Change image every x seconds
+}

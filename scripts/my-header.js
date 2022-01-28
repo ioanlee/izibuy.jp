@@ -1,6 +1,6 @@
 Vue.component('my-header', {
     template: ` <div class="header loginOn">                    
-                    <nav>
+                    <nav id="nav">
                         <a href="">О компании</a>
                         <a href="">Оплата</a>
                         <a href="">Доставка</a>
@@ -40,7 +40,7 @@ Vue.component('my-header', {
                                 <path d="M15.1925 15.6782H27.6085" stroke="#757575" stroke-width="2" stroke-miterlimit="10"/>
                             </svg>                           
                         </a>
-                        <a class="profile" @click.prevent="openModal" href="#">
+                        <a class="profile profile--loginOn" @click.prevent="openModal" href="#">
                             <svg width="28" height="39" viewBox="0 0 28 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.9999 18.5301C19.0257 18.5301 23.0999 14.4559 23.0999 9.43008C23.0999 4.40429 19.0257 0.330078 13.9999 0.330078C8.9741 0.330078 4.89989 4.40429 4.89989 9.43008C4.89989 14.4559 8.9741 18.5301 13.9999 18.5301Z" fill=""/>
                             <path d="M15.56 19.94H12.44C5.83999 19.94 0.48999 25.29 0.48999 31.89V35.03C4.37999 37.54 9.01999 39 14 39C18.98 39 23.62 37.54 27.51 35.03V31.89C27.51 25.29 22.16 19.94 15.56 19.94Z" fill=""/>
@@ -70,6 +70,7 @@ Vue.component('my-header', {
         loginOff() {
             const header = document.querySelector('.header')
             header.classList.remove('loginOn')
+            header.querySelector('.profile').classList.remove('profile--loginOn')
             const userNav = header.querySelector('#userNav')
             userNav.classList.remove('user-nav--opened')
         }
@@ -77,3 +78,16 @@ Vue.component('my-header', {
 })
 
 new Vue({ el: '#app-header' })
+
+
+
+window.addEventListener('scroll', function() {    
+    const header = document.querySelector('.header')
+    console.log(scrollY)
+    if (scrollY > 100) {
+        header.style.transform =  'translateY(-60px)'
+        header.style.transition = '0.6s'
+    } else {
+        header.style.transform =  'translateY(0)'
+    }
+});

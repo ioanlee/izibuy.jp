@@ -46,7 +46,7 @@
         left: 0
         text-align: center
 
-    .carousel__button
+    .dot
         width: 11px
         height: 11px
         display: inline-block
@@ -55,6 +55,20 @@
         margin: 0 15px
         cursor: pointer
 
-    .carousel__button--selected
+    .active
         background: $purple
         border: none
+    
+    /* Fading animation */
+    .fade 
+        -webkit-animation-name: fade
+        -webkit-animation-duration: 2.6s
+        animation-name: fade
+        animation-duration: 2.6s    
+
+        @keyframes fade 
+            from 
+                opacity: .4 
+            to 
+                opacity: 1
+    

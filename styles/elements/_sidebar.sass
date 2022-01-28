@@ -54,6 +54,8 @@
             font-size: 25px
             padding: 8px
             color: $purple
+            margin: 10px 0
+
             &::-webkit-details-marker
                 display: none
             &::after
@@ -83,14 +85,26 @@
             transition: .4s
             padding: 9px
             color: black
+            display: block
             &:hover
                 box-shadow: inset -80px 0 0 0 $brown
                 transition: .1s
                 color: $blue
                 text-decoration: underline
                 background-color: #ecd1bfce
-            &:last-of-type
-                margin-bottom: 20px
+        .sub-catalog-item
+            margin-left: 10px
+
+
+        .category              
+            .sub-category
+                display: flex
+                flex-direction: column
+                padding-left: 20px
+                display: none
+            .sub-category--opened
+                display: block
+
 
     .filters
         flex-direction: column

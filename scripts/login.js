@@ -1,5 +1,5 @@
-Vue.component('login-popup', {
-    template: `
+Vue.component("login-popup", {
+  template: `
     <div class="overlay" @click.self="closeModal">
         <div v-if="!registerActive" class="popup popup--login">
             <button class="close-button" type="button" aria-label="Закрыть окно" @click="closeModal"></button>
@@ -36,23 +36,21 @@ Vue.component('login-popup', {
             </form>           
         </div>
     </div>
-` ,
-    data: function () {
-        return {
-            registerActive: false
-        }
+`,
+  data: function () {
+    return {
+      registerActive: false,
+    };
+  },
+  methods: {
+    closeModal: function () {
+      document.getElementById("loginPopup").style.display = "none";
     },
-    methods: {
-        closeModal: function () {
-            document.getElementById('loginPopup').style.display = 'none'
-        },
-        remindPassword: function () {
-            document.getElementById('loginPopup').style.display = 'none'
-            document.getElementById('remindPassPopup').style.display = 'block'
-        },
+    remindPassword: function () {
+      document.getElementById("loginPopup").style.display = "none";
+      document.getElementById("remindPassPopup").style.display = "block";
+    },
+  },
+});
 
-    }
-})
-
-new Vue({ el: '#loginPopup' })
-
+new Vue({ el: "#loginPopup" });

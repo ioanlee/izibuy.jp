@@ -1,5 +1,5 @@
-Vue.component('cart-item-win', {
-    template: `
+Vue.component("cart-item-win", {
+  template: `
     <div class="cart-item">
         <div class="thumbnail-wrapper">
             <img src="../images/img-item.jpg" height="160" width="170" alt="">
@@ -13,21 +13,20 @@ Vue.component('cart-item-win', {
         </div>
         <hr>
     </div>
-` ,
-    data: function () {
-        return {
-
-        }
+`,
+  data: function () {
+    return {};
+  },
+  methods: {
+    checkoutOrder() {
+      document.querySelector("#checkout-order-container").style.display =
+        "block";
     },
-    methods: {
-        checkoutOrder() {
-            document.querySelector('#checkout-order-container').style.display = "block"
-        }
-    }
-})
+  },
+});
 
-Vue.component('cart-item', {
-    template: `
+Vue.component("cart-item", {
+  template: `
     <div class="cart-item">
         <div class="thumbnail-wrapper">
             <img src="../images/img-item.jpg" height="160" width="170" alt="">
@@ -45,25 +44,22 @@ Vue.component('cart-item', {
         </div>
         <hr>
     </div>
-` ,
-    data: function () {
-        return {
-
-        }
+`,
+  data: function () {
+    return {};
+  },
+  methods: {
+    makeMaxBet() {
+      let betPopup = document.getElementById("betPopup");
+      betPopup.style.display = "block";
+      betPopup.querySelector(".popup--max-bet").style.display = "block";
     },
-    methods: {
-        makeMaxBet() {
-            let betPopup = document.getElementById('betPopup')
-            betPopup.style.display = 'block'
-            betPopup.querySelector('.popup--max-bet').style.display = "block"
+    makeSniperBet() {
+      let betPopup = document.getElementById("betPopup");
+      betPopup.style.display = "block";
+      betPopup.querySelector(".popup--sniper-bet").style.display = "block";
+    },
+  },
+});
 
-        },
-        makeSniperBet() {
-            let betPopup = document.getElementById('betPopup')
-            betPopup.style.display = 'block'
-            betPopup.querySelector('.popup--sniper-bet').style.display = "block"
-        }
-    }
-})
-
-new Vue({ el: '#cart-item-container' })
+new Vue({ el: "#cart-item-container" });
