@@ -1,7 +1,14 @@
 Vue.component('sidebar-catalog', {
     template: `
             <div>
-                <input type="search" name="" id="" placeholder="найти">
+                <div class="closeCatalog">
+                    <a href="/"  @click.prevent="closeCatalog">
+                        <svg width="5" height="7" viewBox="0 0 5 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.602 6.034L3.402 3.556L0.602 1.092L1.176 0.448L4.676 3.514L1.176 6.622L0.602 6.034Z" fill="#8C3E7D"/>
+                        </svg>
+                    </a>
+                    <input type="search" name="" id="" placeholder="найти">
+                </div>            
                 <details class="catalog" open>
                     <summary class="catalog-summary"></summary>
                     <div class="category" v-for="category in categorys">
@@ -50,6 +57,10 @@ Vue.component('sidebar-catalog', {
         methods: {
             openSubCategory() {                       
                 event.target.nextElementSibling.classList.toggle('sub-category--opened')
+            },
+            closeCatalog() {
+                document.querySelector('.main-content').style.display = "block"
+                document.querySelector('.sidebar').style.display = "none"
             }
         }
 })

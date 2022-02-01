@@ -9,9 +9,13 @@
     font-size: 25px
     line-height: 30px
     color: $purple
+    word-break: break-word
+    @media screen and (max-width: 1440px)
+        font-size: 21px
     p
         text-decoration: underline
         text-decoration-style: dotted
+        max-width: 80%
         &:hover
             color: $blue
             text-decoration: none

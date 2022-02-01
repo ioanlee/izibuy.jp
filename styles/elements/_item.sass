@@ -1,6 +1,6 @@
 .item
     display: flex
-    position: relative
+    //position: relative
     flex-direction: column
     width: 220px
     //height: 280px
@@ -34,7 +34,6 @@
         overflow: hidden
         &:hover img
             transform: scale(1.1)
-
         .zoom
             display: none
             position: absolute
@@ -96,7 +95,17 @@
             content: ' ₽'
         @media screen and (max-width: 1440px)
             font-size: 15px
-
+    .mobile-zoom
+        display: none
+        border: none
+        background: none
+        width: 20px
+        height: 20px
+        background-size: 20px 20px
+        background-image: url(/images/icons/icon__mobile-zoom.svg)
+        background-repeat: no-repeat
+        @media screen and( max-width: 1024px)
+            display: block
     .fav
         display: none
         border: none
@@ -115,6 +124,8 @@
             box-shadow: 0 3px #E1BBA5
             border: 1px solid $blue
             border-radius: 3px
+        @media screen and (max-width: 1024px)
+            display: block
     .added
         background-image: url("../images/icons/icons_favorites_purple_fill.svg")
         display: block
@@ -124,3 +135,7 @@
         display: flex
         align-items: center
         padding-right: 10px
+        @media screen and (max-width: 1024px)
+            padding: 0
+            gap: 5px
+        

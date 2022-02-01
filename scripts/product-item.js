@@ -15,7 +15,8 @@ Vue.component('product-item', {
         <a href="../pages/item.html" class="item-description">Одиночный усилитель Mazda 6V6 в хорошем состоянии</a>
         <span class="price-wrapper">
             <span class="item-price">6 824</span>
-            <button class="fav" @click="addToFavs"></button>
+            <button class="mobile-zoom" @click="thumb"></button>
+            <button class="fav" @click="addToFavs"></button>            
         </span>
         
     </div>

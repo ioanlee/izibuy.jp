@@ -32,26 +32,23 @@ html
         display: flex
         flex-direction: column
         max-width: 1920px
+        min-width: 320px
         margin: auto
-        // justify-content: center
-
+        
         .title
             margin-top: 30px
-
         a
             text-decoration: none
-
         img
             max-width: 100%
             height: auto
             display: block
-
         .wrapper
             display: flex
             height: inherit
             width: 100%
 
-            & > div
+            & > .main-content
                 display: flex
                 flex-direction: column
                 width: 100%
@@ -63,6 +60,9 @@ html
                     margin-left: 300px
                 @media screen and (max-width: 1440px)
                     margin-left: 200px
+                @media screen and (max-width: 1024px)
+                    margin: 0
+                    padding: 20px 0
 
                 main
                     // display: flex
@@ -73,3 +73,6 @@ html
                     h1
                         font-size: 34px
                         line-height: 41px//120%
+                        @media screen and (max-width: 1440px)
+                            font-size: 28px
+                            line-height: 30px

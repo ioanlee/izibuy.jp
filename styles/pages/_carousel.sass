@@ -3,6 +3,10 @@
     width: 100%
     padding-bottom: 2em
     border-radius: 10px 10px 0px 0px
+    @media screen and (max-width: 1024px)
+        display: flex
+        overflow: scroll
+        gap: 20px
 
     .carousel__item
         background: $brown
@@ -10,6 +14,10 @@
         display: none
         position: relative
         padding-bottom: 15px
+        min-width: 300px
+        @media screen and (max-width: 1024px)
+            display: block
+        
         img
             width: 100%
 
@@ -22,6 +30,7 @@
             background-color: $purple
             display: block
             width: 978px
+            max-width: 100%
             margin: 0 auto
             padding: 0.5em 0
             text-align: center
@@ -35,6 +44,9 @@
                 font-size: 25px
                 line-height: 15px
                 letter-spacing: 0.35em
+            @media screen and (max-width: 1024px)
+                font-size: 14px
+                max-width: 230px
 
     .carousel__item--selected
         display: block
@@ -45,6 +57,9 @@
         bottom: 0
         left: 0
         text-align: center
+        display: block
+        @media screen and (max-width: 1024px)
+            display: none
 
     .dot
         width: 11px

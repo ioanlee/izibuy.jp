@@ -7,7 +7,7 @@
     text-align: center
     text-transform: uppercase
     padding: 15px 30px
-    min-width: 770px
+    min-width: 65%
     margin: 0 auto
     color: $purple
     background-color: white
@@ -54,6 +54,10 @@
     padding: 15px 30px
     cursor: pointer
     display: block
+    @media screen and (max-width: 1440px)
+        font-size: 14px
+        line-height: 18px
+        padding: 10px 20px
 
     &:hover
         background-color: $blue
@@ -93,6 +97,10 @@
     font-weight: normal
     line-height: 20px
     text-align: center
+    @media screen and (max-width: 1440px)
+        font-size: 14px
+        line-height: 18px
+        padding: 10px 20px
     &:hover
         transition: 0.3s
         transform: translateY(-5px)

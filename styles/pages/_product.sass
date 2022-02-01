@@ -1,7 +1,8 @@
 .product
     display: flex
-    justify-content: space-between
     flex-wrap: wrap
+    @media screen and (max-width: 1024px)
+        flex-direction: column
     .close-button
         display: none
 
@@ -17,6 +18,10 @@
         flex-direction: column
         justify-content: space-between
         height: 580px
+        margin-right: 2%
+        @media screen and (max-width: 1024px)
+            height: 450px
+            width: 100%
 
     .thumbnails-wrapper
         width: 100%
@@ -24,6 +29,8 @@
         flex-wrap: wrap
         img
             margin: 5px 12px 0 0
+            @media screen and (max-width: 1024px)
+                margin: 5px 5px 0 0
         @media screen and (min-width: 1600px)
             justify-content: space-between
             img
@@ -37,9 +44,11 @@
     .thumb
         width: 83px
         height: 83px
+        @media screen and (max-width: 1024px)
+            width: 55px
+            height: 55px
 
     .product-desc
-        margin: 0 auto
         position: relative
         table
             font-style: normal
@@ -48,10 +57,8 @@
             text-align: left
             border-spacing: 15px
             border-collapse: separate
-
             th
                 margin-right: 20px
-
         .logo
             margin: 30px 0
 
@@ -73,12 +80,13 @@
 
 .product-thumb
     width: 780px
+    max-width: 100%
     background-color: white
     border: 1px solid #E1BBA5
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2)
     z-index: 1
     display: none
-    position: fixed
+    position: absolute
     top: 50%
     left: 50%
     padding: 20px
@@ -91,14 +99,19 @@
             transform: rotate(190deg) translateX(-50%) translateY(-50%)
         100%
             transform: rotate(360deg) translateX(-50%) translateY(-50%)
-
+    @media screen and (max-width: 1024px)
+        top: 80%
     .product-title
         font-size: 25px
         margin-bottom: 20px
+        @media screen and (max-width: 1024px)
+            font-size: 18px
     .logo
         display: none
     .product-photos
         height: 329px
+        @media screen and (max-width: 1024px)
+            height: auto
     .current
         height: 260px
     .thumb

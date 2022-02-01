@@ -12,10 +12,10 @@
 
   <body>
     <div class="wrapper">
-      <aside id="sidebar-container" class="sidebar">
+      <div id="sidebar-container" class="sidebar">
         <sidebar-catalog></sidebar-catalog>
-      </aside>
-      <div>
+      </div>
+      <div class="main-content">
         <header id="app-header">
           <my-header></my-header>
         </header>
@@ -57,7 +57,7 @@
               />
               <p>Танки грязи не боятся</p>
             </div>
-            <div style="text-align:center">
+            <div class="carousel__nav">
               <span class="dot active" onclick="currentSlide(1)"></span>
               <span class="dot" onclick="currentSlide(2)"></span>
               <span class="dot" onclick="currentSlide(3)"></span>
