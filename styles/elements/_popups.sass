@@ -2,7 +2,9 @@
 #remindPassPopup,
 #registrationPopup,
 #betPopup,
-#checkout-order-container
+#checkout-order-container,
+#addAdress,
+#editAdress
     display: none
     .popup--bet,
     .popup--max-bet,
@@ -20,6 +22,7 @@
     height: 100%
     background-color: rgba(0, 0, 0, 0.8)
     transition: opacity 0.3s ease
+    overflow: auto
 
 .popup
     background-color: white
@@ -42,8 +45,16 @@
             transform: translate(-50%, -50%)
 
     @media screen and (max-width: 1024px)
-        max-width: 310px
+        max-width: 320px
         padding: 30px 20px
+        top: 100px
+        transform: translate(-50%, -0%)
+        animation: 0.8s slideDownMobile
+        @keyframes slideDownMobile
+            0%
+                transform: translate(-50%,-100%)
+            100%
+                transform: translate(-50%, -0%)
 
     form
         display: flex
@@ -156,6 +167,7 @@
     form
         flex-direction: row
         flex-wrap: wrap
+        justify-content: space-between
     select
         border: 3px solid #BDBDBD
         box-sizing: border-box
@@ -164,15 +176,23 @@
         width: 100%
         option
             max-width: 100%
-    #index, #building
+    .index, .building
         width: 30%
-    #city, #apartment
+        @media screen and (max-width: 1024px)
+            width: 100%
+    .city, .apartment
         width: 65%
-    #street
+        @media screen and (max-width: 1024px)
+            width: 100%
+    .street
         width: 100%
+        @media screen and (max-width: 1024px)
+            width: 100%
     button
         width: 54%
         margin-top: 30px
+        @media screen and (max-width: 1024px)
+            width: 100%
     .reset-button
         color: $purple
         border: 1px solid $purple
@@ -184,6 +204,8 @@
             transition: 0.3s
             transform: translateY(-5px)
             box-shadow: 0 5px #E1BBA5
+        @media screen and (max-width: 1024px)
+            display: none
     .close-button
         width: 0px
 

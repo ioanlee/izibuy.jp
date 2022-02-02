@@ -521,6 +521,7 @@ header .header__sticky-bar .user-nav {
           box-shadow: -12px 10px 4px 2px rgba(34, 60, 80, 0.17);
   -webkit-animation: 0.6s slide;
           animation: 0.6s slide;
+  overflow: auto;
 }
 
 @-webkit-keyframes slide {
@@ -1577,7 +1578,9 @@ header .loginOn .cart {
 #remindPassPopup,
 #registrationPopup,
 #betPopup,
-#checkout-order-container {
+#checkout-order-container,
+#addAdress,
+#editAdress {
   display: none;
 }
 
@@ -1595,7 +1598,13 @@ header .loginOn .cart {
 #betPopup .popup--sniper-bet,
 #checkout-order-container .popup--bet,
 #checkout-order-container .popup--max-bet,
-#checkout-order-container .popup--sniper-bet {
+#checkout-order-container .popup--sniper-bet,
+#addAdress .popup--bet,
+#addAdress .popup--max-bet,
+#addAdress .popup--sniper-bet,
+#editAdress .popup--bet,
+#editAdress .popup--max-bet,
+#editAdress .popup--sniper-bet {
   display: none;
 }
 
@@ -1611,6 +1620,7 @@ header .loginOn .cart {
   background-color: rgba(0, 0, 0, 0.8);
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
+  overflow: auto;
 }
 
 .popup {
@@ -1656,8 +1666,33 @@ header .loginOn .cart {
 
 @media screen and (max-width: 1024px) {
   .popup {
-    max-width: 310px;
+    max-width: 320px;
     padding: 30px 20px;
+    top: 100px;
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+    -webkit-animation: 0.8s slideDownMobile;
+            animation: 0.8s slideDownMobile;
+  }
+  @-webkit-keyframes slideDownMobile {
+    0% {
+      -webkit-transform: translate(-50%, -100%);
+              transform: translate(-50%, -100%);
+    }
+    100% {
+      -webkit-transform: translate(-50%, 0%);
+              transform: translate(-50%, 0%);
+    }
+  }
+  @keyframes slideDownMobile {
+    0% {
+      -webkit-transform: translate(-50%, -100%);
+              transform: translate(-50%, -100%);
+    }
+    100% {
+      -webkit-transform: translate(-50%, 0%);
+              transform: translate(-50%, 0%);
+    }
   }
 }
 
@@ -1816,6 +1851,9 @@ header .loginOn .cart {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .popup--adress select, .popup--adress-edit select {
@@ -1831,21 +1869,45 @@ header .loginOn .cart {
   max-width: 100%;
 }
 
-.popup--adress #index, .popup--adress #building, .popup--adress-edit #index, .popup--adress-edit #building {
+.popup--adress .index, .popup--adress .building, .popup--adress-edit .index, .popup--adress-edit .building {
   width: 30%;
 }
 
-.popup--adress #city, .popup--adress #apartment, .popup--adress-edit #city, .popup--adress-edit #apartment {
+@media screen and (max-width: 1024px) {
+  .popup--adress .index, .popup--adress .building, .popup--adress-edit .index, .popup--adress-edit .building {
+    width: 100%;
+  }
+}
+
+.popup--adress .city, .popup--adress .apartment, .popup--adress-edit .city, .popup--adress-edit .apartment {
   width: 65%;
 }
 
-.popup--adress #street, .popup--adress-edit #street {
+@media screen and (max-width: 1024px) {
+  .popup--adress .city, .popup--adress .apartment, .popup--adress-edit .city, .popup--adress-edit .apartment {
+    width: 100%;
+  }
+}
+
+.popup--adress .street, .popup--adress-edit .street {
   width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .popup--adress .street, .popup--adress-edit .street {
+    width: 100%;
+  }
 }
 
 .popup--adress button, .popup--adress-edit button {
   width: 54%;
   margin-top: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  .popup--adress button, .popup--adress-edit button {
+    width: 100%;
+  }
 }
 
 .popup--adress .reset-button, .popup--adress-edit .reset-button {
@@ -1865,6 +1927,12 @@ header .loginOn .cart {
           transform: translateY(-5px);
   -webkit-box-shadow: 0 5px #E1BBA5;
           box-shadow: 0 5px #E1BBA5;
+}
+
+@media screen and (max-width: 1024px) {
+  .popup--adress .reset-button, .popup--adress-edit .reset-button {
+    display: none;
+  }
 }
 
 .popup--adress .close-button, .popup--adress-edit .close-button {
@@ -2014,7 +2082,6 @@ header .loginOn .cart {
   .button {
     font-size: 14px;
     line-height: 18px;
-    padding: 10px 20px;
   }
 }
 
@@ -2746,6 +2813,12 @@ header .loginOn .cart {
   margin-left: 0;
 }
 
+@media screen and (max-width: 1024px) {
+  .profile-form input {
+    width: 100%;
+  }
+}
+
 .profile-form button {
   background: #BDBDBD;
   border: none;
@@ -2804,6 +2877,16 @@ hr {
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .adress-row {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  .adress-row button {
+    display: none;
+  }
+}
+
 .adress-row p {
   text-decoration: underline;
   -webkit-text-decoration-style: dotted;
@@ -2815,6 +2898,12 @@ hr {
   color: #2E6E9F;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .adress-row p {
+    text-decoration: none;
+  }
 }
 
 .adress-row hr {
@@ -2833,6 +2922,18 @@ hr {
   font-weight: bold;
   margin-bottom: 40px;
   font-family: "Tahoma", "Arial", sans-serif;
+}
+
+@media screen and (max-width: 1024px) {
+  .balance table .auction-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .balance table .auction {
@@ -2871,8 +2972,29 @@ hr {
   height: 46px;
 }
 
+@media screen and (max-width: 1024px) {
+  .payments-history table tr {
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 10px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 20px 0;
+    text-align: left;
+  }
+}
+
 .payments-history table tr:nth-child(odd) {
   background-color: rgba(225, 187, 165, 0.4);
+}
+
+.payments-history table .good-name {
+  padding: 10px 0;
 }
 
 .payments-history table .good-name a {
@@ -2959,6 +3081,16 @@ html body .wrapper > .main-content {
   }
 }
 
+html body .wrapper > .main-content main {
+  padding: 0 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  html body .wrapper > .main-content main {
+    min-height: calc(150vh + 60px);
+  }
+}
+
 html body .wrapper > .main-content main h1 {
   font-size: 34px;
   line-height: 41px;
@@ -2968,6 +3100,12 @@ html body .wrapper > .main-content main h1 {
   html body .wrapper > .main-content main h1 {
     font-size: 28px;
     line-height: 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html body .wrapper > .main-content main h1 {
+    margin: 20px 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,48 +1,22 @@
+Vue.component('adresses', {
+  template: `
+  <div>
+    <add-adress></add-adress>
+    <edit-address></edit-address>
+    <adresses-list></adresses-list>
+  <div>
+`
+})
+
 Vue.component("adresses-list", {
   template: `
     <div>        
-        <span class="adress-row" v-for="(adress, index) in adresses">
-            <p @click="adressEditActive = true"> {{ adress.position }} </p>
-            <button type="button" @click="deleteAdress(index)" class="white-button">Удалить</button>
-            <hr>
-        </span>
-        <button type="button" class="button" @click="adressActive = true">Добавить адрес</button>
-        <div v-if="adressActive" class="popup popup--adress">
-            <p>Добавить адрес</p>
-            <button class="close-button" type="button" aria-label="Закрыть окно" @click="adressActive = !adressActive"></button>
-            <form method="post" action="#">
-                <select id="country" v-model="country">
-                    <option value="Russia" selected>Россия</option>
-                    <option value="China">China</option>
-                    <option value="USA">USA</option>
-                </select>
-                <input id="index" v-model="index" type="text" placeholder="Индекс" autocomplete="on">
-                <input id="city" v-model="city" type="text" placeholder="Город" autocomplete="on">
-                <input id="street" v-model="street" type="text" placeholder="Улица" autocomplete="on">
-                <input id="building" v-model="building" type="text" placeholder="Дом/Корпус/Строение" autocomplete="on">
-                <input id="apartment" v-model="apartment" type="text" placeholder="Квартира" autocomplete="on">
-                <button type="submit" @click.prevent="addAdress" class="button">Добавить</button>
-                <button type="reset" class="reset-button white-button">Отменить</button>
-            </form>
-        </div>
-        <div v-if="adressEditActive" class="popup popup--adress-edit">
-            <p>Редактировать адрес</p>
-            <button class="close-button" type="button" aria-label="Закрыть окно" @click="adressEditActive = false"></button>
-            <form method="post" action="#">
-                <select id="country" v-model="country">
-                    <option value="Russia" selected>Россия</option>
-                    <option value="China">China</option>
-                    <option value="USA">USA</option>
-                </select>
-                <input id="index" v-model="index" type="text" placeholder="Индекс" autocomplete="on">
-                <input id="city" v-model="city" type="text" placeholder="Город" autocomplete="on">
-                <input id="street" v-model="street" type="text" placeholder="Улица" autocomplete="on">
-                <input id="building" v-model="building" type="text" placeholder="Дом/Корпус/Строение" autocomplete="on">
-                <input id="apartment" v-model="apartment" type="text" placeholder="Квартира" autocomplete="on">
-                <button type="submit" @click.prevent="editAdress" class="button">Сохранить</button>
-                <button type="reset" class="reset-button white-button">Отменить</button>
-            </form>
-        </div>
+      <span class="adress-row" v-for="(adress, index) in adresses">
+        <p @click="openEditAdress"> {{ adress.position }} </p>
+        <button type="button" @click="deleteAdress(index)" class="white-button">Удалить</button>
+        <hr>
+      </span>
+      <button type="button" class="button" @click="openAddAdress">Добавить адрес</button>
     </div>
 `,
   data: function () {
@@ -57,14 +31,6 @@ Vue.component("adresses-list", {
             "690015, Россия, г. Владивосток, ул Надибаидзе, д. 125, кв. 1956",
         },
       ],
-      adressActive: false,
-      adressEditActive: false,
-      index: null,
-      country: null,
-      city: null,
-      street: null,
-      building: null,
-      apartment: null,
     };
   },
   methods: {
@@ -83,8 +49,74 @@ Vue.component("adresses-list", {
       };
       this.adresses.splice(index, 1, editedAdress);
     },
+    openAddAdress() {
+      document.querySelector('#addAdress').style.display = 'block'
+    },
+    openEditAdress() {
+      document.querySelector('#editAdress').style.display = 'block'
+    }
   },
 });
+
+Vue.component('add-adress', {
+  template: `
+            <div class="overlay" id="addAdress" @click.self="closeModal">
+              <div class="popup popup--adress">
+                <p>Добавить адрес</p>
+                <button class="close-button" type="button" aria-label="Закрыть окно" @click="closeModal"></button>
+                <form method="post" action="#">
+                  <select>
+                    <option value="Russia" selected>Россия</option>
+                    <option value="China">China</option>
+                    <option value="USA">USA</option>
+                  </select>
+                  <input class="index" type="text" placeholder="Индекс" autocomplete="on">
+                  <input class="city" type="text" placeholder="Город" autocomplete="on">
+                  <input class="street" type="text" placeholder="Улица" autocomplete="on">
+                  <input class="building" type="text" placeholder="Дом/Корпус/Строение" autocomplete="on">
+                  <input class="apartment" type="text" placeholder="Квартира" autocomplete="on">
+                  <button type="submit"  class="button">Добавить</button>
+                  <button type="reset" class="reset-button white-button">Отменить</button>
+                </form>
+              </div>
+            </div>
+  `,
+  methods: {
+    closeModal() {
+      this.$el.style.display = 'none'
+    }
+  }
+})
+
+Vue.component('edit-address',{
+  template: `
+              <div class="overlay" id="editAdress" @click.self="closeModal">                
+                <div class="popup popup--adress-edit">
+                  <p>Редактировать адрес</p>
+                  <button class="close-button" type="button" aria-label="Закрыть окно" @click="closeModal"></button>
+                  <form method="post" action="#">
+                    <select>
+                      <option value="Russia" selected>Россия</option>
+                      <option value="China">China</option>
+                      <option value="USA">USA</option>
+                    </select>
+                    <input class="index" type="text" placeholder="Индекс" autocomplete="on">
+                    <input class="city" type="text" placeholder="Город" autocomplete="on">
+                    <input class="street" type="text" placeholder="Улица" autocomplete="on">
+                    <input class="building" type="text" placeholder="Дом/Корпус/Строение" autocomplete="on">
+                    <input class="apartment" type="text" placeholder="Квартира" autocomplete="on">
+                    <button type="submit"  class="button">Сохранить</button>
+                    <button type="reset" class="reset-button white-button">Отменить</button>
+                  </form>
+                </div>
+              </div>
+    `,
+    methods: {
+      closeModal() {
+        this.$el.style.display = 'none'
+      }
+    }
+})
 
 new Vue({ el: "#app" });
 

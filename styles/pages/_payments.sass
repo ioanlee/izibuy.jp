@@ -7,6 +7,10 @@
         font-weight: bold
         margin-bottom: 40px
         font-family: "Tahoma", "Arial", sans-serif
+        .auction-wrapper
+            @media screen and (max-width: 1024px)
+                display: flex
+                flex-direction: column
         .auction
             color: $purple
             text-decoration: underline
@@ -31,9 +35,18 @@
             color: #757575
         tr
             height: 46px
+            @media screen and (max-width: 1024px)
+                height: auto
+                display: flex
+                flex-wrap: wrap
+                gap: 10px
+                justify-content: space-between
+                margin: 20px 0
+                text-align: left
         tr:nth-child(odd)
             background-color: rgba(225, 187, 165, 0.4)
         .good-name
+            padding: 10px 0
             a
                 color: $purple
                 &:hover

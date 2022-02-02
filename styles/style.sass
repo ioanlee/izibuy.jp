@@ -25,7 +25,7 @@
 html
     scroll-behavior: smooth
     font-family: "KievitPro-Regular", "Arial", sans-serif
-
+    
     body
         box-sizing: border-box
         min-height: 100vh
@@ -51,8 +51,7 @@ html
             & > .main-content
                 display: flex
                 flex-direction: column
-                width: 100%
-                // max-width: 1400px
+                width: 100%                
                 height: 100%
                 margin-left: 350px
                 padding: 0 40px 40px
@@ -65,10 +64,9 @@ html
                     padding: 20px 0
 
                 main
-                    // display: flex
-                    // flex-wrap: wrap
-                    // justify-content: space-between
-                    // gap: 20px
+                    padding: 0 10px
+                    @media screen and (max-width: 1024px)
+                        min-height: calc(150vh + 60px)
 
                     h1
                         font-size: 34px
@@ -76,3 +74,6 @@ html
                         @media screen and (max-width: 1440px)
                             font-size: 28px
                             line-height: 30px
+                        @media screen and (max-width: 1024px)
+                            margin: 20px 0
+                        

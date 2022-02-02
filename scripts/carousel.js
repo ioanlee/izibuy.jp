@@ -1,11 +1,7 @@
-
-
-document.addEventListener('DOMContentLoaded', function() {
   const pageWidth = document.body.clientWidth;
   const mobileWidth = 1024
 
   if (pageWidth > mobileWidth) {
-
     let slideIndex = 0;
     let slideIndexCurrent = 0;
     showSlides();
@@ -59,6 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-})
+
 
 
