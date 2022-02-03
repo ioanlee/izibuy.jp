@@ -57,6 +57,7 @@ Vue.component('sidebar-catalog', {
         methods: {
             openSubCategory() {                       
                 event.target.nextElementSibling.classList.toggle('sub-category--opened')
+                document.querySelector('.main-content').classList.toggle('zindex')
             },
             closeCatalog() {
                 document.querySelector('.main-content').style.display = "block"

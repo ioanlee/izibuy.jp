@@ -2,13 +2,13 @@
     flex-direction: column
     border-width: 0 2px
     background: $lightbrown
-    overflow-y: scroll
-    position: fixed
+    overflow: visible
+    position: sticky
     display: flex
     padding: 70px 0 0 18px
     height: 100%
     border: 2px solid $brown
-    width: 350px
+    width: 310px
     gap: 20px
     scrollbar-width: none
     & > *:last-child
@@ -16,9 +16,9 @@
     &::-webkit-scrollbar
         width: 0
     @media screen and (max-width: 1600px)
-        width: 300px
+        min-width: 300px
     @media screen and (max-width: 1440px)
-        width: 200px
+        min-width: 200px
     @media screen and (max-width: 1024px)
         display: none
         width: 100%
@@ -105,6 +105,7 @@
             padding: 9px
             color: black
             display: block
+            padding-right: 0
             &:hover
                 box-shadow: inset -80px 0 0 0 $brown
                 transition: .1s
@@ -115,14 +116,34 @@
             margin-left: 10px
 
 
-        .category              
+        .category
+            position: relative             
             .sub-category
                 display: flex
-                flex-direction: column
-                padding-left: 20px
+                flex-direction: column  
+                padding-left: 20px              
                 display: none
+                @media screen and (min-width: 1025px)
+                    position: absolute
+                    left: 100%
+                    top: 0
+                    z-index: 1000
+                    background-color: #f6ebe4
+                    padding: 0 0 0 10px
+                    width: 250px
             .sub-category--opened
                 display: block
+                .next-sub-category-wrapper
+                    
+                    .next-sub-category
+                        @media screen and (min-width: 1025px)
+                            position: absolute
+                            top: 0
+                            left: 100%
+                            background-color: #f6ebe4
+                            padding: 0 0 0 10px
+                            width: 250px
+
 
 
     .filters
