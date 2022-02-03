@@ -1,12 +1,12 @@
-Vue.component('adresses', {
+Vue.component("adresses", {
   template: `
   <div>
     <add-adress></add-adress>
     <edit-address></edit-address>
     <adresses-list></adresses-list>
   <div>
-`
-})
+`,
+});
 
 Vue.component("adresses-list", {
   template: `
@@ -50,15 +50,15 @@ Vue.component("adresses-list", {
       this.adresses.splice(index, 1, editedAdress);
     },
     openAddAdress() {
-      document.querySelector('#addAdress').style.display = 'block'
+      document.querySelector("#addAdress").style.display = "block";
     },
     openEditAdress() {
-      document.querySelector('#editAdress').style.display = 'block'
-    }
+      document.querySelector("#editAdress").style.display = "block";
+    },
   },
 });
 
-Vue.component('add-adress', {
+Vue.component("add-adress", {
   template: `
             <div class="overlay" id="addAdress" @click.self="closeModal">
               <div class="popup popup--adress">
@@ -83,12 +83,12 @@ Vue.component('add-adress', {
   `,
   methods: {
     closeModal() {
-      this.$el.style.display = 'none'
-    }
-  }
-})
+      this.$el.style.display = "none";
+    },
+  },
+});
 
-Vue.component('edit-address',{
+Vue.component("edit-address", {
   template: `
               <div class="overlay" id="editAdress" @click.self="closeModal">                
                 <div class="popup popup--adress-edit">
@@ -111,12 +111,12 @@ Vue.component('edit-address',{
                 </div>
               </div>
     `,
-    methods: {
-      closeModal() {
-        this.$el.style.display = 'none'
-      }
-    }
-})
+  methods: {
+    closeModal() {
+      this.$el.style.display = "none";
+    },
+  },
+});
 
 new Vue({ el: "#app" });
 

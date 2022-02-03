@@ -1,5 +1,5 @@
-Vue.component('bet-popup', {
-    template: `
+Vue.component("bet-popup", {
+  template: `
     <div class="overlay" @click.self="closeModal">
         <div class="popup popup--bet">
             <button class="close-button" type="button" aria-label="Закрыть окно" @click="closeModal"></button>
@@ -31,29 +31,26 @@ Vue.component('bet-popup', {
             </form>         
         </div>
     </div>
-` ,
-    data: function () {
-        return {
-
-        }
+`,
+  data: function () {
+    return {};
+  },
+  methods: {
+    closeModal: function () {
+      document.getElementById("betPopup").style.display = "none";
     },
-    methods: {
-        closeModal: function () {
-            document.getElementById('betPopup').style.display = 'none'
-        },
-        addToCart() {
-            const headerCartIcon = document.querySelector('#cart-icon')
-            if (headerCartIcon.classList.contains('cart--active')) {
-                document.getElementById('betPopup').style.display = 'none'
-            } else {
-                headerCartIcon.classList.add('cart--active')
-                document.getElementById('betPopup').style.display = 'none'
-            }
-        }
-    }
-})
+    addToCart() {
+      const headerCartIcon = document.querySelector("#cart-icon");
+      if (headerCartIcon.classList.contains("cart--active")) {
+        document.getElementById("betPopup").style.display = "none";
+      } else {
+        headerCartIcon.classList.add("cart--active");
+        document.getElementById("betPopup").style.display = "none";
+      }
+    },
+  },
+});
 
-
-new Vue({ el: '#betPopup' })
+new Vue({ el: "#betPopup" });
 
 //В кнопке сделать ставку заменить click на submit, чтобы значок на корзину навешивался по успешно сделанной ставке и отправленных данных на сервер

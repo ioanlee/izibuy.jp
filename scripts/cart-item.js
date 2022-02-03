@@ -19,7 +19,8 @@ Vue.component("cart-item-win", {
   },
   methods: {
     checkoutOrder() {
-      document.querySelector("#checkout-order-container").style.display = "block";
+      document.querySelector("#checkout-order-container").style.display =
+        "block";
     },
   },
 });

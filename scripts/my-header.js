@@ -1,5 +1,5 @@
-Vue.component('my-header', {
-    template: ` <div ref="header" class="header loginOn">                    
+Vue.component("my-header", {
+  template: ` <div ref="header" class="header loginOn">                    
                     <nav id="nav">
                         <a href="../pages/404.html">О компании</a>
                         <a href="../pages/payments.html">Оплата</a>
@@ -77,53 +77,48 @@ Vue.component('my-header', {
                                 <a href="" @click.prevent="loginOff">Выход</a>
                             </div>
                         </div>
-
-                    </div>     
-                </div>               
+                    </div>
+                </div>
 `,
 
-    data: function() {
-        return {
-            
-        }
+  data: function () {
+    return {};
+  },
+  methods: {
+    openModal() {
+      if (this.$refs.header.classList.contains("loginOn")) {
+        this.$refs.userNav.classList.toggle("user-nav--opened");
+      } else {
+        document.getElementById("loginPopup").style.display = "block";
+      }
     },
-    methods: {
-        openModal() {            
-            if (this.$refs.header.classList.contains('loginOn')) {
-                this.$refs.userNav.classList.toggle('user-nav--opened')
-            } else {
-                document.getElementById('loginPopup').style.display = 'block'
-            }
-        },
-        loginOff() {
-            this.$refs.header.classList.remove('loginOn')
-            this.$refs.profile.classList.remove('profile--loginOn')
-            this.$refs.userNav.classList.remove('user-nav--opened')
-        },
-        openCatalog() {
-            document.querySelector('.main-content').style.display = "none"
-            document.querySelector('.sidebar').style.display = "block"
-        }
-    }
-})
+    loginOff() {
+      this.$refs.header.classList.remove("loginOn");
+      this.$refs.profile.classList.remove("profile--loginOn");
+      this.$refs.userNav.classList.remove("user-nav--opened");
+    },
+    openCatalog() {
+      document.querySelector(".main-content").style.display = "none";
+      document.querySelector(".sidebar").style.display = "block";
+    },
+  },
+});
 
-new Vue({ el: '#app-header' })
+new Vue({ el: "#app-header" });
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    const header = document.querySelector('.header')
-    const pageWidth = document.body.clientWidth;
-    const mobileWidth = 1024
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector(".header");
+  const pageWidth = document.body.clientWidth;
+  const mobileWidth = 1024;
 
-    if (pageWidth > mobileWidth) {
-        
-        window.addEventListener('scroll', function() {
-            if (scrollY > 100) {
-                header.style.transform =  'translateY(-60px)'
-                header.style.transition = '0.6s'
-            } else {
-                header.style.transform =  'translateY(0)'
-            }
-        }) 
-    }
-})
+  if (pageWidth > mobileWidth) {
+    window.addEventListener("scroll", function () {
+      if (scrollY > 100) {
+        header.style.transform = "translateY(-60px)";
+        header.style.transition = "0.6s";
+      } else {
+        header.style.transform = "translateY(0)";
+      }
+    });
+  }
+});

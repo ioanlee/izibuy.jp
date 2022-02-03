@@ -29,10 +29,14 @@
         td
             min-width: 100px
             vertical-align: middle
+            @media screen and (max-width: 1024px)
+                order: 1
         th
             min-width: 100px
             vertical-align: middle
             color: #757575
+            @media screen and (max-width: 1024px)
+                order: 2
         tr
             height: 46px
             @media screen and (max-width: 1024px)
@@ -43,11 +47,17 @@
                 justify-content: space-between
                 margin: 20px 0
                 text-align: left
+                padding: 15px 10px
         tr:nth-child(odd)
             background-color: rgba(225, 187, 165, 0.4)
         .good-name
             padding: 10px 0
+            @media screen and (max-width: 1024px)
+                order: 3
             a
                 color: $purple
                 &:hover
                     color: $blue
+        .operation
+            @media screen and (max-width: 1024px)
+                order: 3

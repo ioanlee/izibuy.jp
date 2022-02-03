@@ -9,7 +9,7 @@ Vue.component("favorite-item", {
                 <span>Осталось 3 минуты</span>
                 <span>Текущая ставка 62 000р</span>
             </div>
-            <a href="../pages/item.html">[XX44]Windows11 or Windows10[ASUS GL752VW]Core i7-6700HQ/ новый товар SSD 240GB/GTX 960M/ память 16GB/Web камера /Office2019/BluRay</a>
+            <a href="../pages/item.html">[XX44]Windows11 or Windows10[ASUS GL752VW]Core i7-6700HQ</a>
             <div class="button-wrapper">
                 <button @click="makeBet" type="button" class="button">Сделать ставку</button>
                 <button type="button" class="white-button">Удалить</button>
