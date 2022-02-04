@@ -9,7 +9,7 @@ Vue.component('sidebar-catalog', {
                     </a>
                     <input type="search" name="" id="" placeholder="найти">
                 </div>            
-                <details class="catalog" open>
+                <details ref="catalog" class="catalog" open>
                     <summary class="catalog-summary"></summary>
                     <div class="category" v-for="category in categorys">
                         <a class="catalog-item" href="../pages/catalog.html" @click.prevent="openSubCategory">{{ category }}</a>
@@ -24,8 +24,7 @@ Vue.component('sidebar-catalog', {
             </div>
 `,
         data: function() {
-            return {
-                catalogItemClicked : false,
+            return {                
                 categorys: [
                             'Компьютеры',
                             'Электроника', 
@@ -55,9 +54,18 @@ Vue.component('sidebar-catalog', {
             }
         },
         methods: {
-            openSubCategory() {                       
-                event.target.nextElementSibling.classList.toggle('sub-category--opened')
-                document.querySelector('.main-content').classList.toggle('zindex')
+            openSubCategory() {                
+                this.$refs.catalog.querySelectorAll('.sub-category').forEach((item) => {
+                    item.classList.remove('sub-category--opened')
+                })
+                event.target.nextElementSibling.classList.add('sub-category--opened')
+                document.querySelector('.main-content').classList.add('zindex')
+            },
+            closeSubCategory() {                
+                if (event.target.nextElementSibling.classList.contains('sub-category--opened')) {
+                    event.target.nextElementSibling.classList.remove('sub-category--opened')
+                    document.querySelector('.main-content').classList.remove('zindex')
+                }
             },
             closeCatalog() {
                 document.querySelector('.main-content').style.display = "block"
@@ -69,8 +77,8 @@ Vue.component('sidebar-catalog', {
 Vue.component('next-sub-category', {
     template: `
             <div class="next-sub-category-wrapper">
-                <a href="" class="catalog-item" href="../pages/catalog.html" @click.prevent="nextSubCategoryClicked = !nextSubCategoryClicked">Подкатегория</a>
-                <div class="next-sub-category" v-if="nextSubCategoryClicked">
+                <a href="" class="catalog-item" href="../pages/catalog.html" @click.prevent="openNextSubCategory">Подкатегория</a>
+                <div class="next-sub-category">
                     <a href="" class="catalog-item sub-catalog-item" href="../pages/catalog.html">Подкатегория #2</a>
                     <a href="" class="catalog-item sub-catalog-item" href="../pages/catalog.html">Подкатегория #2</a>
                     <a href="" class="catalog-item sub-catalog-item" href="../pages/catalog.html">Подкатегория #2</a>
@@ -80,8 +88,16 @@ Vue.component('next-sub-category', {
     `,
     data: function() {
         return {
-            nextSubCategoryClicked: false
+            
         }
+    },
+    methods: {
+        openNextSubCategory() {                        
+            document.querySelectorAll('.next-sub-category').forEach((item) => {
+                item.classList.remove('next-sub-category--opened')
+            })            
+            event.target.nextElementSibling.classList.add('next-sub-category--opened')            
+        },
     }
 })
 
@@ -170,3 +186,21 @@ Vue.component('sidebar-nav', {
 })
 
 new Vue({ el: '#sidebar-container' })
+
+document.addEventListener('DOMContentLoaded', () => {
+    const wrapper = document.querySelector('.wrapper')
+    const main = document.querySelector('.main-content')
+    const categorys = document.querySelectorAll('.sub-category')
+    const subCategorys = document.querySelectorAll('.next-sub-category')
+    window.addEventListener('click', () => {
+        if (event.target == wrapper) {
+            categorys.forEach((item) => {
+                item.classList.remove('sub-category--opened')                
+            })
+            subCategorys.forEach((item) => {
+                item.classList.remove('next-sub-category--opened')
+            })
+            main.classList.remove('zindex')
+        }
+    })
+})

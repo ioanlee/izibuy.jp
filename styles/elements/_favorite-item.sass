@@ -6,12 +6,22 @@
     @media screen and (max-width: 1024px)
         grid-template-columns: 150px auto
         grid-gap: 10px
+        min-height: 170px
+        border: 2px solid #E1BBA5
+        border-radius: 5px 5px 0 0
+        overflow: hidden
+        padding-top: 5px
+        hr
+            display: none
+    .thumbnail-wrapper
+        img           
+            max-height: 120px 
     .info-wrapper
         display: flex
         flex-direction: column
         @media screen and (max-width: 1024px)
             position: relative
-            padding-bottom: 50px
+            padding-bottom: 40%
         .timer
             font-family: "Tahoma", "Arial", sans-serif
             font-style: normal
@@ -26,9 +36,12 @@
                 flex-direction: column
                 font-size: 11px
                 line-height: 13px
+                order: 2
 
             span
                 margin-right: 50px
+                @media screen and (max-width: 1024px)
+                    margin: 0
         a
             font-weight: normal
             font-size: 25px
@@ -40,18 +53,20 @@
             @media screen and (max-width: 1440px)
                 font-size: 21px
                 line-height: 20px
-            @media screen and (max-width: 1440px)
+            @media screen and (max-width: 1024px)
                 font-size: 15px
                 line-height: 16px
+                margin: 0 0 10px 0
         .button-wrapper
             display: flex
             justify-content: space-between
             max-height: 50px
             @media screen and (max-width: 1024px)
                 position: absolute
-                bottom: 36px
-                left: -150px
-                right: 0
+                bottom: 8px
+                left: -155px
+                right: 5px
+                
 
     hr
         grid-column: span 2

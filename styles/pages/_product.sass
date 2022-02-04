@@ -6,9 +6,15 @@
     .close-button
         display: none
 
-    h1
+    .product-title
         width: 100%
         margin-bottom: 40px
+        font-family: 'Tahoma', "Arial", sans-serif
+        font-size: 26px
+        color: #363636
+        @media screen and (max-width: 1024px)
+            font-size: 19px
+            margin-block-end: 20px
 
     .product-photos
         border-radius: 7px
@@ -20,8 +26,9 @@
         height: 580px
         margin-right: 2%
         @media screen and (max-width: 1024px)
-            height: 450px
+            height: auto
             width: 100%
+            
 
     .thumbnails-wrapper
         width: 100%
@@ -35,6 +42,13 @@
             justify-content: space-between
             img
                 margin: 0
+        @media screen and (max-width: 1024px)
+            flex-direction: row
+            overflow: scroll
+            flex-wrap: nowrap
+            img
+                width: 140px
+                height: 110px
 
     .current
         width: 100%
@@ -50,6 +64,9 @@
 
     .product-desc
         position: relative
+        @media screen and (max-width: 1024px)
+            display: flex
+            flex-direction: column-reverse
         table
             font-style: normal
             font-weight: normal
@@ -57,6 +74,9 @@
             text-align: left
             border-spacing: 15px
             border-collapse: separate
+            @media screen and (max-width: 1024px)
+                font-size: 15px
+                border-spacing: 0 15px
             th
                 margin-right: 20px
         .logo
@@ -66,10 +86,14 @@
     padding: 80px 0 40px 0
     font-size: 17px
     line-height: 20px
+    @media screen and (max-width: 1024px)
+        padding: 20px 0
 
     p
         margin-bottom: 30px
         max-width: 60%
+        @media screen and (max-width: 1024px)
+            max-width: 100%
 
 .similar-goods,
 .viewed-goods
@@ -100,7 +124,9 @@
         100%
             transform: rotate(360deg) translateX(-50%) translateY(-50%)
     @media screen and (max-width: 1024px)
-        top: 80%
+        top: 100%
+    .product-desc
+        padding-top: 20px
     .product-title
         font-size: 25px
         margin-bottom: 20px

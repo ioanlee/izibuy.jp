@@ -2,13 +2,13 @@ Vue.component("cart-item-win", {
   template: `
     <div class="cart-item">
         <div class="thumbnail-wrapper">
-            <img src="../images/img-item.jpg" height="160" width="170" alt="">
+            <img src="../images/item/macbook-win.jpeg" height="160" width="170" alt="">
         </div>
         <div class="info-wrapper">
             <div class="timer">
                 <span>Вы выиграли лот за 62 000р</span>               
             </div>
-            <a href="../pages/item.html">[XX44]Windows11 or Windows10[ASUS GL752VW]Core i7-6700HQ/ новый товар SSD 240GB/GTX 960M/ память 16GB/Web камера /Office2019/BluRay</a>
+            <a href="../pages/item.html">Apple MacBook Pro 13" (M1, 2020) 8 ГБ, 512 ГБ SSD, Touch Bar, «серый космос»</a>
             <button @click="checkoutOrder" type="button" class="button">Оформить доставку</button>
         </div>
         <hr>
@@ -29,17 +29,17 @@ Vue.component("cart-item", {
   template: `
     <div class="cart-item">
         <div class="thumbnail-wrapper">
-            <img src="../images/img-item.jpg" height="160" width="170" alt="">
+            <img src="../images/item/macbook.jpg" height="160" width="170" alt="">
         </div>
         <div class="info-wrapper">
             <div class="timer">
                 <span>Осталось 8 минут</span>               
             </div>
-            <a href="../pages/item.html">[XX44]Windows11 or Windows10[ASUS GL752VW]Core i7-6700HQ/ новый товар SSD 240GB/GTX 960M/ память 16GB/Web камера /Office2019/BluRay</a>
+            <a href="../pages/item.html">Apple MacBook Air (M1, 2020) 8 ГБ, 256 ГБ SSD, золотой</a>
             <div class="button-wrapper">
-                <span>Текущая ставка: 62 000р (Моя)</span>
-                <button type="button" class="text-button" @click="makeMaxBet">Максимальная ставка: 70 000р</button>
-                <button type="button" class="text-button" @click="makeSniperBet">Снайперская ставка: 72 000р</button>
+                <span>Ставка: 62 000р (Моя)</span>
+                <button type="button" class="text-button max-bet" @click="makeMaxBet">Максимальная ставка: 70 000р</button>
+                <button type="button" class="text-button snipe-bet" @click="makeSniperBet">Снайперская ставка: 72 000р</button>
             </div>
         </div>
         <hr>

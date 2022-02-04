@@ -2,7 +2,7 @@ Vue.component("favorite-item", {
   template: `
     <div class="favorite-item">
         <div class="thumbnail-wrapper">
-            <img src="../images/img-item.jpg" height="160" width="170" alt="">
+            <img src="../images/item/macbook.jpg" height="160" width="170" alt="">
         </div>
         <div class="info-wrapper">
             <div class="timer">

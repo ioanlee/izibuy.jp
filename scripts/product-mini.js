@@ -2,7 +2,7 @@ Vue.component('product-mini', {
     template: `
     <div class="product">
         <button class="close-button" type="button" aria-label="Закрыть окно" @click="closeModal"></button>
-        <h1 class="product-title">[XX44]Windows11 or Windows10[ASUS GL752VW]Core i7-6700HQ/ новый товар SSD 240GB/GTX 960M/ память 16GB/Web камера /Office2019/BluRay</h1>
+        <p class="product-title">Ноутбук 15.6" Acer A515-55G-52ZS i5-1035G1 Чёрный</p>
         <div class="product-photos">   
             <div class="full-wrapper">
                 <img src="../images/img-item.jpg" alt="full" class="current"></img>
