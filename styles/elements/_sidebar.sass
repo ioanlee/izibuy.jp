@@ -88,7 +88,6 @@
             padding: 8px
             color: $purple
             margin: 10px 0
-
             &::-webkit-details-marker
                 display: none
             &::after
@@ -102,11 +101,7 @@
                 font-size: 18px
 
         &[open] > summary
-            box-shadow: inset -350px 0 0 0 $brown
-            @media screen and (max-width: 1600px)
-                box-shadow: inset -300px 0 0 0 $brown
-            @media screen and (max-width: 1440px)
-                box-shadow: inset -200px 0 0 0 $brown
+            box-shadow: inset -1024px 0 0 0 $brown
 
             &::after
                 content: "Свернуть каталог"

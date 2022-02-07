@@ -831,22 +831,8 @@ header .loginOn .cart {
 }
 
 .sidebar .catalog[open] > summary {
-  -webkit-box-shadow: inset -350px 0 0 0 #E1BBA5;
-          box-shadow: inset -350px 0 0 0 #E1BBA5;
-}
-
-@media screen and (max-width: 1600px) {
-  .sidebar .catalog[open] > summary {
-    -webkit-box-shadow: inset -300px 0 0 0 #E1BBA5;
-            box-shadow: inset -300px 0 0 0 #E1BBA5;
-  }
-}
-
-@media screen and (max-width: 1440px) {
-  .sidebar .catalog[open] > summary {
-    -webkit-box-shadow: inset -200px 0 0 0 #E1BBA5;
-            box-shadow: inset -200px 0 0 0 #E1BBA5;
-  }
+  -webkit-box-shadow: inset -1024px 0 0 0 #E1BBA5;
+          box-shadow: inset -1024px 0 0 0 #E1BBA5;
 }
 
 .sidebar .catalog[open] > summary::after {
@@ -2703,7 +2689,7 @@ header .loginOn .cart {
 @media screen and (max-width: 1024px) {
   .cart-item .info-wrapper {
     position: relative;
-    padding-bottom: 30%;
+    padding-bottom: 120px;
   }
 }
 
@@ -2972,6 +2958,7 @@ header .loginOn .cart {
 }
 
 .product .product-desc table {
+  font-family: 'Tahoma', 'Arial', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 17px;
