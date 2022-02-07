@@ -2187,7 +2187,6 @@ header .loginOn .cart {
     padding: 8px 10px;
     line-height: 18px;
     padding: 13px 10px;
-    margin: 15px 0;
   }
 }
 
@@ -2961,7 +2960,7 @@ header .loginOn .cart {
   font-family: 'Tahoma', 'Arial', sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 17px;
+  font-size: 14px;
   text-align: left;
   border-spacing: 15px;
   border-collapse: separate;
@@ -3070,10 +3069,6 @@ header .loginOn .cart {
     -webkit-box-shadow: none;
             box-shadow: none;
   }
-}
-
-.product-thumb .product-desc {
-  padding-top: 20px;
 }
 
 .product-thumb .product-title {
