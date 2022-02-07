@@ -1,6 +1,6 @@
 Vue.component('product-mini', {
     template: `
-    <div class="product">
+    <div ref="product" class="product">
         <button class="close-button" type="button" aria-label="Закрыть окно" @click="closeModal"></button>
         <p class="product-title">Ноутбук 15.6" Acer A515-55G-52ZS i5-1035G1 Чёрный</p>
         <div class="product-photos">   
@@ -88,8 +88,8 @@ Vue.component('product-mini', {
                 </table>
             </div>
             <img class="logo" src="../images/logos/yahoo.svg" alt="Yahoo logo" height="30" width="160">
-            <button type="button" class="button make-bet" @click="makeBet">Сделать ставку</button>
-            <button type="button" class="add-favs" @click="addToFavs">Добавить в избранное</button>
+            <button type="button" class="button make-bet" @click="makeBet();closeModal();">Сделать ставку</button>
+            <button type="button" ref="addFavs" class="add-favs" @click="addToFavs">Добавить в избранное</button>
         </div>
     </div>
 `,
@@ -103,9 +103,13 @@ Vue.component('product-mini', {
             let betPopup = document.getElementById('betPopup')
             betPopup.style.display = 'block'
             betPopup.querySelector('.popup--bet').style.display = "block"
+            
         },
         closeModal() {
-            this.$el.parentNode.parentNode.style.display = "none"
+            const parent = this.$refs.product.parentNode.parentNode.parentNode
+            if (parent.classList.contains('product-thumb')) {
+                parent.style.display = "none"
+            }            
         },
         display() {
             let current = this.$el.querySelector('.current');
@@ -113,7 +117,7 @@ Vue.component('product-mini', {
             current.setAttribute('src', ph);
         },
         addToFavs() {
-            this.$el.querySelector('.add-favs').classList.toggle('added')
+            this.$refs.addFavs.classList.toggle('added')
             const headerFavoriteIcon = document.querySelector('#favorite-icon')
             if (headerFavoriteIcon.classList.contains('favorite--active')) {
                 return

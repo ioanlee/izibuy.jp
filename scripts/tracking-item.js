@@ -13,13 +13,13 @@ Vue.component('tracking-item', {
             <div class="tracking-status">
                 <span class="identificator">№ 2358965</span>
                 <span class="status">В пути по Японии</span>
-                <button type="button" class="button tracking">Отследить</button>
-                <button type="button" class="dropdown" @click="listActive = !listActive">
+                <button type="button" class="button tracking" @click="openList">Отследить</button>
+                <button ref="dropdownButton" type="button" class="dropdown" @click="openList">
                     <svg width="30" height="22" viewBox="0 0 5 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0.602 6.034L3.402 3.556L0.602 1.092L1.176 0.448L4.676 3.514L1.176 6.622L0.602 6.034Z" fill="#8C3E7D"/>
                     </svg>
                 </button>
-                <ul v-if="listActive">
+                <ul ref="dropdownList" class="dropdown-list">
                     <li>
                         <span class="date">01.01.21</span>
                         <span class="track-status">Лот выигран</span>
@@ -87,7 +87,10 @@ Vue.component('tracking-item', {
         }
     },
     methods: {
-
+        openList() {
+            this.$refs.dropdownList.classList.toggle('dropdown-list--open')
+            this.$refs.dropdownButton.classList.toggle('dropdown--rotate')
+        }
     }
 })
 

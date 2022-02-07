@@ -3,7 +3,7 @@ import '../scripts/product-mini.js'
 Vue.component('product-item', {
     template: `
     <div class="item">
-        <div class="product-thumb">
+        <div ref="productThumb" class="product-thumb">
         <div class="overlay" @click.self="closeModal">
             <div class="product-info">
                 <product-mini></product-mini>
@@ -19,14 +19,14 @@ Vue.component('product-item', {
         <span class="price-wrapper">
             <span class="item-price">6 824</span>
             <button class="mobile-zoom" @click="thumb"></button>
-            <button class="fav" @click="addToFavs"></button>            
+            <button ref="fav" class="fav" @click="addToFavs"></button>            
         </span>
         
     </div>
 `,
     methods: {
         addToFavs: function () {
-            this.$el.querySelector('.fav').classList.toggle('added')
+            this.$refs.fav.classList.toggle('added')
             const headerFavoriteIcon = document.querySelector('#favorite-icon')
             if (headerFavoriteIcon.classList.contains('favorite--active')) {
                 return
@@ -35,10 +35,10 @@ Vue.component('product-item', {
             }
         },
         thumb: function () {
-            this.$el.querySelector('.product-thumb').style.display = "block"
+            this.$refs.productThumb.style.display = "block"
         },
         closeModal() {
-            this.$el.querySelector('.product-thumb').style.display = "none"
+            this.$refs.productThumb.style.display = "none"
         }
     }
 })

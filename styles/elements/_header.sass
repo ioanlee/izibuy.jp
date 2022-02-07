@@ -55,7 +55,19 @@ header
 
             img
                 width: 100%
-
+        .search-bar
+            width: 100%
+            position: relative                   
+            &::after
+                
+                position: absolute
+                content: ''
+                width: 28px
+                height: 30px
+                background-image: url(../images/icons/icon_search.svg)
+                background-repeat: no-repeat
+                right: 10px
+                top: 10px
         input[type=search]
             color: $brown
             border: 3px solid $brown

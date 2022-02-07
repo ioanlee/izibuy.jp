@@ -37,18 +37,6 @@ Vue.component("adresses-list", {
     deleteAdress: function (index) {
       this.adresses.splice(index, 1);
     },
-    addAdress: function () {
-      let newAdress = {
-        position: `${this.index} , ${this.country} , г. ${this.city} , ул ${this.street} , д. ${this.building} , кв. ${this.apartment}`,
-      };
-      this.adresses.push(newAdress);
-    },
-    editAdress: function (index) {
-      let editedAdress = {
-        position: `${this.index} , ${this.country} , г. ${this.city} , ул ${this.street} , д. ${this.building} , кв. ${this.apartment}`,
-      };
-      this.adresses.splice(index, 1, editedAdress);
-    },
     openAddAdress() {
       document.querySelector("#addAdress").style.display = "block";
     },

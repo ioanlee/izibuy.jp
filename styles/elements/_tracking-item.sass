@@ -32,7 +32,7 @@
         display: flex
         flex-direction: row
         justify-content: flex-start
-        gap: 100px
+        //gap: 100px
         min-height: 100px
         background-color: rgba(225, 187, 165, 0.4)
         color: black
@@ -40,12 +40,16 @@
         font-weight: bold
         align-items: center
         padding: 0 20px
-        flex-wrap: wrap        
+        flex-wrap: wrap
+        padding: 20px    
         @media screen and (max-width: 1024px)
             gap: 10px
             min-height: fit-content
             padding: 10px
-        ul
+        .identificator
+            margin-right: 7%
+        .dropdown-list
+            display: none
             width: 100%
             .date
                 font-family: 'Tahoma', 'Arial', sans-serif
@@ -75,11 +79,21 @@
                 font-size: 12px
                 line-height: 14px
                 color: #363636
+        .dropdown-list--open
+            display: block
         .dropdown
             border: none
             background: none
+            display: none            
+            @media screen and (max-width: 1024px)
+                display: block
             svg
                 transform: rotate(90deg)
+                transition: 0.4s
+        .dropdown--rotate
+            svg
+                transform: rotate(270deg)
+                transition: 0.4s
         button
             margin-left: auto
         .tracking

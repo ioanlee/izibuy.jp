@@ -156,6 +156,22 @@ header .header__sticky-bar .logo img {
   width: 100%;
 }
 
+header .header__sticky-bar .search-bar {
+  width: 100%;
+  position: relative;
+}
+
+header .header__sticky-bar .search-bar::after {
+  position: absolute;
+  content: '';
+  width: 28px;
+  height: 30px;
+  background-image: url(../images/icons/icon_search.svg);
+  background-repeat: no-repeat;
+  right: 10px;
+  top: 10px;
+}
+
 header .header__sticky-bar input[type=search] {
   color: #E1BBA5;
   border: 3px solid #E1BBA5;
@@ -685,6 +701,17 @@ header .loginOn .cart {
       -ms-flex-align: center;
           align-items: center;
   gap: 20px;
+  position: relative;
+}
+
+.sidebar .closeCatalog::after {
+  position: absolute;
+  content: '';
+  width: 28px;
+  height: 30px;
+  background-image: url(../images/icons/icon_search.svg);
+  background-repeat: no-repeat;
+  right: 50px;
 }
 
 .sidebar .closeCatalog a {
@@ -2174,6 +2201,7 @@ header .loginOn .cart {
     padding: 8px 10px;
     line-height: 18px;
     padding: 13px 10px;
+    margin: 15px 0;
   }
 }
 
@@ -2205,7 +2233,7 @@ header .loginOn .cart {
 
 .add-favs:hover {
   background-image: url("../images/icons/icon_favorites_blue.svg");
-  background-size: 30px 30px;
+  background-size: 27px 27px;
   color: #2E6E9F;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -2213,8 +2241,17 @@ header .loginOn .cart {
 
 @media screen and (max-width: 1024px) {
   .add-favs {
-    background-position: 60px 5px;
+    background-position: 40px 3px;
   }
+}
+
+.added {
+  background-image: url("../images/icons/icons_favorites_purple_fill.svg");
+  display: block;
+}
+
+.added:hover {
+  background-image: url("../images/icons/icons_favorites_purple_fill.svg");
 }
 
 .white-button {
@@ -2345,7 +2382,6 @@ header .loginOn .cart {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  gap: 100px;
   min-height: 100px;
   background-color: rgba(225, 187, 165, 0.4);
   color: black;
@@ -2357,6 +2393,7 @@ header .loginOn .cart {
   padding: 0 20px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding: 20px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -2369,11 +2406,16 @@ header .loginOn .cart {
   }
 }
 
-.tracking-item .tracking-status ul {
+.tracking-item .tracking-status .identificator {
+  margin-right: 7%;
+}
+
+.tracking-item .tracking-status .dropdown-list {
+  display: none;
   width: 100%;
 }
 
-.tracking-item .tracking-status ul .date {
+.tracking-item .tracking-status .dropdown-list .date {
   font-family: 'Tahoma', 'Arial', sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -2383,11 +2425,11 @@ header .loginOn .cart {
   margin-right: 30px;
 }
 
-.tracking-item .tracking-status ul li {
+.tracking-item .tracking-status .dropdown-list li {
   position: relative;
 }
 
-.tracking-item .tracking-status ul li::after {
+.tracking-item .tracking-status .dropdown-list li::after {
   content: "";
   position: absolute;
   width: 20px;
@@ -2397,11 +2439,11 @@ header .loginOn .cart {
   left: 65px;
 }
 
-.tracking-item .tracking-status ul li:last-of-type::after {
+.tracking-item .tracking-status .dropdown-list li:last-of-type::after {
   background-image: url(../images/icons/icon_tracking-last.svg);
 }
 
-.tracking-item .tracking-status ul .track-status {
+.tracking-item .tracking-status .dropdown-list .track-status {
   font-family: 'Kievit Offc Pro', 'Tahoma', sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -2410,14 +2452,34 @@ header .loginOn .cart {
   color: #363636;
 }
 
+.tracking-item .tracking-status .dropdown-list--open {
+  display: block;
+}
+
 .tracking-item .tracking-status .dropdown {
   border: none;
   background: none;
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .tracking-item .tracking-status .dropdown {
+    display: block;
+  }
 }
 
 .tracking-item .tracking-status .dropdown svg {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.tracking-item .tracking-status .dropdown--rotate svg {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .tracking-item .tracking-status button {
@@ -3059,12 +3121,6 @@ header .loginOn .cart {
 .product-thumb .thumb {
   width: 49px;
   height: 49px;
-}
-
-.product-thumb .add-favs {
-  position: absolute;
-  left: -335px;
-  bottom: 10px;
 }
 
 .product-thumb .close-button {
