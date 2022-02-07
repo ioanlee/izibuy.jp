@@ -4,9 +4,12 @@ Vue.component('product-item', {
     template: `
     <div class="item">
         <div class="product-thumb">
+        <div class="overlay" @click.self="closeModal">
             <div class="product-info">
                 <product-mini></product-mini>
             </div>
+        </div>
+
         </div>
         <div class="item-image">
             <img src="../images/img_item_thumbnail.jpg" alt="">
@@ -33,6 +36,9 @@ Vue.component('product-item', {
         },
         thumb: function () {
             this.$el.querySelector('.product-thumb').style.display = "block"
+        },
+        closeModal() {
+            this.$el.querySelector('.product-thumb').style.display = "none"
         }
     }
 })

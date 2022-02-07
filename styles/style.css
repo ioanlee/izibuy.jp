@@ -1128,6 +1128,8 @@ header .loginOn .cart {
   color: #000;
   margin: 20px 0;
   cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 @media screen and (max-width: 1600px) {
@@ -1701,7 +1703,6 @@ header .loginOn .cart {
   position: absolute;
   left: 50%;
   top: 50%;
-  left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 480px;
@@ -2661,7 +2662,7 @@ header .loginOn .cart {
 
 @media screen and (max-width: 1024px) {
   .cart-item .info-wrapper .timer {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 10px;
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -2699,7 +2700,7 @@ header .loginOn .cart {
 
 @media screen and (max-width: 1024px) {
   .cart-item .info-wrapper a {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 16px;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
@@ -2967,20 +2968,17 @@ header .loginOn .cart {
 }
 
 .product-thumb {
-  width: 780px;
-  max-width: 100%;
-  background-color: white;
-  border: 1px solid #E1BBA5;
-  -webkit-box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, 0.2);
-          box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, 0.2);
-  z-index: 1;
   display: none;
+}
+
+.product-thumb .product-info {
   position: absolute;
   top: 50%;
   left: 50%;
-  padding: 20px;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: white;
+  max-width: 780px;
   padding: 20px;
   -webkit-animation-duration: 0.3s;
           animation-duration: 0.3s;
@@ -3011,8 +3009,17 @@ header .loginOn .cart {
 }
 
 @media screen and (max-width: 1024px) {
-  .product-thumb {
-    top: 100%;
+  .product-thumb .product-info {
+    max-width: 100%;
+    min-width: 320px;
+    top: 20px;
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+    -webkit-animation-name: none;
+            animation-name: none;
+    border-radius: 5px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
 }
 
