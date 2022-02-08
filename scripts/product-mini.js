@@ -17,75 +17,51 @@ Vue.component('product-mini', {
             </div>
         </div>
         <div class="product-desc">
-            <div class="text-content">
-                <table>
-                    <tr>
-                        <th>Начало торгов (Jpn):</th>
-                        <td>
-                            <span>2021-10-13 10:44:13</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Конец торгов (Jpn):</th>
-                        <td>
-                            <span>2021-10-13 10:44:13</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Количество:</th>
-                        <td>
-                            <span>1 шт.</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Состояние товара:</th>
-                        <td>
-                            <span>б/у</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Раннее завершение:</th>
-                        <td>
-                            <span>есть</span>
-                        </td>
-                    </tr>                                
-                    <tr>
-                        <th>Авто продление:</th>
-                        <td>
-                            <span>есть</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Стартовая цена:</th>
-                        <td>
-                            <span>12 000 i</span>
-                        </td>
-                    </tr>                                
-                    <tr>
-                        <th>Число ставок:</th>
-                        <td>
-                            <span>24</span>
-                        </td>
-                    </tr>                                
-                    <tr>
-                        <th>Текущая ставка:</th>
-                        <td>
-                            <span>35 000 i</span>
-                        </td>
-                    </tr>                                
-                    <tr>
-                        <th>Блиц цена:</th>
-                        <td>
-                            <span>42 000 i</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Осталось времени:</th>
-                        <td>
-                            <span>6 час 30 мин</span>
-                        </td>
-                    </tr>
-                </table>
+            <div class="text-content">                
+                    <span class="table-row">
+                        <span class="parameter">Начало торгов (Jpn):</span>
+                        <span class="value">2021-10-13 10:44:13</span>
+                    </span>
+                    <span class="table-row">
+                        <span class="parameter">Конец торгов (Jpn):</span>
+                        <span class="value">2021-10-13 10:44:13</span>
+                    </span>
+                    <span class="table-row">
+                        <span class="parameter">Количество:</span>
+                        <span class="value">1 шт.</span>
+                    </span>
+                    <span class="table-row">
+                        <span class="parameter">Состояние товара:</span>
+                        <span class="value">б/у</span>
+                    </span>
+                    <span class="table-row">
+                        <span class="parameter">Раннее завершение:</span>
+                        <span class="value">есть</span>
+                    </span>                                
+                    <span class="table-row">
+                        <span class="parameter">Авто продление:</span>
+                        <span class="value">есть</span>
+                    </span>
+                    <span class="table-row">
+                        <span class="parameter">Стартовая цена:</span>
+                        <span class="value">12 000 i</span>
+                    </span>                                
+                    <span class="table-row">
+                        <span class="parameter">Число ставок:</span>
+                        <span class="value">24</span>
+                    </span>                                
+                    <span class="table-row">
+                        <span class="parameter">Текущая ставка:</span>
+                        <span class="value">35 000 i</span>
+                    </span>                                
+                    <span class="table-row">
+                        <span class="parameter">Блиц цена:</span>
+                        <span class="value">42 000 i</span>
+                    </span>
+                    <span class="table-row">
+                        <span class="parameter">Осталось времени:</span>
+                        <span class="value">6 час 30 мин</span>
+                    </span>                
             </div>
             <img class="logo" src="../images/logos/yahoo.svg" alt="Yahoo logo" height="30" width="160">
             <button type="button" class="button make-bet" @click="makeBet();closeModal();">Сделать ставку</button>
