@@ -10,12 +10,12 @@ Vue.component('my-footer', {
             <a href="https://delomain.com/" class="copyright">© 2021 Разработано Digital Agency “Delomain”</a>
         </div>    
         <span>
-            <a class="logo" href="/">
+            <div class="logo" @click="scrollUp">
                 <picture>
                     <source media="(min-width: 1024px)" srcset="../images/logos/logo_izibuy.svg">
                     <img src="../images/logos/logo_mobile.svg" width="110" height="35" alt="Логотип">
                 </picture>  
-            </a>
+            </div>
             <img width="90" height="20" src="../images/icons/mastercard.svg""></img>
             <img width="90" height="20" src="../images/icons/masterpass.svg""></img>
             <img width="90" height="20" src="../images/icons/mir.svg""></img>
@@ -26,7 +26,12 @@ Vue.component('my-footer', {
 
 
     </div>
-    `
+    `,
+    methods: {
+        scrollUp() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    }
 })
 
 new Vue({ el: "#app-footer" });
