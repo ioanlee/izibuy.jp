@@ -1,0 +1,35 @@
+footer
+    flex: 0 0 auto
+    width: 100%
+    padding: 10px 40px
+    background-color: #f6ebe4
+    @media screen and( max-width: 1024px)
+        margin-top: -400px
+        
+    .footer
+        display: grid
+        grid-template-rows: auto auto
+        @media screen and( max-width: 1024px)
+            grid-template-columns: auto auto
+    a
+        color: black
+        &:hover
+            color: $blue
+    span
+        display: flex
+        flex-direction: row
+        align-items: center
+        @media screen and( max-width: 1024px)
+            flex-direction: column
+        .logo
+            //margin-right: auto
+            img
+                @media screen and( max-width: 1024px)
+                    width: 40px
+    .links
+        display: flex
+        justify-content: space-between
+        margin: 10px 0 0
+        @media screen and( max-width: 1024px)
+            flex-direction: column
+        

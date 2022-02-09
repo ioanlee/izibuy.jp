@@ -111,7 +111,7 @@
         transform: translate(-50%, -50%)
         background-color: white
         max-width: 780px
-        padding: 20px
+        padding: 25px 35px
         animation-duration: 0.3s
         animation-name: slidein
         @keyframes slidein
@@ -127,17 +127,22 @@
             animation-name: none
             border-radius: 5px
             box-shadow: none
+            padding: 20px 15px
     .product
         grid-template-columns: 310px auto
         grid-gap: 10px
+        column-gap: 30px
+
         .text-content
             font-size: 14px
-            padding-top: 20px
+            @media screen and (max-width: 1024px)
+                padding-top: 20px
         .product-title
             font-size: 25px
-            margin-bottom: 20px
+            margin: 10px 0 20px
             @media screen and (max-width: 1024px)
                 font-size: 18px
+                margin: 10px 0
         .logo
             display: none
         .product-photos

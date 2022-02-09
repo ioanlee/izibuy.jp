@@ -13,7 +13,7 @@
 @import elements/_tracking-item
 @import elements/_favorite-item
 @import elements/_cart-item
-
+@import elements/_footer
 @import pages/_catalog
 @import pages/_product
 @import pages/_carousel
@@ -55,23 +55,25 @@ html
                 display: flex
                 flex-direction: column
                 width: 100%                
-                height: 100%
+                //height: 100%
                 //margin-left: 310px
-                padding: 0 40px 40px
+                //padding: 0 40px 40px
                 @media screen and (max-width: 1600px)
                     //margin-left: 300px
                 @media screen and (max-width: 1440px)
                     //margin-left: 200px
                 @media screen and (max-width: 1024px)
                     margin: 0
-                    padding: 20px 0
+                    //padding: 20px 0
 
 
                 main
-                    padding: 0 10px
+                    padding: 0 40px
+                    flex: 1 0 auto
                     @media screen and (max-width: 1024px)
-                        min-height: 150vh 
-                        padding-bottom: 100px
+                        min-height: 150vh                        
+                        padding: 0 10px
+                        padding-bottom: 410px
 
                     h1
                         font-size: 34px

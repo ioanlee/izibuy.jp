@@ -45,7 +45,8 @@ Vue.component('product-item', {
 
 Vue.component('large-banner', {
     template: `
-    <div class="banners-wrapper large-banner">    
+    <div class="banners-wrapper large-banner">
+        <h2 >{{ title }}</h2>    
         <div v-for="item in items" class="banner">
             <img v-bind:src="item.img">
             <p>{{ item.description }}</p>
@@ -64,14 +65,16 @@ Vue.component('large-banner', {
                     description: 'Все для похода',
                     img: './images/banners/hike.jpg'
                 }
-            ]
+            ],
+            title: 'Для активного отдыха'
         }
     }
 })
 
 Vue.component('medium-banner', {
     template: `
-    <div class="banners-wrapper medium-banner">    
+    <div class="banners-wrapper medium-banner">
+        <h2 >{{ title }}</h2>
         <div v-for="item in items" class="banner">
             <img v-bind:src="item.img">
             <p>{{ item.description }}</p>
@@ -94,7 +97,8 @@ Vue.component('medium-banner', {
                     description: 'Косметика',
                     img: './images/banners/asian-girl.jpg'
                 }
-            ]
+            ],
+            title: 'Популярные разделы'
         }
     }
 })
