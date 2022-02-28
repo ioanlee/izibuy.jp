@@ -1,11 +1,11 @@
 Vue.component("my-header", {
   template: ` <div ref="header" class="header loginOn">                    
                     <nav id="nav">
-                        <a href="../pages/about.html">О компании</a>
-                        <a href="../pages/payment.html">Оплата</a>
-                        <a href="../pages/delivery.html">Доставка</a>
-                        <a href="../pages/contacts.html">Контакты</a>
-                        <a href="../pages/help.html">Помощь</a>
+                        <a href="/pages/about.html">О компании</a>
+                        <a href="/pages/help.html">Оплата</a>
+                        <a href="/pages/help.html">Доставка</a>
+                        <a href="/pages/about.html">Контакты</a>
+                        <a href="/pages/help.html">Помощь</a>
                         <a href="" class="currency-select">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="12" fill="#E1BBA5"/>

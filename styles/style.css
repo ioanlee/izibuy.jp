@@ -3633,6 +3633,221 @@ hr {
   }
 }
 
+.about__intro {
+  background-image: url("/images/about-back1.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 700px;
+  color: white;
+  font-size: 34px;
+  line-height: 41px;
+  text-align: center;
+  padding: 22%;
+}
+
+@media screen and (max-width: 1440px) {
+  .about__intro {
+    padding: 5%;
+    min-height: auto;
+  }
+}
+
+.about__intro a img {
+  margin: 30px auto;
+}
+
+.about__features {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5% 10%;
+  margin: 80px 0;
+}
+
+@media screen and (max-width: 1440px) {
+  .about__features {
+    padding: 0;
+  }
+}
+
+.about__features span {
+  text-align: left;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-column-gap: 5%;
+          column-gap: 5%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.about__features span img {
+  grid-row: 1 / -1;
+}
+
+.about__features span p {
+  font-size: 25px;
+}
+
+@media screen and (max-width: 1440px) {
+  .about__features span p {
+    font-size: 18px;
+  }
+}
+
+.about__features span p:first-of-type {
+  font-size: 35px;
+  margin: 0 0 10px 0;
+}
+
+@media screen and (max-width: 1440px) {
+  .about__features span p:first-of-type {
+    font-size: 24px;
+  }
+}
+
+.about__contacts {
+  background-image: url("/images/about-back2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 650px;
+  padding: 5% 3% 3% 52%;
+  font-size: 21px;
+  line-height: 38px;
+  margin: 80px 0;
+}
+
+@media screen and (max-width: 1440px) {
+  .about__contacts {
+    padding: 5%;
+  }
+}
+
+.about__contacts p {
+  margin-bottom: 15px;
+}
+
+.about__delivery {
+  background-image: url(/images/about-back3.png);
+  background-position: 95%, 0;
+  padding: 5% 45% 5% 10%;
+  background-repeat: no-repeat;
+  min-height: 420px;
+}
+
+@media screen and (max-width: 1440px) {
+  .about__delivery {
+    padding: 5%;
+  }
+}
+
+.about__delivery p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.faq {
+  padding: 20px 0;
+}
+
+.faq .faq__list {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 10px;
+  display: none;
+}
+
+.faq .faq__list a {
+  color: #8C3E7D;
+  text-decoration: underline;
+  font-size: 17px;
+  line-height: 22px;
+  position: relative;
+  padding-left: 30px;
+  margin: 3px 0;
+}
+
+.faq .faq__list a:hover {
+  color: #2E6E9F;
+  cursor: pointer;
+}
+
+.faq .faq__list a::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  background-image: url("/images/help.svg");
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.faq .faq__list--open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.faq button {
+  border: none;
+  background: none;
+  color: #2E6E9F;
+  font-size: 23px;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+  margin: 8px 0;
+  position: relative;
+  padding-left: 45px;
+  cursor: pointer;
+}
+
+.faq button:hover {
+  color: #8C3E7D;
+}
+
+.faq button::before {
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  content: "";
+  left: 0;
+  background-repeat: no-repeat;
+}
+
+.faq .button--pay::before {
+  background-image: url("/images/faq-pay.svg");
+}
+
+.faq .button--auccion::before {
+  background-image: url("/images/faq-auccion.svg");
+}
+
+.faq .button--plan::before {
+  background-image: url("/images/faq-plan.svg");
+}
+
+.faq .button--card::before {
+  background-image: url("/images/faq-card.svg");
+}
+
+.faq__text {
+  margin: 40px 0;
+  font-size: 21px;
+}
+
 html {
   scroll-behavior: smooth;
   font-family: "KievitPro-Regular", "Arial", sans-serif;

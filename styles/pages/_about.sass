@@ -1,0 +1,73 @@
+.about__intro
+    background-image: url('/images/about-back1.png')
+    background-size: 100% 100%
+    background-repeat: no-repeat
+    min-height: 700px
+    color: white
+    font-size: 34px
+    line-height: 41px
+    text-align: center
+    padding: 22%
+    @media screen and (max-width: 1440px)
+        padding: 5%
+        min-height: auto
+
+    a
+        img
+            margin: 30px auto
+
+.about__features 
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    padding: 5% 10%
+    margin: 80px 0
+    @media screen and (max-width: 1440px)
+        padding: 0
+    span
+        text-align: left
+        display: grid
+        grid-template-rows: auto auto
+        grid-template-columns: auto auto
+        column-gap: 5%
+        align-content: center
+        img
+            grid-row: 1 / -1
+
+        p
+            font-size: 25px
+            @media screen and (max-width: 1440px)
+                font-size: 18px
+            &:first-of-type
+                font-size: 35px
+                margin: 0 0 10px 0
+                @media screen and (max-width: 1440px)
+                    font-size: 24px
+.about__contacts 
+    background-image: url('/images/about-back2.png')
+    background-size: cover
+    background-repeat: no-repeat
+    min-height: 650px
+    padding: 5% 3% 3% 52%
+    font-size: 21px
+    line-height: 38px
+    margin: 80px 0
+    @media screen and (max-width: 1440px)
+        padding: 5%
+    p
+        margin-bottom: 15px
+
+.about__delivery
+    background-image: url(/images/about-back3.png)
+    background-position: 95%, 0
+    padding: 5% 45% 5% 10%
+    background-repeat: no-repeat
+    min-height: 420px
+    @media screen and (max-width: 1440px)
+        padding: 5%
+    p
+        font-size: 24px
+        margin-bottom: 20px
+
+                
+        

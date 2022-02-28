@@ -1,0 +1,59 @@
+.faq 
+    padding: 20px 0
+    .faq__list        
+        flex-direction: column
+        padding-left: 10px
+        display: none
+        a
+            color: $purple
+            text-decoration: underline
+            font-size: 17px
+            line-height: 22px
+            position: relative
+            padding-left: 30px
+            margin: 3px 0
+            &:hover
+                color: $blue
+                cursor: pointer
+            &::before
+                position: absolute
+                content: ""
+                left: 0
+                background-image: url('/images/help.svg')
+                background-repeat: no-repeat
+                width: 20px
+                height: 20px
+    .faq__list--open
+        display: flex
+    button
+        border: none
+        background: none
+        color: $blue
+        font-size: 23px
+        text-decoration: underline
+        text-decoration-style: dotted
+        margin: 8px 0
+        position: relative
+        padding-left: 45px
+        cursor: pointer
+        &:hover
+            color: $purple
+        &::before
+            position: absolute
+            width: 35px
+            height: 30px
+            content: ""
+            left: 0
+            background-repeat: no-repeat
+    .button--pay
+        &::before
+            background-image: url('/images/faq-pay.svg')
+    .button--auccion
+        &::before
+            background-image: url('/images/faq-auccion.svg')
+    .button--plan
+        &::before
+            background-image: url('/images/faq-plan.svg')
+    .button--card
+        &::before
+            background-image: url('/images/faq-card.svg')
