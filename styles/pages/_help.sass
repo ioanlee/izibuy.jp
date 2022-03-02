@@ -64,18 +64,23 @@
 .faq__form
     display: flex
     flex-direction: column
-    max-width: 55%
+    max-width: 700px
     p
         font-size: 34px
         line-height: 41px
         margin: 25px 0
+        @media screen and (max-width: 700px)
+            font-size: 28px
     input
         border: 3px solid #BDBDBD
         box-sizing: border-box
         border-radius: 5px
         padding: 10px
         font-family: "KievitPro-Regular", "Arial", sans-serif
-        max-width: 30%
+        max-width: 220px
+        width: 100%
+        @media screen and (max-width: 700px)
+            max-width: 500px
     textarea
         border: 3px solid #BDBDBD
         box-sizing: border-box
@@ -84,5 +89,8 @@
         margin: 35px 0
         padding: 10px
         font-family: "KievitPro-Regular", "Arial", sans-serif
+        max-width: 700px
     button
-        max-width: 25%
+        display: inline-block
+        width: fit-content
+        padding: 13px 20px

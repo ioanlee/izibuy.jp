@@ -3856,13 +3856,19 @@ hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 55%;
+  max-width: 700px;
 }
 
 .faq__form p {
   font-size: 34px;
   line-height: 41px;
   margin: 25px 0;
+}
+
+@media screen and (max-width: 700px) {
+  .faq__form p {
+    font-size: 28px;
+  }
 }
 
 .faq__form input {
@@ -3872,7 +3878,14 @@ hr {
   border-radius: 5px;
   padding: 10px;
   font-family: "KievitPro-Regular", "Arial", sans-serif;
-  max-width: 30%;
+  max-width: 220px;
+  width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+  .faq__form input {
+    max-width: 500px;
+  }
 }
 
 .faq__form textarea {
@@ -3884,10 +3897,15 @@ hr {
   margin: 35px 0;
   padding: 10px;
   font-family: "KievitPro-Regular", "Arial", sans-serif;
+  max-width: 700px;
 }
 
 .faq__form button {
-  max-width: 25%;
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 13px 20px;
 }
 
 html {
