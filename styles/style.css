@@ -3848,6 +3848,48 @@ hr {
   font-size: 21px;
 }
 
+.faq__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 55%;
+}
+
+.faq__form p {
+  font-size: 34px;
+  line-height: 41px;
+  margin: 25px 0;
+}
+
+.faq__form input {
+  border: 3px solid #BDBDBD;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: "KievitPro-Regular", "Arial", sans-serif;
+  max-width: 30%;
+}
+
+.faq__form textarea {
+  border: 3px solid #BDBDBD;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  resize: none;
+  margin: 35px 0;
+  padding: 10px;
+  font-family: "KievitPro-Regular", "Arial", sans-serif;
+}
+
+.faq__form button {
+  max-width: 25%;
+}
+
 html {
   scroll-behavior: smooth;
   font-family: "KievitPro-Regular", "Arial", sans-serif;
