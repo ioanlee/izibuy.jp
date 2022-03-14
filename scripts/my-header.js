@@ -30,10 +30,9 @@ Vue.component("my-header", {
                                 <img src="../images/logos/logo_mobile.svg" alt="Логотип">
                             </picture>
                         </a>
-                        <div class="search-bar">
+                        <form class="search-bar" method="POST" action="">
                           <input type="search" name="" id="" placeholder="найти">
-                        </div>
-                        
+                        </form>                        
                         <div class="header__bottom-bar">
                             <a id="catalog-open" href="..pages/catalog" class="mobile-catalog-button" @click.prevent="openCatalog">
                                 <svg width="42" height="32" viewBox="0 0 42 32" fill="none" xmlns="http://www.w3.org/2000/svg">
