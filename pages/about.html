@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <title>Document</title>
+    <script src="../scripts/vue.min.js"></script>
+    <script src="../scripts/index.js"></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div id="sidebar-container" class="sidebar">
+        <sidebar-catalog></sidebar-catalog>
+      </div>
+      <div class="main-content">
+        <header id="app-header">
+          <my-header></my-header>
+        </header>
+        <main id="app">
+          <div id="loginPopup">
+            <login-popup></login-popup>
+          </div>
+          <div id="remindPassPopup">
+            <remind-password-popup></remind-password-popup>
+          </div>
+          <div class="bread-crumbs">
+            <a href="#">О компании</a>
+          </div>
+          <div class="about__intro">
+            <a href="../index.html">
+              <img width="350" height="90" src="/images/logos/Logo01.png" alt="">
+            </a>
+            <h1>Лучший интернет-магазин покупок<br>из Японии</h1>            
+          </div>
+          <div class="about__features">
+            <span>
+              <img src="/images/about-box.svg" width="122" height="135">
+              <p>Более 1 000 000 товаров</p>
+              <p>Каждый сможет найти товар себе<br> по душе</p>
+            </span>
+            <span>
+              <img src="/images/about-planet.svg" width="122" height="135">
+              <p>Доставка по всему миру</p>
+              <p>Мы доставим товар в любую<br> точку земли</p>
+            </span>
+          </div>
+          <div class="about__contacts">
+            <p style="font-size: 46px;">IZIBUY Inc</p>
+            <p style="font-size: 34px;">Адрес</p>
+            <p>Kawaramachi, 1-chōme-7-7,Osaka Sakaisuji L Tower 10F<br> Osaka prefecture, Osaka Chuo Ward<br> 541-0048 Japan<br> 06-4560-4070</p>
+            <p><b style="font-weight: bold;">IZIBUY</b> - компания-посредник, предоставляющая помощь в оформлении заказов на торговых площадках Японии с их последующей пересылкой за ее границы. Покупка товаров с другого конца света может вызывать опасения и тревоги, поэтому мы прилагаем все усилия, чтобы сделать процесс заказа максимально простым и понятным. У нас полмиллиона клиентов в разных уголках земного шара, и мы ежедневно заботимся о том, чтобы языковой барьер не стал препятствием в использовании наших услуг.</p>
+          </div>
+          <div class="about__delivery">
+            <p style="font-size: 38px;">Ваши товары в безопасности</p>
+            <p>У нас есть три склада в Осаке: в г. Кадома, г. Суйта и г. Хигаси-Осака.. После размещения заказа Ваши товары отправят на один из этих складов, где они будут храниться до того времени, пока Вы не решите их отправить. После того, как мы получим от Вас инструкции об отправке, мы упакуем Ваши товары (консолидация разных товаров в одну посылку бесплатная!) и отправим их на Ваш адрес. Мы также предлагаем дополнительную услугу усиления посылки для хрупких товаров и услугу проверки состояния товара, если Вы хотите посмотреть на свой товар перед отправкой.</p>
+          </div>
+        </main>
+        <footer id="app-footer">
+          <my-footer></my-footer>
+        </footer>
+      </div>
+    </div>
+    <script src="../scripts/main.js" type="module"></script>
+  </body>
+</html>

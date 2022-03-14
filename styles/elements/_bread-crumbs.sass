@@ -1,0 +1,26 @@
+.bread-crumbs
+    padding: 20px 0
+    a
+        font-size: 14px
+        line-height: 22px
+        color: #757575
+        position: relative
+        margin-right: 30px
+        @media screen and (max-width: 1024px)
+            color: white
+            background-color: #BDBDBD
+            border-radius: 7px
+            padding: 2px 8px
+        &:hover
+            color: $blue
+        &::after
+            position: absolute
+            content: ""
+            width: 15px
+            height: 15px
+            background-image: url('../images/icons/arrow.svg')
+            background-repeat: no-repeat
+            right: -30px
+            bottom: -25%
+            @media screen and (max-width: 1024px)
+                bottom: -2px

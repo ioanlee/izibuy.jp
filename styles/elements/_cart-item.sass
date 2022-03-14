@@ -1,0 +1,87 @@
+.cart-item
+    display: grid
+    grid-template-columns: 170px auto
+    gap: 30px
+    margin: 30px 0
+    @media screen and (max-width: 1024px)
+        grid-template-columns: 150px auto
+        grid-gap: 10px
+        min-height: 170px
+        border: 2px solid #E1BBA5
+        border-radius: 5px 5px 0 0
+        overflow: hidden
+        padding-top: 5px    
+        hr
+            display: none
+    .thumbnail-wrapper
+        img           
+            max-height: 120px 
+
+    .info-wrapper
+        display: flex
+        flex-direction: column
+        @media screen and (max-width: 1024px)
+            position: relative
+            padding-bottom: 120px
+        .timer
+            font-family: "Tahoma", "Arial", sans-serif
+            font-style: normal
+            font-weight: bold
+            font-size: 17px
+            line-height: 18px
+            color: #363636
+            @media screen and (max-width: 1440px)
+                font-size: 14px
+            @media screen and (max-width: 1024px)
+                font-size: 12px
+                line-height: 10px
+                order: 2
+            span
+                margin-right: 50px
+                @media screen and (max-width: 1024px)
+                    margin: 0
+
+        a
+            font-weight: normal
+            font-size: 25px
+            line-height: 30px
+            color: $purple
+            margin: 15px 0
+            &:hover
+                color: $blue
+            @media screen and (max-width: 1440px)
+                font-size: 21px
+            @media screen and (max-width: 1024px)
+                font-size: 15px
+                line-height: 16px
+                order: 1
+                margin: 0 0 10px 0
+        button
+            width: fit-content
+            @media screen and (max-width: 1024px)
+                position: absolute
+                bottom: 8px
+                left: -155px
+                width: auto
+        .button-wrapper
+            display: flex
+            justify-content: space-between
+            @media screen and (max-width: 1024px)
+                order: 3
+                span
+                    font-size: 13px
+            .max-bet
+                @media screen and (max-width: 1024px)
+                    position: absolute
+                    bottom: 20px
+                    left: -160px
+                    width: auto
+            .snipe-bet
+                @media screen and (max-width: 1024px)
+                    position: absolute
+                    bottom: 0
+                    left: -160px
+                    width: auto
+    hr
+        grid-column: span 2
+        width: 100%

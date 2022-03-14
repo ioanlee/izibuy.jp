@@ -1,0 +1,118 @@
+.tracking-item
+    display: flex
+    flex-direction: column
+    padding: 20px 0
+    .thumbnail-wrapper
+        display: grid
+        grid-template-columns: 170px auto
+        gap: 47px
+        padding: 20px 0
+        @media screen and (max-width: 1024px)
+            gap: 10px
+        a
+            font-size: 25px
+            line-height: 30px
+            color: $purple
+            margin-bottom: 85px
+            display: block
+            @media screen and (max-width: 1440px)
+                font-size: 21px
+            @media screen and (max-width: 1024px)
+                font-size: 15px
+                line-height: 18px
+                margin-bottom: 0
+        .price
+            font-size: 17px
+            font-weight: bold
+            line-height: 18px
+            text-align: center
+            color: #363636
+
+    .tracking-status
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        //gap: 100px
+        min-height: 100px
+        background-color: rgba(225, 187, 165, 0.4)
+        color: black
+        font-family: "Tahoma", "Arial", sans-serif
+        font-weight: bold
+        align-items: center
+        padding: 0 20px
+        flex-wrap: wrap
+        padding: 20px    
+        @media screen and (max-width: 1024px)
+            gap: 10px
+            min-height: fit-content
+            padding: 10px
+        .identificator
+            margin-right: 7%
+        .dropdown-list
+            display: none
+            width: 100%
+            .date
+                font-family: 'Tahoma', 'Arial', sans-serif
+                font-style: normal
+                font-weight: bold
+                font-size: 12px
+                line-height: 14px
+                color: #757575
+                margin-right: 30px
+            li
+                position: relative
+                &::after
+                    content: ""
+                    position: absolute
+                    width: 20px
+                    height: 30px
+                    background-image: url(../images/icons/icon_tracking.svg) 
+                    background-repeat: no-repeat
+                    left: 65px
+                &:last-of-type                    
+                    &::after                        
+                        background-image: url(../images/icons/icon_tracking-last.svg)
+            .track-status
+                font-family: 'Kievit Offc Pro', 'Tahoma', sans-serif
+                font-style: normal
+                font-weight: normal
+                font-size: 12px
+                line-height: 14px
+                color: #363636
+        .dropdown-list--open
+            display: block
+        .dropdown
+            border: none
+            background: none
+            display: none            
+            @media screen and (max-width: 1024px)
+                display: block
+            svg
+                transform: rotate(90deg)
+                transition: 0.4s
+        .dropdown--rotate
+            svg
+                transform: rotate(270deg)
+                transition: 0.4s
+        button
+            margin-left: auto
+        .tracking
+            @media screen and (max-width: 1024px)
+                display: none
+        .identificator
+            @media screen and (max-width: 1024px)
+                display: none
+    table
+        text-align: left
+        width: 70%
+        font-family: "Tahoma", "Arial", sans-serif
+        margin-top: 20px
+        border-spacing: 0 10px
+        border-collapse: inherit
+        margin-bottom: 20px
+        @media screen and (max-width: 1024px)
+            width: 100%
+        th
+            color: #757575
+    hr
+        width: 100%

@@ -1,22 +1,28 @@
-#app-header
+header
     position: sticky
     top: 0
+    z-index: 100
+    @media screen and (min-width: 1024px)
+        padding: 0 10px
 
     .header
-    height: 150px
-    width: 100%
-    display: flex
-    flex-direction: column
-    padding: 20px 0
-    background-color: white
-    z-index: 10
-    
+        height: 150px
+        width: 100%
+        display: flex
+        flex-direction: column
+        padding: 20px 0
+        background-color: white
+        @media screen and (max-width: 1024px)
+            height: auto
+
+
     nav
         display: flex
         justify-content: space-around
         margin: 0 auto
         padding-bottom: 35px
-        
+        @media screen and (max-width: 1024px)
+            display: none
         a
             color: black
             font-size: 17px
@@ -29,7 +35,7 @@
                 margin-right: 40px
             &:hover
                 opacity: .7
-            
+
         .currency-select
             margin-left: auto
 
@@ -37,16 +43,31 @@
         display: flex
         justify-content: space-between
         align-items: center
-
+        position: relative
         .logo
-            width: 22%
-            margin-right: 5%
-            //height: 55px
+            width: 24%
+            min-width: 160px
+            margin-right: 1%            
             display: block
+            @media screen and (max-width: 1024px)
+                min-width: 50px
+                width: auto
 
             img
                 width: 100%
-
+        .search-bar
+            width: 100%
+            position: relative                   
+            &::after
+                
+                position: absolute
+                content: ''
+                width: 28px
+                height: 30px
+                background-image: url(../images/icons/icon_search.svg)
+                background-repeat: no-repeat
+                right: 10px
+                top: 10px
         input[type=search]
             color: $brown
             border: 3px solid $brown
@@ -56,39 +77,107 @@
             min-height: 50px
             padding: 0 10px
             outline: none
-            width: 95%
+            width: 100%
             &::placeholder
                 color: $brown
             &:focus
                 // outline: none
+
+        .header__bottom-bar
+            display: flex
+            gap: 10px
+            padding: 0 10px
+            @media screen and (max-width: 1024px)
+                position: fixed
+                //top: calc(100% - 60px)
+                bottom: 0
+                background-color: white
+                width: 100%
+                height: 67px
+                justify-content: space-between
+                padding: 10px 15px
+
+        .mobile-catalog-button
+            display: none
+            @media screen and (max-width: 1024px)
+                display: block
 
         .favorite
             min-width: 50px
             height: 50px
             border: 1px solid $grey
             border-radius: 25px
-            background-size: 50px 50px
             background-color: #fff
-            border-color: #757575
+            border-color: #BDBDBD
             border-radius: 50%
             padding: 14px 9px 11px 11px
             margin: 0 2%
+            @media screen and (max-width: 1024px)
+                border: none
+            @media screen and (max-width: 1440px)
+                height: 40px
+                width: 40px
+                padding: 0
+                min-width: 40px
+                svg
+                    display: block
+                    margin: auto auto
+                    margin-top: 25%
+                    height: 18px
+                    width: 20px
             svg
                 fill: white
                 stroke: #757575
+                @media screen and (max-width: 1024px)
+                    width: 32px
+                    height: 35px
+                    margin-top: 0
 
-            &:hover                                    
+            &:hover
                 background-color: $brown
                 border-color: $blue
+                @media screen and (max-width: 1024px)
+                    border: none
+                    background-color: white
                 svg
                     fill: $blue
                     stroke: $blue
 
-            &:active
-                border-color: $purple
+        .cart
+            display: none
+            margin: 0 2%
+            margin-left: 0
+            border: 2px solid #BDBDBD
+            border-radius: 50%
+            padding: 10px 10px 9px 5px
+            width: 50px
+            height: 50px
+            @media screen and (max-width: 1440px)
+                height: 40px
+                width: 40px
+                padding: 0
                 svg
-                    fill: $purple
-                    stroke: $purple
+                    display: block
+                    margin: 0 auto
+                    margin-top: 21%
+                    height: 19px
+                    width: 36px
+            @media screen and (max-width: 1024px)
+                border: none
+                svg
+                    margin-top: 10%
+                    height: 28px
+                    width: 39px
+
+        #profile-button
+            @media screen and (max-width: 1024px)
+                border: none
+                background-color: white
+                svg
+                    fill: #BDBDBD
+                    width: 25px
+                    height: 31px
+                    margin-top: 8%
 
         .profile
             min-width: 50px
@@ -96,23 +185,184 @@
             border: 2px solid $purple
             border-radius: 25px
             background-color: #fff
-            background-size: 50px 50px                
             border-radius: 50%
             padding: 9px 10px 8px 10px
-
+            cursor: pointer
+            svg
+                margin: 0 auto
+                display: block
+            @media screen and (max-width: 1440px)
+                height: 40px
+                width: 40px
+                padding: 0
+                min-width: 40px
+                svg
+                    display: block
+                    margin: auto auto
+                    margin-top: 26%
+                    height: 30px
+                    width: 20px
             &:hover
                 background-color: $brown
                 border-color: $blue
                 svg
                     fill: $blue
 
-            &:active
-                border-color: $purple
-                svg
-                    fill: $purple
-
             svg
                 fill: $purple
 
+        .profile--loginOn
+            background-color: $brown
+            border: 2px solid $brown
+            svg
+                fill: $purple
+        .profile--pageOn
+            border: 2px solid $purple
 
+        .favorite--active
+            background-color: $brown
+            border: 2px solid $brown
+            position: relative
+            &:hover
+                border: 2px solid $blue
+                svg
+                    path
+                        stroke: $blue
+            &::after
+                width: 13px
+                height: 13px
+                position: absolute
+                content: ""
+                background-color: #EB5757
+                border: 2px solid white
+                border-radius: 50%
+                right: -1px
+                bottom: -5px
+            svg
+                fill: $purple
+                path
+                    stroke: $purple
+            @media screen and (max-width: 1024px)
+                background-color: white
+                border: none
+                &::after
+                    width: 15px
+                    height: 15px
+                    right: 2px
+                    bottom: 4px
 
+        .cart--active
+            background-color: $brown
+            border: 2px solid $brown
+            position: relative
+            &:hover
+                border: 2px solid $blue
+                svg
+                    path
+                        stroke: $blue
+            &::after
+                width: 13px
+                height: 13px
+                position: absolute
+                content: ""
+                background-color: #EB5757
+                border: 2px solid white
+                border-radius: 50%
+                right: -1px
+                bottom: -5px
+            svg
+                path
+                    stroke: $purple
+            @media screen and (max-width: 1024px)
+                background-color: white
+                border: none
+                &::after
+                    width: 15px
+                    height: 15px
+                    right: -2px
+                    bottom: 2px
+
+        .cart--pageOn 
+            border: 2px solid $purple
+            background-color: $brown
+            @media screen and (max-width: 1024px)
+                border: none
+                background-color: white
+            svg
+                path
+                    stroke: $purple
+
+        .favorite--pageOn
+            border: 2px solid $purple
+            background-color: $brown
+            svg
+                fill: $purple
+                stroke: $purple
+            @media screen and (max-width: 1024px)
+                border: none
+                background-color: white
+
+        .user-nav
+            position: absolute
+            bottom: -312px
+            right: 0
+            padding: 40px 25px
+            width: 300px
+            background: white
+            display: none
+            flex-direction: column
+            gap: 15px
+            box-shadow: -12px 10px 4px 2px rgba(34, 60, 80, 0.17)
+            animation: 0.6s slide
+            overflow: auto
+            @keyframes slide
+                0%
+                    transform: translate(100%,0%)
+                100%
+                    transform: translate(0%, 0%)
+            @media screen and (max-width: 1024px)
+                position: fixed
+                top: 0
+                bottom: 60px
+                width: 100%
+                box-shadow: none
+                
+            p
+                font-size: 36px
+            a
+                font-size: 24px
+                color: $purple
+                &:hover
+                    text-decoration: underline
+                @media screen and (max-width: 1024px)
+                    padding: 10px 0
+        .closeUserNav
+            display: flex
+            gap: 20px
+            align-items: center
+            @media screen and (max-width: 1024px)
+                margin-bottom: 20px          
+        .closeUserNav__link
+            display: none
+            svg
+                transform: rotate(180deg)
+                width: 20px
+                height: 25px
+            @media screen and (max-width: 1024px)
+                display: block   
+
+        .user-nav--opened
+            display: flex
+
+    .loginOn
+        .cart
+            display: block
+            svg
+                path
+
+        // .favorite
+        //     background-color: $brown
+        //     border: 2px solid $brown
+        //     svg
+        //         fill: $purple
+        //         stroke: $purple

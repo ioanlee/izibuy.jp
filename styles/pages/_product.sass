@@ -1,0 +1,159 @@
+.product
+    display: grid
+    grid-template-columns: 1fr 1.5fr
+    column-gap: 30px
+    @media screen and (max-width: 1024px)
+        flex-direction: column 
+        display: flex
+        .make-bet
+            margin-top: 15px
+    .close-button
+        display: none
+
+    .product-title        
+        grid-column: 1 / -1
+        margin-bottom: 40px
+        font-family: 'Tahoma', "Arial", sans-serif
+        font-size: 26px
+        color: #363636
+        @media screen and (max-width: 1024px)
+            font-size: 19px
+            margin-block-end: 20px
+
+    .product-photos
+        border-radius: 7px
+        max-width: 650px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        height: 580px        
+        @media screen and (max-width: 1024px)
+            height: auto
+            width: 100%            
+
+    .thumbnails-wrapper
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        img
+            margin: 5px 12px 0 0
+            @media screen and (max-width: 1024px)
+                margin: 5px 5px 0 0
+        @media screen and (min-width: 1600px)
+            justify-content: space-between
+            img
+                margin: 0
+        @media screen and (max-width: 1024px)
+            flex-direction: row
+            overflow: scroll
+            flex-wrap: nowrap
+            img
+                width: 140px
+                height: 110px
+
+    .current
+        width: 100%
+        max-height: 485px
+        margin: auto
+
+    .thumb
+        width: 83px
+        height: 83px
+        @media screen and (max-width: 1024px)
+            width: 55px
+            height: 55px
+
+    .product-desc
+        position: relative
+        @media screen and (max-width: 1024px)
+            display: flex
+            flex-direction: column-reverse
+        .text-content
+            font-family: 'Tahoma', 'Arial', sans-serif
+            font-style: normal
+            font-weight: normal
+            font-size: 16px
+            text-align: left
+            display: flex
+            flex-direction: column
+            @media screen and (max-width: 1024px)
+                font-size: 15px
+            .table-row
+                margin: 0 0 10px 0
+        .logo
+            margin: 30px 0
+
+.product-details
+    padding: 80px 0 40px 0
+    font-size: 17px
+    line-height: 20px
+    @media screen and (max-width: 1024px)
+        padding: 20px 0
+    p
+        margin-bottom: 30px
+        max-width: 60%
+        @media screen and (max-width: 1024px)
+            max-width: 100%
+
+.similar-goods,
+.viewed-goods
+    padding: 30px 0
+    h2
+        font-size: 34px
+        line-height: 41px
+
+.product-thumb
+    display: none
+    .product-info
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        background-color: white
+        max-width: 780px
+        padding: 25px 35px
+        animation-duration: 0.3s
+        animation-name: slidein
+        @keyframes slidein
+            0%
+                transform: rotate(190deg) translateX(-50%) translateY(-50%)
+            100%
+                transform: rotate(360deg) translateX(-50%) translateY(-50%)
+        @media screen and (max-width: 1024px)
+            max-width: 100%
+            min-width: 320px            
+            top: 20px
+            transform: translate(-50%, -0%)
+            animation-name: none
+            border-radius: 5px
+            box-shadow: none
+            padding: 20px 15px
+    .product
+        grid-template-columns: 310px auto
+        grid-gap: 10px
+        column-gap: 30px
+
+        .text-content
+            font-size: 14px
+            @media screen and (max-width: 1024px)
+                padding-top: 20px
+        .product-title
+            font-size: 25px
+            margin: 10px 0 20px
+            @media screen and (max-width: 1024px)
+                font-size: 18px
+                margin: 10px 0
+        .logo
+            display: none
+        .product-photos
+            height: 329px
+            @media screen and (max-width: 1024px)
+                height: auto
+        .current
+            height: 260px
+        .thumb
+            width: 49px
+            height: 49px
+        .close-button
+            display: block
+

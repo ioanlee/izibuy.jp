@@ -1,15 +1,25 @@
-.carousel 
+.carousel
     position: relative
     width: 100%
     padding-bottom: 2em
     border-radius: 10px 10px 0px 0px
+    @media screen and (max-width: 1024px)
+        display: flex
+        overflow: scroll
+        gap: 20px
 
-    .carousel__item 
+    .carousel__item
         background: $brown
         color: #ffffff
         display: none
         position: relative
         padding-bottom: 15px
+        min-width: 300px
+        @media screen and (max-width: 1024px)
+            display: block
+        
+        img
+            width: 100%
 
         p
             text-transform: uppercase
@@ -20,6 +30,7 @@
             background-color: $purple
             display: block
             width: 978px
+            max-width: 100%
             margin: 0 auto
             padding: 0.5em 0
             text-align: center
@@ -32,28 +43,47 @@
                 width: 642px
                 font-size: 25px
                 line-height: 15px
-                letter-spacing: 0.35em    
+                letter-spacing: 0.35em
+            @media screen and (max-width: 1024px)
+                font-size: 14px
+                max-width: 230px
 
-    .carousel__item--selected 
-        display: block    
+    .carousel__item--selected
+        display: block
 
-    .carousel__nav 
+    .carousel__nav
         width: 100%
         position: absolute
         bottom: 0
         left: 0
-        text-align: center    
+        text-align: center
+        display: block
+        @media screen and (max-width: 1024px)
+            display: none
 
-    .carousel__button 
+    .dot
         width: 11px
         height: 11px
         display: inline-block
         border: 2px solid $brown
         border-radius: 50%
         margin: 0 15px
-        cursor: pointer    
+        cursor: pointer
 
-    .carousel__button--selected 
+    .active
         background: $purple
         border: none
+    
+    /* Fading animation */
+    .fade 
+        -webkit-animation-name: fade
+        -webkit-animation-duration: 1s
+        animation-name: fade
+        animation-duration: 1s    
+
+        @keyframes fade 
+            from 
+                opacity: .4 
+            to 
+                opacity: 1
     

@@ -1,31 +1,58 @@
 .item
     display: flex
-    position: relative
+    //position: relative
     flex-direction: column
     width: 220px
-    height: 280px
+    //height: 280px
     border: 2px solid $brown
     border-radius: 15px 15px 0px 0px
-    // overflow: hidden
+    color: #000
+    margin: 20px auto
+    //overflow: hidden
     cursor: pointer
+    outline: none
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
     @media screen and( max-width: 1600px)
         width: 200px
-        height: 280px
+        //height: 280px
     @media screen and( max-width: 1440px)
-        width: 200px
-        height: 280px
+        width: 160px
+        //height: 280px
     @media screen and( max-width: 1024px)
-        width: 160px    
-        height: 220px
+        width: 160px
+        //height: 220px
+    &:hover
+        a
+            color: $purple
+    &:hover .fav
+        display: block
 
     .item-image
-        background: url(/images/img_item_thumbnail.jpg) no-repeat center
-        background-size: cover
         position: relative
         width: 100%
-        height: 165px
+        max-height: 150px
         transition: .2s
         border-radius: 15px 15px 0px 0px
+        overflow: hidden
+        &:hover img
+            transform: scale(1.1)
+        .zoom
+            display: none
+            position: absolute
+            width: 50px
+            height: 50px
+            background-image: url(/images/icons/icon_zoom.svg)
+            background-repeat: no-repeat
+            top: 33%
+            left: 40%
+            &:hover
+                width: 70px
+                height: 70px
+                background-image: url(/images/icons/icon_zoom-hover.svg)
+                transition: 0.2s
+
+        &:hover .zoom
+            display: block
 
         &:hover .item-preview-button
             background: url(/images/icons/icon_preview.svg) no-repeat
@@ -39,27 +66,78 @@
             width: 35px
             height: 35px
 
-            &:active                
+            &:active
                 background-image: url(/images/icons/icon_preview_click.svg)
-            
+
     .item-description
         width: 100%
-        height: 66px
+        //height: 66px
         margin: auto
         padding: 4px 8px
         font-size: 17px
         line-height: 129%
         overflow: hidden
-        text-overflow: ellipsis     //
-
+        text-overflow: ellipsis
+        color: black
+        &:hover
+            color: $blue
+            text-decoration: underline
+        @media screen and (max-width: 1440px)
+            font-size: 15px
 
     .item-price
+        font-family: "Tahoma", "Arial", sans-serif
         color: $purple
         background: $brown
         border-radius: 0px 5px 0px 0px
         padding: 8px 16px
         font-size: 19px
         margin: auto auto 0 0
-
         &::after
             content: ' ₽'
+        @media screen and (max-width: 1440px)
+            font-size: 15px
+    .mobile-zoom
+        display: none
+        border: none
+        background: none
+        width: 20px
+        height: 20px
+        background-size: 20px 20px
+        background-image: url(/images/icons/icon__mobile-zoom.svg)
+        background-repeat: no-repeat
+        @media screen and( max-width: 1024px)
+            display: block
+    .fav
+        display: none
+        border: none
+        background: none
+        color: $purple
+        cursor: pointer
+        background-image: url("../images/icons/icon_favorites_purple.svg")
+        background-repeat: no-repeat
+        width: 30px
+        height: 30px
+        background-position: center
+        &:hover
+            background-image: url("../images/icons/icon_favorites_blue.svg")
+            transition: 0.3s
+            transform: translateY(-5px)
+            box-shadow: 0 3px #E1BBA5
+            border: 1px solid $blue
+            border-radius: 3px
+        @media screen and (max-width: 1024px)
+            display: block
+    .added
+        background-image: url("../images/icons/icons_favorites_purple_fill.svg")
+        display: block
+        &:hover
+            background-image: url("../images/icons/icons_favorites_purple_fill.svg")
+    .price-wrapper
+        display: flex
+        align-items: center
+        padding-right: 10px
+        @media screen and (max-width: 1024px)
+            padding: 0
+            gap: 5px
+        

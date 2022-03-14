@@ -1,0 +1,137 @@
+.showMore
+    border: 1px solid $purple
+    box-sizing: border-box
+    border-radius: 5px
+    font-size: 17px
+    line-height: 20px
+    text-align: center
+    text-transform: uppercase
+    padding: 15px 30px
+    min-width: 65%
+    margin: 0 auto
+    color: $purple
+    background-color: white
+    cursor: pointer
+    &:hover
+        transition: 0.3s
+        transform: translateY(-5px)
+        box-shadow: 0 5px #E1BBA5
+        border: 1px solid $blue
+        color: $blue
+
+.close-button
+    border: none
+    background: none
+    &:hover
+        &::before,
+        &::after
+            background-color: $blue
+    &::before,
+    &::after
+        content: ""
+        position: absolute
+        top: 25px
+        right: 15px
+        width: 24px
+        height: 4px
+        background-color: $purple
+        cursor: pointer
+    &::before
+        transform: rotate(45deg)
+        box-shadow: none
+    &::after
+        transform: rotate(-45deg)
+
+.button
+    border: none
+    border-radius: 5px
+    background-color: $purple
+    color: white
+    font-size: 17px
+    line-height: 20px
+    text-align: center
+    text-transform: uppercase
+    padding: 15px 30px
+    cursor: pointer
+    display: block
+    @media screen and (max-width: 1440px)
+        font-size: 14px
+        line-height: 18px
+    @media screen and (max-width: 1024px)
+        padding: 8px 10px
+        line-height: 18px
+        padding: 13px 10px
+        //margin: 15px 0
+
+    &:hover
+        background-color: $blue
+        transition: 0.3s
+        transform: translateY(-5px)
+        box-shadow: 0 5px #E1BBA5
+
+.add-favs
+    border: none
+    background: none
+    color: $purple
+    padding: 5px 0
+    text-decoration: underline
+    font-size: 17px
+    line-height: 22px
+    padding-left: 35px
+    margin-top: 20px
+    cursor: pointer
+    background-image: url("../images/icons/icon_favorites_purple.svg")
+    background-repeat: no-repeat
+    background-position: left
+    &:hover
+        background-image: url("../images/icons/icon_favorites_blue.svg")
+        background-size: 27px 27px
+        color: $blue
+        transition: 0.3s
+    @media screen and (max-width: 1024px)
+        background-position: 40px 3px
+
+.added
+    background-image: url("../images/icons/icons_favorites_purple_fill.svg")
+    display: block
+    &:hover
+        background-image: url("../images/icons/icons_favorites_purple_fill.svg")
+.white-button
+    background-color: white
+    color: $purple
+    border: 1px solid $purple
+    border-radius: 5px
+    cursor: pointer
+    text-transform: uppercase
+    padding: 15px 30px
+    font-size: 17px
+    font-weight: normal
+    line-height: 20px
+    text-align: center
+    @media screen and (max-width: 1440px)
+        font-size: 14px
+        line-height: 18px
+        padding: 10px 20px
+    @media screen and (max-width: 1024px)
+        font-size: 14px
+        line-height: 15px
+        padding: 8px 10px
+    &:hover
+        transition: 0.3s
+        transform: translateY(-5px)
+        box-shadow: 0 5px #e1bba5
+
+.text-button
+    border: none
+    background: none
+    color: #8C3E7D
+    text-decoration: underline
+    -webkit-text-decoration-style: dotted
+    text-decoration-style: dotted
+    cursor: pointer
+    font-size: 17px
+    line-height: 22px
+    &:hover
+        color: $blue
+    @media screen and (max-width: 1024px)
+        font-size: 14px

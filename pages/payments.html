@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <title>Document</title>
+    <script src="../scripts/vue.min.js"></script>
+    <script src="../scripts/index.js"></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div id="sidebar-container" class="sidebar">
+        <sidebar-catalog></sidebar-catalog>
+        <sidebar-nav></sidebar-nav>
+      </div>
+      <div class="main-content">
+        <header id="app-header">
+          <my-header></my-header>
+        </header>
+        <main id="app">
+          <div id="loginPopup">
+            <login-popup></login-popup>
+          </div>
+          <div id="remindPassPopup">
+            <remind-password-popup></remind-password-popup>
+          </div>
+          <h1 class="adresses-title">Платежи</h1>
+          <div class="balance">
+            <table>
+              <tr>
+                <th>Баланс:</th>
+                <td>
+                  <span>85 000Р</span>
+                </td>
+              </tr>
+              <tr>
+                <th>Зарезервировано:</th>
+                <td class="auction-wrapper">
+                  <span>74 000р</span>
+                  <span class="auction"
+                    ><a href="../pages/cart.html">1 аукцион</a></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <th>Остаток:</th>
+                <td>
+                  <span>11 000р</span>
+                </td>
+              </tr>
+            </table>
+            <button type="button" class="button">Пополнить</button>
+          </div>
+          <hr />
+          <div class="payments-history">
+            <h2>История</h2>
+            <table>
+              <tr>
+                <th>17.08.21</th>
+                <td>-74 000р</td>
+                <td class="good-name">
+                  <a href="../pages/item.html"
+                    >[XX44]Windows11 or Windows10[ASUS GL752VW]Core i7-6700HQ/
+                    новый товар SSD 240GB/GTX 960M/ память 16GB/Web камера /Offi
+                    ce2019/BluRay</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <th>15.08.21</th>
+                <td>+ 159 000р</td>
+                <td class="operation">Пополнение счета с карты **** 7650</td>
+              </tr>
+              <tr>
+                <th>17.08.21</th>
+                <td>-74 000р</td>
+                <td class="good-name">
+                  <a href="../pages/item.html"
+                    >[XX44]Windows11 or Windows10[ASUS GL752VW]Core i7-6700HQ/
+                    новый товар SSD 240GB/GTX 960M/ память 16GB/Web камера /Offi
+                    ce2019/BluRay</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <th>17.08.20</th>
+                <td>+ 100 000р</td>
+                <td class="operation">Пополнение счета с карты **** 7650</td>
+              </tr>
+              <tr>
+                <th>17.08.21</th>
+                <td>-74 000р</td>
+                <td class="good-name">
+                  <a href="../pages/item.html"
+                    >[XX44]Windows11 or Windows10[ASUS GL752VW]Core i7-6700HQ/
+                    новый товар SSD 240GB/GTX 960M/ память 16GB/Web камера /Offi
+                    ce2019/BluRay</a
+                  >
+                </td>
+              </tr>
+            </table>
+          </div>
+        </main>
+        <footer id="app-footer">
+          <my-footer></my-footer>
+        </footer>
+      </div>
+    </div>
+    <script src="../scripts/main.js" type="module"></script>
+  </body>
+</html>
