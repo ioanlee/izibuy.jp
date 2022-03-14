@@ -6,7 +6,7 @@ function elementLoader() {
 }
 
 $(function() {
-    elementLoader();
+    // elementLoader();         //  deprecated
 });
 
 function openPreview() {
