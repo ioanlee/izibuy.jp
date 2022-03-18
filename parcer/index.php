@@ -20,14 +20,15 @@
         </header>
         <main>    
         <div class="product-container" style="display:flex; flex-direction:row; flex-wrap: wrap;">    
-            <?php 
-                include 'lib.php';
-                populate_items(get_json()); 
-            ?>
+        <?php 
+            include 'lib.php';
+            populate_items(get_json()); 
+        ?>
         </div>
         </main>
     </div>
 </div>
 <script src="../scripts/main.js" type="module"></script> 
+<script src="exchangerate.js"></script>
 </body>
 </html>

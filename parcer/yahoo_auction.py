@@ -25,6 +25,15 @@ import webbrowser
 # https://auctions.yahooapis.jp/AuctionWebService/V2/json/search?
 
 
+
+
+# ПОИСК ПО ПРОДАВЦУ, РАБОТАЕТ
+# https://auctions.yahooapis.jp/AuctionWebService/V2/json/sellingList?sellerID=megu3ho3&eappid=
+
+
+
+
+
 # get Yahoo Auction API key
 def get_auc_api_key():
     url = "https://page.auctions.yahoo.co.jp/jp/auction/1041438083"
@@ -61,7 +70,7 @@ def get_filters():  # поменять на foreach потом
     results     = NULL #
 
 
-    query       = '&query='         + 'sega'       # ВЫДАЛ ОШИБКУ НА 'parcer','parser'; скорее всего просто пусто - сделать error handler
+    query       = '&query='         + 'dota'       # ВЫДАЛ ОШИБКУ НА 'parcer','parser'; скорее всего просто пусто - сделать error handler
     results     = '&results='       + '20'
     category    = NULL#'&category='      + '2084264212'
     id          = NULL#'&id='            + 'tagusaya3812'
@@ -82,6 +91,7 @@ def get_filters():  # поменять на foreach потом
 # OUTPUT JSON
 def build_request():
     request = base + method + get_filters() + api_key
+    # print(request)
     return urlopen(request).read()
 
 print(build_request())

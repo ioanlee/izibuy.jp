@@ -1,18 +1,20 @@
 <?php
 
+include "YahooAuction.php";
+
     function get_json(string $path = NULL){                                         // returns clean JSON from URL request
         $rawjson = shell_exec('python C:\xampp\htdocs\izibuy\parcer\yahoo_auction.py');     // returns unformatted json      
         $cutjson = stripslashes(substr($rawjson, 9, -3));                                   // cuts edges & strips backslashes
         $json    = json_decode($cutjson, true);                                             // decodes json string into associative array
         return $json;
     }
-    function read_json_file(string $path){                                          // returns local JSON file data
-        ob_start();
-        include($path);
-        $json = ob_get_contents(); 
-        ob_end_clean();
-        return $json;
-    }
+    // function read_json_file(string $path){                                          // returns local JSON file data
+    //     ob_start();
+    //     include($path);
+    //     $json = ob_get_contents(); 
+    //     ob_end_clean();
+    //     return $json;
+    // }
     function print_values($json, ?bool $pretty = true){                             // prints all JSON values to list view
         foreach($json as $key=>$value){
             if (is_string($value)){
@@ -61,13 +63,21 @@
             ';
         } 
     }
-    
-    
-    
-    
-    function populate_item($json){}                                                 // populate single item page with values
-    function translate_text(string $string, string $langfrom, string $langto){}     // returns translated text
-    function convert_currency(float $value, string $curfrom, string $curto){}       // returns converted currency
+    function populate_item($json){                                                  // populate single item page with values
+        
+    }
+    function translate(string $text, string $langfrom, string $langto){             // returns translated text
+        $request = "https://languageomega.herokuapp.com/json?lang_one=$langfrom&lang_two=$langto&content=$text";    
+        $rawjson = file_get_contents($request);
+        $json = json_decode($rawjson, true);
+        return $json["TranslatedContent"];
+    }
+    function phpgetjson(string $urlrequest){                                        // returns clean JSON from URL request
+        $rawjson      = file_get_contents($urlrequest);                                     // returns unformatted json          
+        $cutjson      = stripslashes(substr($rawjson, 7, -1));                              // cuts edges & strips backslashes
+        $decodedjson  = json_decode($cutjson, true);                                        // decodes json string into associative array
+        return $decodedjson;
+    }       //  НАПИСАТЬ ЗАПРОС НА JSON
     
 
 

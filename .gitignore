@@ -3,3 +3,4 @@
 *.sass.map
 *.scss.map
 config.py
+config.php
