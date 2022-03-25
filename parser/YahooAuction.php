@@ -1,15 +1,25 @@
 <?php
+    
     include_once 'lib/simple_html_dom.php';
+    include_once 'config.php';
+
+    class YahooAuction {
+
+    }
 
     function build_url(string $methodtype){
-        $auctionkey = "&eappid="  . get_auction_key();
-        $base       = "https://auctions.yahooapis.jp/AuctionWebService/V";
-        $method     = "2/json/search?";
-        $query      = "&query="   . "jeans";
-        $results    = "&results=" . "20";
-        $filters    = "$query$results";
+        $query   = "jeans";
+        $results = "20";
+        $eappid  = get_key_yahoo_auction();
+
+        $eappid  = "&".var_name($eappid) ."=$eappid";
+        $base    = "https://auctions.yahooapis.jp/AuctionWebService/V";
+        $method  = "2/json/search?";
+        $query   = "&".var_name($query)  ."=$query";
+        $results = "&".var_name($results)."=$results";
+        $filters = "$query$results";
         // foreach($filters as $filter){}
-        $url        = "$base$method$filters$auctionkey";
+        $url     = "$base$method$filters$eappid";
         return $url;
     }    
     function request_json($url){ // returns clean JSON from URL request
@@ -17,14 +27,6 @@
         $cutjson    = substr($rawjson, 7, -1);
         $jsonarray  = json_decode($cutjson, true);
         return $jsonarray;
-    }
-    function get_auction_key(){
-        $url = "https://page.auctions.yahoo.co.jp/jp/auction/1041438083";
-        // $html = htmlspecialchars(file_get_contents($url));     //htmlentities()
-        $html = file_get_html($url);
-        $target = "input[id='js-deliveryData']";//data-eappid
-        $apikey = $html->find($target, 0)->attr["data-eappid"];
-        return $apikey;
     }
     function get_exchangerate(string $currfrom, string $currto){        // ОЧЕНЬ МЕДЛЕННО
         $url    = "https://www.marketwatch.com/investing/currency/$currfrom$currto";
@@ -34,8 +36,21 @@
         // echo get_exchangerate('JPY', 'RUB');
         // 0.8811
     }
+    function var_name( $v ) {                                                       // RETURNS VAR NAME
+        $trace = debug_backtrace();
+        $vLine = file( __FILE__ );
+        $fLine = $vLine[ $trace[0]['line'] - 1 ];
+        preg_match( "#\\$(\w+)#", $fLine, $match );
+        return $match[1];
+    }
     function populate_items($json){                                                 // populates webpage with elements & adds values for every item
         foreach($json["ResultSet"]["Result"]["Item"] as $key=>$item){   // желательно быстрее + не хардкод []
+            $id     = $item["AuctionID"];
+            $url    = "#";//$item["url"];
+            $title  = $item["Title"];
+            $price  = $item["CurrentPrice"];
+            $imgsrc = $item["Image"];
+            $imgalt = "#";//$item["imageId"];
             echo '
                 <div class="item">
                     <div ref="productThumb" class="product-thumb">
@@ -46,14 +61,14 @@
                         </div>
                     </div>
                     <div class="item-image">
-                        <img src="'.$item["Image"].'" alt="">
+                        <img src="'.$imgsrc.'" alt="">
                         <div class="zoom" @click="thumb"></div>
                     </div>
-                    <a href="../pages/item.html#'.$item["AuctionID"].'" class="item-description">'.$item["Title"].'</a>
+                    <a href="../pages/item.html#'.$id.'" class="item-description">'.$title.'</a>
                     <span class="price-wrapper">
-                        <span class="item-price">'.number_format(floatval($item["CurrentPrice"])*$_COOKIE["JPY/RUB"], 2 ).'</span>
+                        <span class="item-price">'.number_format(floatval($price)*$_COOKIE["JPY/RUB"], 2 ).'</span>
                         <button class="mobile-zoom" @click="thumb"></button>
-                        <button ref="fav" class="fav" @click="addToFavs" idx="'.$item["AuctionID"].'"></button>            
+                        <button ref="fav" class="fav" @click="addToFavs" idx="'.$id.'"></button>            
                     </span>        
                 </div>
             ';

@@ -29,28 +29,16 @@
           <div id="betPopup">
             <bet-popup></bet-popup>
           </div>
-          <div class="bread-crumbs">
-            <a href="../pages/catalog.html">Компьютеры</a>
-            <a href="../pages/unit.html">Ноутбуки</a>
-          </div>
-          <div class="product-info">
-            <product-mini></product-mini>
-          </div>
-          <div class="product-details">
-            <p>
-              Ноутбук в отличном состоянии, установлена Windows 10 и пакет
-              стандартных программ. Процессор Intel ® Core ™ 11-го поколения.
-              Сертификат защиты от синего света и мерцания TÜV Rheinland.
-              Сенсорный 2К-экран FullView с полезной площадью 90%. 11 часов
-              автономной работы и компактная зарядка HUAWEI SuperCharge
-            </p>
-            <img
-              src="../images/item/details-image.jpg"
-              height="470"
-              width="830"
-              alt="product details photo"
-            />
-          </div>
+          <?php 
+            include_once '../parser/YahooShopping.php';
+            // translate_page(); 
+
+            $url = "https://shopping.yahooapis.jp/ShoppingWebService/V1/php/itemLookup?&appid=".get_key_yahoo_shopping()."&responsegroup=large&itemcode=soup-stock-tokyo_100007a";
+            $json = unserialize(file_get_contents($url));  
+            populate_single($json);
+          ?>
+          <!-- <div class="product-info"><product-mini></product-mini></div> -->
+          
           <section id="product">
             <div class="similar-goods">
               <h2>Похожие товары</h2>

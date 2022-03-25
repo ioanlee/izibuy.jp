@@ -1,3 +1,38 @@
+TRANSLATE
+https://auctions-yahoo-co-jp.translate.goog/seller/takumahasipa?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ru
+https://auctions-yahoo-co-jp.translate.goog/jp/show/rating?userID=takumahasipa&filter=1&_x_tr_sl=ja&_x_tr_tl=auto&_x_tr_hl=ru
+https://auctions-yahoo-co-jp.translate.goog/jp/show/rating?userID=takumahasipa&filter=-1&_x_tr_sl=ja&_x_tr_tl=auto&_x_tr_hl=ru
+
+
+
+
+LOGISTICS
+<option selected="selected" value="ems">EMS ~7 дн</option>
+<option value="aviasm">Авиа (мелкий пакет) ~12 дн</option>
+<option value="avia">Авиа (обычная посылка) ~12 дн</option>
+<option value="salsm">SAL (мелкий пакет) ~18 дн</option>
+<option value="sal">SAL (обычная посылка) ~18 дн</option>
+<option value="ups">UPS 2~4 дн</option>
+<option value="fedex">FedEx 2-4 дн</option>
+<option value="dhl">DHL 2~4 дн</option>
+<option value="dhl_pps">DHLeC PACKET PLUS 3 недели</option>
+<option value="dhl_pkd">DHLeC PACKET STANDARD 1 месяц</option>
+<option value="sfexpress">SF Express 3-5 дн</option>
+<option value="surface">Морская почта ~2-3 месяца</option>
+<option value="pony_express">Pony Express ~12 дней</option>
+<option value="zen_express_standart">Zen Express Standard</option>
+<option value="sber_logistics">СБЕР ЛОГИСТИКА</option>
+
+
+
+
+PROHIBITED
+https://zenmarket.jp/ru/prohibited_items.aspx
+
+
+
+
+REQUESTS
 https://    auctions.yahooapis.jp/AuctionWebService/V   2/categoryTree?         appid=<Your application ID>     &category=<Yahoo! Auctions category ID>
 https://    auctions.yahooapis.jp/AuctionWebService/V   2/categoryLeaf?         appid=<Your application ID>     &category=<Category ID of product list>
 https://    auctions.yahooapis.jp/AuctionWebService/V   2/sellingList?          appid=<Your application ID>     &sellerID=<Seller's Yahoo! JAPAN ID>
@@ -24,6 +59,7 @@ https://    auctions.yahooapis.jp/AuctionWebService/V   1/reminder?             
 https://    auctions.yahooapis.jp/AuctionWebService/V   1/deleteReminder?       auctionID=<Auction ID to cancel watchlist reminders>
 https://    auctions.yahooapis.jp/AuctionWebService/V   1/watchList?            auctionID=<Auction ID to add to watchlist>
 https://    auctions.yahooapis.jp/AuctionWebService/V   1/deleteWatchList?      auctionID=<Auction ID to be deleted from the watchlist>
+
 
 
 
@@ -70,12 +106,7 @@ return filters
 
 
 
-
-
-
-
-
-
+YAHOO SHOPPING
 from asyncio.windows_events import NULL
 from types import NoneType
 import webbrowser
@@ -86,7 +117,6 @@ query           = 'soup'
 affiliate_type  = ''
 affiliate_id    = ''
 
-
 def add_filter(filter, value):
     return filter + '=' + value + '&'
 
@@ -94,7 +124,6 @@ url = urlstart + add_filter('appid', apikey) + add_filter('query',query)
 # url = urlstart + 'appid=' + apikey + '&' + add_filter(query)
 
 webbrowser.open(url, new = 0, autoraise = True)
-
 
 shopping requests
 
@@ -104,7 +133,6 @@ https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch?
     &sort              = -sold
 
 https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch?appid=dj00aiZpPW42bWdCR2x5NEhFNyZzPWNvbnN1bWVyc2VjcmV0Jng9Y2Q-&query=soup&
-
 {
     "totalResultsAvailable": 2091806,
     "totalResultsReturned": 20,
