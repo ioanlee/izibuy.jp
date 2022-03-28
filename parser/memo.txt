@@ -105,8 +105,19 @@ return filters
 
 
 
+https://auctions.yahooapis.jp/AuctionWebService/V2/auctionItem?&auctionID=2084042879&appid=dj00aiZpPW42bWdCR2x5NEhFNyZzPWNvbnN1bWVyc2VjcmV0Jng9Y2Q
+https://auctions.yahooapis.jp/AuctionWebService/V2/search?&query=jeans&results=20&category=22152&eappid=ZQniJ7ytmbzkSM2x6STLJ_nyx4DGbVZE8FNMpW3TOCBac5rpwCAEXTpqpNNvevwYtH8h8Y4FyNUOQLJ._1pZhcExOh20sBOQXF1f2RKugVPt2dI-
+https://auctions.yahooapis.jp/AuctionWebService/V2/json/search?&query=jeans&results=20&eappid=ZQniJ7ytmbzkSM2x6STLJ_nyx4DGbVZE8FNMpW3TOCBac5rpwCAEXTpqpNNvevwYtH8h8Y4FyNUOQLJ._1pZhcExOh20sBOQXF1f2RKugVPt2dI-
+https://auctions.yahoo.co.jp/catalog/detail/78de504392/?target=spec#content
+
+
 
 YAHOO SHOPPING
+
+full item info      https://shopping.yahooapis.jp/ShoppingWebService/V1/itemLookup?&appid=dj00aiZpPW42bWdCR2x5NEhFNyZzPWNvbnN1bWVyc2VjcmV0Jng9Y2Q-&itemcode=soup-stock-tokyo_100007a&responsegroup=large
+                    https://shopping.yahooapis.jp/ShoppingWebService/V1/php/itemLookup?&appid=dj00aiZpPW42bWdCR2x5NEhFNyZzPWNvbnN1bWVyc2VjcmV0Jng9Y2Q-&itemcode=soup-stock-tokyo_100007a
+
+
 from asyncio.windows_events import NULL
 from types import NoneType
 import webbrowser

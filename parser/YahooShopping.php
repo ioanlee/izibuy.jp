@@ -69,7 +69,7 @@
             <script>document.cookie = "googtrans=/en/ru";</script> 
         ';
     }
-    function populate_single($json){  
+    function populate_single($json){
 
         function add_thumb_gallery($var){
             echo "<img src='".$var["Image"]["Medium"]."' alt='".$var["Image"]["Id"]."' class='thumb'></img>";
@@ -96,7 +96,7 @@
         $imgalt      = $item["Image"]["Id"];
         $imgsrc      = $item["Image"]["Medium"];
         $price       = $item["Price"]["_value"];     
-        $currfrom    = $item["Price"]["_attributes"]["currency"];
+        $currfrom    = $item["Price"]["_attributes"]["currency"];// JPY
         $currto      = "RUB";        
         $category    = $item["ProductCategory"]["ID"];
 
@@ -174,7 +174,7 @@
                         <img src="'.$imgsrc.'" alt="'.$imgalt.'" style="width: 100%;">
                         <div class="zoom" @click="thumb"></div>
                     </div>
-                    <a href="./item.php#'.$id.'" class="item-description">'.$title.'</a>
+                    <a href="./item?item='.$id.'" class="item-description">'.$title.'</a>
                     <span class="price-wrapper">
                         <span class="item-price">'.number_format(floatval($price)*$_COOKIE["JPY/RUB"], 2 ).'</span>
                         <button class="mobile-zoom" @click="thumb"></button>

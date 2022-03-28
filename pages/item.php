@@ -29,16 +29,20 @@
           <div id="betPopup">
             <bet-popup></bet-popup>
           </div>
+          
           <?php 
             include_once '../parser/YahooShopping.php';
-            // translate_page(); 
+            translate_page(); 
+            $apikey = get_key_yahoo_shopping();
 
-            $url = "https://shopping.yahooapis.jp/ShoppingWebService/V1/php/itemLookup?&appid=".get_key_yahoo_shopping()."&responsegroup=large&itemcode=soup-stock-tokyo_100007a";
+            $item = 'soup-stock-tokyo_100007a';
+            if(isset($_GET["item"])){ $item = $_GET["item"]; }
+            $url = "https://shopping.yahooapis.jp/ShoppingWebService/V1/php/itemLookup?&appid=$apikey&responsegroup=large&itemcode=$item";
             $json = unserialize(file_get_contents($url));  
             populate_single($json);
           ?>
+
           <!-- <div class="product-info"><product-mini></product-mini></div> -->
-          
           <section id="product">
             <div class="similar-goods">
               <h2>Похожие товары</h2>

@@ -11,8 +11,9 @@ Vue.component('sidebar-catalog', {
                 </div>            
                 <details ref="catalog" class="catalog" open>
                     <summary class="catalog-summary"></summary>
-                    <div class="category" v-for="category in categorys">
-                        <a class="catalog-item" href="../pages/catalog.html" @click.prevent="openSubCategory">{{ category }}</a>
+                    <div class="category" v-for="category in categories.yahooshopping">
+                        <a class="catalog-item" href="/izibuy/pages/searchshop" v-bind:href="category.href" @mouseover.prevent="openSubCategory">{{ category.name }}</a>
+                        <!-- <a class="catalog-item" href="/izibuy/pages/searchshop" v-bind:href="category.href" @click.prevent="openSubCategory">{{ category.name }}</a> -->
                         <div class="sub-category">
                             <next-sub-category></next-sub-category>
                             <next-sub-category></next-sub-category>
@@ -24,33 +25,36 @@ Vue.component('sidebar-catalog', {
             </div>
 `,
         data: function() {
-            return {                
-                categorys: [
-                            'Компьютеры',
-                            'Электроника', 
-                            'AV-камеры',
-                            'Бытовая техника',
-                            'Игры и игрушки',
-                            'Музыка',
-                            'Книги и журналы',
-                            'Хобби и рукоделие',
-                            'Антиквариат',
-                            'Спорт и отдых',
-                            'Авто и мото',
-                            'Аксессуары и часы',
-                            'Здоровье и красота',
-                            'Еда и напитки',
-                            'Дом и интерьер',
-                            'Домашние питомцы',
-                            'Бизнес и офис',
-                            'Цветы и растения',
-                            'Детские товары',
-                            'Знаменитости',
-                            'Аниме и манга',
-                            'Мода',
-                            'Благотворительность',
-                            'Другое',
-                        ]
+            return {
+                categories: {
+                    yahooshopping : [
+                            { name: 'Компьютеры',               id: '2502',       href: '/izibuy/pages/searchshop?c=2502',  subcategories: []},
+                            { name: 'Электроника',              id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []}, 
+                            { name: 'AV-камеры',                id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []},
+                            { name: 'Бытовая техника',          id: '2505',       href: '/izibuy/pages/searchshop?c=2505',  subcategories: []},
+                            { name: 'Игры и игрушки',           id: '2511',       href: '/izibuy/pages/searchshop?c=2511',  subcategories: []},
+                            { name: 'Музыка',                   id: '2516',       href: '/izibuy/pages/searchshop?c=2516',  subcategories: []},
+                            { name: 'Книги и журналы',          id: '10002',      href: '/izibuy/pages/searchshop?c=10002', subcategories: []},
+                            { name: 'Хобби и рукоделие',        id: '2503',       href: '/izibuy/pages/searchshop?c=2503',  subcategories: []},
+                            { name: 'Антиквариат',              id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []},
+                            { name: 'Спорт и отдых',            id: '2512',       href: '/izibuy/pages/searchshop?c=2512',  subcategories: []},
+                            { name: 'Авто и мото',              id: '2514',       href: '/izibuy/pages/searchshop?c=2514',  subcategories: []},
+                            { name: 'Аксессуары и часы',        id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []},
+                            { name: 'Здоровье и диета',         id: '2500',       href: '/izibuy/pages/searchshop?c=2500',  subcategories: []},
+                            { name: 'Косметика и Парфюмерия',   id: '2501',       href: '/izibuy/pages/searchshop?c=2501',  subcategories: []},
+                            { name: 'Еда и напитки',            id: '2498',       href: '/izibuy/pages/searchshop?c=2498',  subcategories: []},
+                            { name: 'Дом и интерьер',           id: '2506',       href: '/izibuy/pages/searchshop?c=2506',  subcategories: []},
+                            { name: 'Домашние питомцы',         id: '2509',       href: '/izibuy/pages/searchshop?c=2509',  subcategories: []},
+                            { name: 'Бизнес и офис',            id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []},
+                            { name: 'Цветы и растения',         id: '2507',       href: '/izibuy/pages/searchshop?c=2507',  subcategories: []},
+                            { name: 'Детские товары',           id: '2497',       href: '/izibuy/pages/searchshop?c=2497',  subcategories: []},
+                            { name: 'Знаменитости',             id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []},
+                            { name: 'Аниме и манга',            id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []},
+                            { name: 'Мода',                     id: '13457',      href: '/izibuy/pages/searchshop?c=13457', subcategories: []},
+                            { name: 'Благотворительность',      id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []},
+                            { name: 'Другое',                   id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []},
+                    ]
+                }
             }
         },
         methods: {
@@ -190,14 +194,14 @@ new Vue({ el: '#sidebar-container' })
 document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.querySelector('.wrapper')
     const main = document.querySelector('.main-content')
-    const categorys = document.querySelectorAll('.sub-category')
-    const subCategorys = document.querySelectorAll('.next-sub-category')
+    const categories = document.querySelectorAll('.sub-category')
+    const subcategories = document.querySelectorAll('.next-sub-category')
     window.addEventListener('click', () => {
         if (event.target == wrapper) {
-            categorys.forEach((item) => {
+            categories.forEach((item) => {
                 item.classList.remove('sub-category--opened')                
             })
-            subCategorys.forEach((item) => {
+            subcategories.forEach((item) => {
                 item.classList.remove('next-sub-category--opened')
             })
             main.classList.remove('zindex')

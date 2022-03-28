@@ -23,8 +23,17 @@
             include '../parser/YahooShopping.php';
             translate_page();
             
-            // get_exchangerate('JPY','RUB');
-            $json = get_json(build_url());
+            // get_exchangerate('JPY','RUB');              // Убрать
+
+            $category   = NULL;
+            $query      = NULL;
+            $apikey     = "appid=".get_key_yahoo_shopping();
+
+            if(isset($_GET["c"]))                           { $category = "&genre_category_id=". $_GET["c"]; }
+            if(isset($_GET["q"]))                           { $query = "&query=". $_GET["q"]; }
+            
+            $url = "https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch?$apikey$category$query";
+            $json = get_json($url);
             populate_items($json);
         ?>
         </div>
