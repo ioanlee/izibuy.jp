@@ -3,10 +3,6 @@
     include_once 'lib/simple_html_dom.php';
     include_once 'config.php';
 
-    class YahooShopping {
-        
-    }
-
     function build_url(){
         return "https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch?appid=dj00aiZpPW42bWdCR2x5NEhFNyZzPWNvbnN1bWVyc2VjcmV0Jng9Y2Q-&query=soup";   
              // https://shopping.yahooapis.jp/ShoppingWebService/V1/php/itemSearch?appid=dj00aiZpPW42bWdCR2x5NEhFNyZzPWNvbnN1bWVyc2VjcmV0Jng9Y2Q-&query=soup
@@ -142,12 +138,6 @@
             <div class='product-details'>
                 <p>$description</p>
                 <p>$Additional3</p>
-                <img
-                    src='../images/item/details-image.jpg'
-                    height='470'
-                    width='830'
-                    alt='product details photo'
-                />
             </div>
         ";
     }

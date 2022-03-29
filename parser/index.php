@@ -1,18 +1,5 @@
-<?php           
-    // include_once 'YahooAuction.php';
+<?php
     include_once 'YahooShopping.php';
-
-    
-
-    // print($json["ResultSet"]["totalResultsReturned"]);
-
-
-    // echo $json["ResultSet"]["0"]["Result"]["0"]["Name"];
-
-
-    // $json = get_json($url);
-    // populate_single($json);
-
 
 
 

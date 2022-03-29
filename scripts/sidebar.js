@@ -12,7 +12,7 @@ Vue.component('sidebar-catalog', {
                 <details ref="catalog" class="catalog" open>
                     <summary class="catalog-summary"></summary>
                     <div class="category" v-for="category in categories.yahooshopping">
-                        <a class="catalog-item" href="/izibuy/pages/searchshop" v-bind:href="category.href" @mouseover.prevent="openSubCategory">{{ category.name }}</a>
+                        <a class="catalog-item" href="/izibuy/pages/searchshop" :href="category.href" @mouseover.prevent="openSubCategory">{{ category.name }}</a>
                         <!-- <a class="catalog-item" href="/izibuy/pages/searchshop" v-bind:href="category.href" @click.prevent="openSubCategory">{{ category.name }}</a> -->
                         <div class="sub-category">
                             <next-sub-category></next-sub-category>
@@ -28,32 +28,36 @@ Vue.component('sidebar-catalog', {
             return {
                 categories: {
                     yahooshopping : [
-                            { name: 'Компьютеры',               id: '2502',       href: '/izibuy/pages/searchshop?c=2502',  subcategories: []},
-                            { name: 'Электроника',              id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []}, 
-                            { name: 'AV-камеры',                id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []},
-                            { name: 'Бытовая техника',          id: '2505',       href: '/izibuy/pages/searchshop?c=2505',  subcategories: []},
-                            { name: 'Игры и игрушки',           id: '2511',       href: '/izibuy/pages/searchshop?c=2511',  subcategories: []},
-                            { name: 'Музыка',                   id: '2516',       href: '/izibuy/pages/searchshop?c=2516',  subcategories: []},
-                            { name: 'Книги и журналы',          id: '10002',      href: '/izibuy/pages/searchshop?c=10002', subcategories: []},
-                            { name: 'Хобби и рукоделие',        id: '2503',       href: '/izibuy/pages/searchshop?c=2503',  subcategories: []},
-                            { name: 'Антиквариат',              id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []},
-                            { name: 'Спорт и отдых',            id: '2512',       href: '/izibuy/pages/searchshop?c=2512',  subcategories: []},
-                            { name: 'Авто и мото',              id: '2514',       href: '/izibuy/pages/searchshop?c=2514',  subcategories: []},
-                            { name: 'Аксессуары и часы',        id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []},
-                            { name: 'Здоровье и диета',         id: '2500',       href: '/izibuy/pages/searchshop?c=2500',  subcategories: []},
-                            { name: 'Косметика и Парфюмерия',   id: '2501',       href: '/izibuy/pages/searchshop?c=2501',  subcategories: []},
-                            { name: 'Еда и напитки',            id: '2498',       href: '/izibuy/pages/searchshop?c=2498',  subcategories: []},
-                            { name: 'Дом и интерьер',           id: '2506',       href: '/izibuy/pages/searchshop?c=2506',  subcategories: []},
-                            { name: 'Домашние питомцы',         id: '2509',       href: '/izibuy/pages/searchshop?c=2509',  subcategories: []},
-                            { name: 'Бизнес и офис',            id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []},
-                            { name: 'Цветы и растения',         id: '2507',       href: '/izibuy/pages/searchshop?c=2507',  subcategories: []},
-                            { name: 'Детские товары',           id: '2497',       href: '/izibuy/pages/searchshop?c=2497',  subcategories: []},
-                            { name: 'Знаменитости',             id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []},
-                            { name: 'Аниме и манга',            id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []},
-                            { name: 'Мода',                     id: '13457',      href: '/izibuy/pages/searchshop?c=13457', subcategories: []},
-                            { name: 'Благотворительность',      id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []},
-                            { name: 'Другое',                   id: 'default',    href: '/izibuy/pages/searchshop',         subcategories: []},
-                    ]
+                        { name: 'Компьютеры',               id: '2502',     href: '/izibuy/pages/searchshop?c=2502',  subcategories: []},
+                        { name: 'Электроника',              id: '2519',     shref: '/izibuy/pages/searchshop',         subcategories: []}, 
+                        { name: 'Бытовая техника',          id: '2505',     href: '/izibuy/pages/searchshop?c=2505',  subcategories: []},
+                        { name: 'Игры и игрушки',           id: '2511',     href: '/izibuy/pages/searchshop?c=2511',  subcategories: []},
+                        { name: 'Музыка',                   id: '2516',     href: '/izibuy/pages/searchshop?c=2516',  subcategories: []},
+                        { name: 'Книги и журналы',          id: '10002',    href: '/izibuy/pages/searchshop?c=10002', subcategories: []},
+                        { name: 'Хобби и рукоделие',        id: '2503',     href: '/izibuy/pages/searchshop?c=2503',  subcategories: []},
+                        { name: 'Спорт и отдых',            id: '2512',     href: '/izibuy/pages/searchshop?c=2512',  subcategories: []},
+                        { name: 'Авто и мото',              id: '2514',     href: '/izibuy/pages/searchshop?c=2514',  subcategories: []},
+                        { name: 'Аксессуары и часы',        id: '2496',     href: '/izibuy/pages/searchshop?c=2496',  subcategories: []},
+                        { name: 'Здоровье и диета',         id: '2500',     href: '/izibuy/pages/searchshop?c=2500',  subcategories: []},
+                        { name: 'Косметика и Парфюмерия',   id: '2501',     href: '/izibuy/pages/searchshop?c=2501',  subcategories: []},
+                        { name: 'Еда и напитки',            id: '2498',     href: '/izibuy/pages/searchshop?c=2498',  subcategories: []},
+                        { name: 'Дом и интерьер',           id: '2506',     href: '/izibuy/pages/searchshop?c=2506',  subcategories: []},
+                        { name: 'Домашние питомцы',         id: '2509',     href: '/izibuy/pages/searchshop?c=2509',  subcategories: []},
+                        { name: 'Бизнес и офис',            id: '',         href: '/izibuy/pages/searchshop',         subcategories: []},
+                        { name: 'Цветы и растения',         id: '2507',     href: '/izibuy/pages/searchshop?c=2507',  subcategories: []},
+                        { name: 'Детские товары',           id: '2497',     href: '/izibuy/pages/searchshop?c=2497',  subcategories: []},
+                        { name: 'Аниме и манга',            id: '10002',    href: '/izibuy/pages/searchshop?c=10002', subcategories: []},
+                        { name: 'Мода',                     id: '13457',    href: '/izibuy/pages/searchshop?c=13457', subcategories: []},
+                    ],
+                    yahooauction : [
+                        // { name: 'Знаменитости',             id: '',         href: '/izibuy/pages/searchshop',         subcategories: []},
+                        // { name: 'Антиквариат',              id: '',         href: '/izibuy/pages/searchshop',         subcategories: []},
+                        // { name: 'AV-камеры',                id: '',         href: '/izibuy/pages/searchshop',         subcategories: []},
+                        { name: 'Благотворительность',      id: '',         href: '/izibuy/pages/searchshop',         subcategories: []},
+                        { name: 'Другое',                   id: '',         href: '/izibuy/pages/searchshop',         subcategories: []},
+                    ],
+                    amazonjapan : [],
+                    rakuten : [],
                 }
             }
         },

@@ -20,19 +20,13 @@
           <my-header></my-header>
         </header>
         <main>
-          <div id="loginPopup">
-            <login-popup></login-popup>
-          </div>
-          <div id="remindPassPopup">
-            <remind-password-popup></remind-password-popup>
-          </div>
-          <div id="betPopup">
-            <bet-popup></bet-popup>
-          </div>
+          <div id="loginPopup"><login-popup></login-popup></div>
+          <div id="remindPassPopup"><remind-password-popup></remind-password-popup></div>
+          <div id="betPopup"><bet-popup></bet-popup></div>
           
           <?php 
             include_once '../parser/YahooShopping.php';
-            translate_page(); 
+            translate_page();
             $apikey = get_key_yahoo_shopping();
 
             $item = 'soup-stock-tokyo_100007a';

@@ -1142,24 +1142,28 @@ header .loginOn .cart {
   margin: 20px auto;
   cursor: pointer;
   outline: none;
+  height: 280px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 @media screen and (max-width: 1600px) {
   .item {
     width: 200px;
+    height: 280px;
   }
 }
 
 @media screen and (max-width: 1440px) {
   .item {
     width: 160px;
+    height: 280px;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .item {
     width: 160px;
+    height: 220px;
   }
 }
 
@@ -1344,6 +1348,58 @@ header .loginOn .cart {
   .item .price-wrapper {
     padding: 0;
     gap: 5px;
+  }
+}
+
+.skeleton {
+  -webkit-animation: skeleton-loading 1s linear infinite alternate;
+          animation: skeleton-loading 1s linear infinite alternate;
+  border-radius: 15px !important;
+  cursor: default;
+}
+
+.skeleton-image {
+  height: 100%;
+}
+
+.skeleton-text {
+  width: 90%;
+  height: 24px;
+}
+
+.skeleton-text::after {
+  display: none;
+}
+
+.skeleton-text:first-of-type {
+  width: 100%;
+}
+
+.skeleton-text:last-of-type {
+  margin-top: 10px;
+  width: 60%;
+  height: 100%;
+}
+
+.skeleton-noborder {
+  border: none;
+}
+
+@-webkit-keyframes skeleton-loading {
+  0% {
+    background-color: #c2cfd6;
+  }
+  100% {
+    background-color: #f0f3f5;
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #c2cfd6;
+  }
+  100% {
+    background-color: #f0f3f5;
   }
 }
 

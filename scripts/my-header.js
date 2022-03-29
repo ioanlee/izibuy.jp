@@ -30,7 +30,7 @@ Vue.component("my-header", {
                                 <img src="../images/logos/logo_mobile.svg" alt="Логотип">
                             </picture>
                         </a>
-                        <form class="search-bar" method="GET" action="/izibuy/pages/searchshop">
+                        <form class="search-bar" method="GET" action="../pages/searchshop">
                           <input type="search" name="q" id="" placeholder="найти">
                         </form>                        
                         <div class="header__bottom-bar">

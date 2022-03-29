@@ -10,17 +10,18 @@
     margin: 20px auto
     //overflow: hidden
     cursor: pointer
-    outline: none
+    outline: none    
+    height: 280px
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
     @media screen and( max-width: 1600px)
         width: 200px
-        //height: 280px
+        height: 280px
     @media screen and( max-width: 1440px)
         width: 160px
-        //height: 280px
+        height: 280px
     @media screen and( max-width: 1024px)
         width: 160px
-        //height: 220px
+        height: 220px
     &:hover
         a
             color: $purple
@@ -148,3 +149,31 @@
             padding: 0
             gap: 5px
         
+
+.skeleton
+    animation: skeleton-loading 1s linear infinite alternate
+    border-radius: 15px !important
+    cursor: default
+
+    &-image
+        height: 100%
+
+    &-text
+        width: 90%
+        height: 24px
+        &::after
+            display: none
+        &:first-of-type
+            width: 100%
+        &:last-of-type
+            margin-top: 10px
+            width: 60% 
+            height: 100%  
+    &-noborder
+        border: none   
+
+@keyframes skeleton-loading
+    0%
+        background-color: hsl(200, 20%,80%)
+    100%
+        background-color: hsl(200, 20%,95%)
