@@ -18,7 +18,7 @@
         height: 280px
     @media screen and( max-width: 1440px)
         width: 160px
-        height: 280px
+        height: 250px
     @media screen and( max-width: 1024px)
         width: 160px
         height: 220px
@@ -31,25 +31,28 @@
     .item-image
         position: relative
         width: 100%
-        max-height: 150px
+        height: 150px
         transition: .2s
         border-radius: 15px 15px 0px 0px
         overflow: hidden
         &:hover img
             transform: scale(1.1)
+        & img
+            transition: 0.2s
         .zoom
             display: none
             position: absolute
             width: 50px
             height: 50px
-            background-image: url(/images/icons/icon_zoom.svg)
+            background-image: url(../images/icons/icon_zoom.svg)
             background-repeat: no-repeat
             top: 33%
             left: 40%
+            transition: 0.2s
             &:hover
                 width: 70px
                 height: 70px
-                background-image: url(/images/icons/icon_zoom-hover.svg)
+                background-image: url(../images/icons/icon_zoom-hover.svg)
                 transition: 0.2s
 
         &:hover .zoom
@@ -71,10 +74,10 @@
                 background-image: url(/images/icons/icon_preview_click.svg)
 
     .item-description
-        width: 100%
+        width: 90%
         //height: 66px
         margin: auto
-        padding: 4px 8px
+        // padding: 4px 8px
         font-size: 17px
         line-height: 129%
         overflow: hidden
@@ -84,13 +87,16 @@
         overflow: hidden
         display: -webkit-box
         -webkit-box-orient: vertical
-        -webkit-line-clamp: 4
+        -webkit-line-clamp: 3
         
         &:hover
             color: $blue
             text-decoration: underline
         @media screen and (max-width: 1440px)
             font-size: 15px
+        @media screen and( max-width: 1024px)
+            -webkit-line-clamp: 2
+            margin: 10px 5px
 
     .item-price
         font-family: "Tahoma", "Arial", sans-serif

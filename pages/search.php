@@ -30,8 +30,7 @@
         </main>
     </div>
 </div>
-<script src="../scripts/main.js" type="module"></script> 
-<script src="exchangerate.js"></script>
+<script src="../scripts/main.js" type="module"></script>
 <script>document.cookie = 'googtrans=/en/ru';</script>
 </body>
 </html>

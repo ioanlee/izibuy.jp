@@ -3,6 +3,8 @@
     include_once 'lib/simple_html_dom.php';
     include_once 'config.php';
 
+    error_reporting(0);
+
     function build_url(){
         return "https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch?appid=dj00aiZpPW42bWdCR2x5NEhFNyZzPWNvbnN1bWVyc2VjcmV0Jng9Y2Q-&query=soup";   
              // https://shopping.yahooapis.jp/ShoppingWebService/V1/php/itemSearch?appid=dj00aiZpPW42bWdCR2x5NEhFNyZzPWNvbnN1bWVyc2VjcmV0Jng9Y2Q-&query=soup
@@ -61,8 +63,6 @@
                 }
             </script>
             <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script> 
-            <div class="product-container" style="display:flex; flex-direction:row; flex-wrap: wrap;">   
-            <script>document.cookie = "googtrans=/en/ru";</script> 
         ';
     }
     function populate_single($json){
@@ -70,12 +70,15 @@
         function add_thumb_gallery($var){
             echo "<img src='".$var["Image"]["Medium"]."' alt='".$var["Image"]["Id"]."' class='thumb'></img>";
             $pics = $var['RelatedImages'];
-            foreach($pics as $values){                
-                if(is_array($values))  {
-                    $imgalt = $values['Id'];
-                    $imgsrc = $values['Small'];
-                    print "<img src='$imgsrc' alt='$imgalt' class='thumb'></img>";
-                }   
+            if ($pics == "") { return; }
+            else {
+                foreach($pics as $values){                
+                    if(is_array($values))  {
+                        $imgalt = $values['Id'];
+                        $imgsrc = $values['Small'];
+                        print "<img src='$imgsrc' alt='$imgalt' class='thumb'></img>";
+                    }   
+                }
             }
         }
         check_cookie();
@@ -142,14 +145,16 @@
         ";
     }
     function populate_items($json){
-        if(!isset($_COOKIE["JPY/RUB"])){get_exchangerate('JPY','RUB');}
+        $izibuy_rate = get_izibuy_rate();
+        $_COOKIE["JPY/RUB"] = .9;   // fixed, change with get_exchangerate('JPY','RUB')
+        
         foreach($json["hits"] as $key=>$item){   // желательно быстрее + не хардкод []
-            $id     = $item["imageId"];// $item["AuctionID"];
+            $id     = $item["imageId"];
             $url    = $item["url"];
             $title  = $item["name"];
-            $price  = $item["price"];
-            $imgsrc = $item["image"]["medium"];
             $imgalt = $item["imageId"];
+            $imgsrc = $item["image"]["medium"];
+            $price  = number_format(floatval($item["price"])*$_COOKIE["JPY/RUB"]*$izibuy_rate, 2 );
             
             echo '
                 <div class="item">
@@ -166,7 +171,8 @@
                     </div>
                     <a href="./item?item='.$id.'" class="item-description">'.$title.'</a>
                     <span class="price-wrapper">
-                        <span class="item-price">'.number_format(floatval($price)*$_COOKIE["JPY/RUB"], 2 ).'</span>
+                        <span class="item-price">'.$price.'</span>
+                        <!-- <span class="item-price">'.$price.'</span> -->
                         <button class="mobile-zoom" @click="thumb"></button>
                         <button ref="fav" class="fav" @click="addToFavs" idx="'.$id.'"></button>            
                     </span>        
