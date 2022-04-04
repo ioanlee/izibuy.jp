@@ -20,7 +20,7 @@
         </header>
         <main>
         <?php           
-            include '../parser/YahooAuction.php';
+            include '../yahooauctions/YahooAuction.php';
             translate_page();
             
             get_exchangerate('JPY','RUB');

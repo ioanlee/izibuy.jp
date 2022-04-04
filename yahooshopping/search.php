@@ -7,8 +7,32 @@
     <link rel="stylesheet" href="../styles/style.css" />
     <title>Document</title>
     <script src="../scripts/vue.min.js"></script>
-    <script src="../parser/scroll.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        results = 10;
+        start   = 0;
+        var parts = window.location.search.substr(1).split("&");
+        var $_GET = {};
+        for (var i = 0; i < parts.length; i++) {
+            var temp = parts[i].split("=");
+            $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
+        }
+        
+        start += results;
+        $.get('LoadItems.php', { results_num: 30, start_pos: start, q: $_GET['q'], c: $_GET['c']}, function(data){
+            $('.product-container').append(data);
+        })
+
+        window.onscroll = function(ev) {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+                start += results;
+                $.get('LoadItems.php', { results_num: results, start_pos: start, q: $_GET['q'], c: $_GET['c']}, function(data){
+                    $('.product-container').append(data);
+                })
+            }
+        };
+    </script>
+    <!-- <script src="../scripts/scroll.js"></script> -->
 </head>
 <body>
 <div class="wrapper">
@@ -54,15 +78,15 @@
                     }, "google_translate_element");
                 }
             </script> 
+            <!-- <script>document.cookie = 'googtrans=/en/ru';</script> -->
             <script>document.cookie = "googtrans=/jp/ru";</script>
             <!-- // gtranslate end // -->
-            <div class="product-container">   
+            <div class="product-container">
             </div>
         </main>
     </div>
 </div>
 <script src="../scripts/main.js" type="module"></script>
-<script>document.cookie = 'googtrans=/en/ru';</script>
 <?php //echo get_exchangerate('JPY','RUB') ?>
 </body>
 </html>

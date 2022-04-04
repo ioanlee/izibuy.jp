@@ -1,7 +1,7 @@
 <?php 
     
-    include_once 'lib/simple_html_dom.php';
-    include_once 'config.php';
+    include_once '../lib/simple_html_dom.php';
+    include_once '../config.php';
 
     error_reporting(0);
 
@@ -126,8 +126,8 @@
 
         echo "        
             <div class='bread-crumbs'>
-                <a category-id='$category' href='../pages/catalog.html'>Компьютеры</a><!-- /category/$category -->
-                <a category-id='' href='../pages/unit.html'>Ноутбуки</a>
+                <a category-id='$category' href='#'>Компьютеры</a>      <!-- /category/$category -->
+                <a category-id='' href='#'>Ноутбуки</a>
             </div>
             <div ref='product' class='product'>
                 <button class='close-button' type='button' aria-label='Закрыть окно' @click='closeModal'></button>
@@ -145,14 +145,12 @@
                 <div class='product-desc'>
                     <div class='text-content'>
                             <span class='table-row'><span class='parameter'>Цена:</span><span class='value'>$price JPY (".$price*$_COOKIE['JPY/RUB']." RUB)</span></span>
+                            <span class='table-row'><span class='parameter'>Тип:</span><span class='value'>$headline</span></span>
                             <span class='table-row'><span class='parameter'>Состояние:</span><span class='value'>$condition</span></span>
                             <span class='table-row'><span class='parameter'>В наличии:</span><span class='value'>$instock</span></span>
-                            <span class='table-row'><span class='parameter'>".var_name($headline).":</span><span class='value'><a href='/izibuy/yahooshopping/search?s=$headline'>$headline</a></span></span>
-                            <span class='table-row'><span class='parameter'>".var_name($condition).":</span><span class='value'>$condition</span></span>
-                            <span class='table-row'><span class='parameter'>".var_name($rating).":</span><span class='value'>$rating</span></span>
-                            <span class='table-row'><span class='parameter'>Категория:</span><span class='value'><a href='/izibuy/yahooshopping/search?c=$category'>$category</a></span></span>
-                            <span class='table-row'><span class='parameter'>".var_name($rating).":</span><span class='value'>$rating</span></span>
+                            <span class='table-row'><span class='parameter'>Рейтинг:</span><span class='value'>$rating</span></span>
                             <span class='table-row'><span class='parameter'>Количество:</span><span class='value'>$amount шт.</span></span>
+                            <span class='table-row'><span class='parameter'>Категория:</span><span class='value'><a href='/izibuy/yahooshopping/search?c=$category'>$category</a></span></span>
                     </div>
                     <a href='$url' target='_blank'><img class='logo' src='../images/logos/yahoo.svg' alt='Yahoo logo' height='30' width='160'></a>
                     <a><button type='button' class='button make-bet' @click='makeBet();closeModal();'>Сделать ставку</button></a>
@@ -191,7 +189,7 @@
                         <img src="'.$imgsrc.'" alt="'.$imgalt.'" style="width: 100%;">
                         <div class="zoom" @click="thumb"></div>
                     </div>
-                    <a href="./item?item='.$id.'" class="item-description">'.$title.'</a>
+                    <a href="./item?item='.$id.'" target="_blank" class="item-description">'.$title.'</a>
                     <span class="price-wrapper">
                         <span class="item-price">'.$price.'</span>
                         <!-- <span class="item-price">'.$price.'</span> -->
