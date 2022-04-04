@@ -11,61 +11,166 @@ Vue.component('sidebar-catalog', {
                 </div>            
                 <details ref="catalog" class="catalog" open>
                     <summary class="catalog-summary"></summary>
-                    <div class="category" v-for="category in categorys">
-                        <a class="catalog-item" href="../pages/catalog.html" @click.prevent="openSubCategory">{{ category }}</a>
-                        <div class="sub-category">
-                            <next-sub-category></next-sub-category>
-                            <next-sub-category></next-sub-category>
-                            <next-sub-category></next-sub-category>
-                            <next-sub-category></next-sub-category>
+                    <div class="category" v-for="(category, index) in allcategories.yahooshopping.categories">
+                        <a class="catalog-item" :href="allcategories.yahooshopping.path + category.id">{{ category.name }}</a>
+                        <div class="sub-category" v-if="category.subcategories.length > 0">
+                            <div class="next-sub-category-wrapper" @mouseout="closeSubCategory" v-for="subcategory in category.subcategories">
+                                <a class="catalog-item" :href="subcategory.href">{{subcategory.name}}</a>
+                            </div>
                         </div>
                     </div>
                 </details>                
             </div>
 `,
         data: function() {
-            return {                
-                categorys: [
-                            'Компьютеры',
-                            'Электроника', 
-                            'AV-камеры',
-                            'Бытовая техника',
-                            'Игры и игрушки',
-                            'Музыка',
-                            'Книги и журналы',
-                            'Хобби и рукоделие',
-                            'Антиквариат',
-                            'Спорт и отдых',
-                            'Авто и мото',
-                            'Аксессуары и часы',
-                            'Здоровье и красота',
-                            'Еда и напитки',
-                            'Дом и интерьер',
-                            'Домашние питомцы',
-                            'Бизнес и офис',
-                            'Цветы и растения',
-                            'Детские товары',
-                            'Знаменитости',
-                            'Аниме и манга',
-                            'Мода',
-                            'Благотворительность',
-                            'Другое',
+            return {
+                allcategories: {
+                    yahooshopping: {
+                        path: '/izibuy/yahooshopping/search?c=',
+                        categories: [
+                            { name: 'Компьютеры',               id: '2502',  subcategories: []},
+                            { name: 'Электроника',              id: '2519',  subcategories: []}, 
+                            { name: 'Бытовая техника',          id: '2505',  subcategories: []},
+                            { name: 'Игры и игрушки',           id: '2511',  subcategories: []},
+                            { name: 'Музыка',                   id: '2516',  subcategories: [
+                                { name: 'Наушники',                 id: '2504',},   
+                                { name: 'Наушники такие же',        id: '2504',}]},
+                            { name: 'Книги и журналы',          id: '10002', subcategories: []},
+                            { name: 'Хобби и рукоделие',        id: '2503',  subcategories: []},
+                            { name: 'Спорт и отдых',            id: '2512',  subcategories: []},
+                            { name: 'Авто и мото',              id: '2514',  subcategories: []},
+                            { name: 'Аксессуары и часы',        id: '2496',  subcategories: []},
+                            { name: 'Здоровье и диета',         id: '2500',  subcategories: []},
+                            { name: 'Косметика и Парфюмерия',   id: '2501',  subcategories: []},
+                            { name: 'Еда и напитки',            id: '2498',  subcategories: []},
+                            { name: 'Дом и интерьер',           id: '2506',  subcategories: []},
+                            { name: 'Домашние питомцы',         id: '2509',  subcategories: []},
+                            { name: 'Бизнес и офис',            id: '',      subcategories: []},
+                            { name: 'Цветы и растения',         id: '2507',  subcategories: []},
+                            { name: 'Детские товары',           id: '2497',  subcategories: []},
+                            { name: 'Аниме и манга',            id: '10002', subcategories: []},
+                            { name: 'Мода',                     id: '13457', subcategories: []},
                         ]
+                    },
+                    yahooauction: {
+                        path: '/izibuy/yahooauctions/search?c=',
+                        categories: [
+                            { name: 'Знаменитости',             id: '',      subcategories: []},
+                            { name: 'Антиквариат',              id: '',      subcategories: []},
+                            { name: 'AV-камеры',                id: '',      subcategories: []},
+                            { name: 'Благотворительность',      id: '',      subcategories: []},
+                            { name: 'Другое',                   id: '',      subcategories: []},
+
+                            { name: 'Мода',                     id: '23000',      subcategories: []},
+                            { name: 'Аксессуары, часы',         id: '23140',      subcategories: []},
+                            { name: 'Спорт',                    id: '24698',      subcategories: []},
+                            { name: 'Товары для детей',         id: '24202',      subcategories: []},
+                            { name: 'Красота и здоровье',       id: '42177',      subcategories: []},
+                            { name: 'Авто, мото',               id: '26318',      subcategories: []},
+                            { name: 'Компьютеры',               id: '23336',      subcategories: []},
+                            { name: 'Бытовая техника',          id: '23632',      subcategories: []},
+                            { name: 'Товары для дома',          id: '24198',      subcategories: []},
+                            { name: 'Товары для офиса',         id: '22896',      subcategories: []},
+                            { name: 'Книги, журналы',           id: '21600',      subcategories: []},
+                            { name: 'Музыка',                   id: '22152',      subcategories: []},
+                            { name: 'Игры, игрушки',            id: '25464',      subcategories: []},
+                            { name: 'Товары для фанатов',       id: '2084032594', subcategories: []},
+                            { name: 'Комиксы, аниме',           id: '20060',      subcategories: []},
+                            { name: 'Хобби, увлечения',         id: '24242',      subcategories: []},
+                            { name: 'Коллекционирование',       id: '20000',      subcategories: []},
+                        ]
+                    },
+                    amazonjapan : {
+                        path: '/izibuy/amazon/search?c=',
+                        categories: [
+                            { name: 'Сумки и чемоданы',             id: '2221077051',   subcategories: []},
+                            { name: 'Мужская одежда',               id: '2230005051',   subcategories: []},
+                            { name: 'Женская одежда',               id: '2230006051',   subcategories: []},
+                            { name: 'Ювелирные изделия',            id: '85895051',     subcategories: []},
+                            { name: 'Детские товары',               id: '2230804051',   subcategories: []},
+                            { name: 'Обувь',                        id: '2016926051',   subcategories: []},
+                            { name: 'Часы',                         id: '324025011',    subcategories: []},
+                            { name: 'Техника',                      id: '2016929051',   subcategories: []},
+                            { name: 'Аксессуары для авто',          id: '2319890051',   subcategories: []},
+                            { name: 'Аксессуары для мотоциклов',    id: '2017304051',   subcategories: []},
+                            { name: 'Здоровье и уход',              id: '2127209051',   subcategories: []},
+                            { name: 'Музыкальные инструменты',      id: '2123629051',   subcategories: []},
+                            { name: 'Кухонные принадлежности',      id: '3828871',      subcategories: []},
+                            { name: 'Косметика',                    id: '52374051',     subcategories: []},
+                            { name: 'Красота',                      id: '160384011',    subcategories: []},
+                            { name: 'Спортивные товары',            id: '14304371',     subcategories: []},
+                            { name: 'Игрушки/хобби',                id: '13299531',     subcategories: []},
+                            { name: 'Продукты питания',             id: '57239051',     subcategories: []},
+
+                        ]
+                    },
+                    rakuten : {
+                        path: '',
+                        categories: [
+                            { name: 'Женская одежда',                   id: '100371',      subcategories: []},
+                            { name: 'Мужская одежда',                   id: '551177',      subcategories: []},
+                            { name: 'Сумки/Дизайнерские вещи',          id: '216131',      subcategories: []},
+                            { name: 'Нижнее бельё',                     id: '100433',      subcategories: []},
+                            { name: 'Обувь',                            id: '558885',      subcategories: []},
+                            { name: 'Наручные часы',                    id: '558929',      subcategories: []},
+                            { name: 'Ювелирные изделия',                id: '216129',      subcategories: []},
+                            { name: 'Дети/Материнство',                 id: '100533',      subcategories: []},
+                            { name: 'Косметика/Парфюмерия',             id: '100939',      subcategories: []},
+                            { name: 'Питание',                          id: '100227',      subcategories: []},
+                            { name: 'Вода/Безалкогольные напитки',      id: '100316',      subcategories: []},
+                            { name: 'Европейские/японские сладости',    id: '551167',      subcategories: []},
+                            { name: 'Игрушки, хобби',                   id: '101164',      subcategories: []},
+                            { name: 'Товары повседневного спроса',      id: '215783',      subcategories: []},
+                            { name: 'Спорт/Активный отдых',             id: '101070',      subcategories: []},
+                            { name: 'Диета/Здоровье',                   id: '100938',      subcategories: []},
+                            { name: 'Медикаменты',                      id: '551169',      subcategories: []},
+                            { name: 'Цветы/Сад/Сделай сам',             id: '100005',      subcategories: []},
+                            { name: 'Домашние животные',                id: '101213',      subcategories: []},
+                            { name: 'Компьютеры/Периферия',             id: '100026',      subcategories: []},
+                            { name: 'Бытовая электроника',              id: '562637',      subcategories: []},
+                            { name: 'ТВ/Аудио/Камеры',                  id: '211742',      subcategories: []},
+                            { name: 'Кухонные принадлежности',          id: '558944',      subcategories: []},
+                            { name: 'Автомобили/Мотоциклы',             id: '101114',      subcategories: []},
+                            { name: 'Запчасти авто/мото',               id: '503190',      subcategories: []},
+
+                        ]
+                    },
+                    izibuy : {
+                        path: '',
+                        categories: [
+                            { name: '',             id: '',      subcategories: []},
+                            { name: '',             id: '',      subcategories: []},
+                            { name: '',             id: '',      subcategories: []},
+                            { name: '',             id: '',      subcategories: []},
+                            { name: '',             id: '',      subcategories: []},
+                            { name: '',             id: '',      subcategories: []},
+                            { name: '',             id: '',      subcategories: []},
+                            { name: '',             id: '',      subcategories: []},
+                            { name: '',             id: '',      subcategories: []},
+                            { name: '',             id: '',      subcategories: []},
+                            { name: '',             id: '',      subcategories: []},
+                            { name: '',             id: '',      subcategories: []},
+
+                        ]
+                    }
+                }
             }
         },
         methods: {
-            openSubCategory() {                
-                this.$refs.catalog.querySelectorAll('.sub-category').forEach((item) => {
-                    item.classList.remove('sub-category--opened')
-                })
-                event.target.nextElementSibling.classList.add('sub-category--opened')
-                document.querySelector('.main-content').classList.add('zindex')
+            openSubCategory() {   
+                // DEPRECATED, done with styles in _sidebar.sass              
+                // this.$refs.catalog.querySelectorAll('.sub-category').forEach((item) => {
+                //     item.classList.remove('sub-category--opened')
+                // })
+                // event.target.nextElementSibling.classList.add('sub-category--opened')
+                // document.querySelector('.main-content').classList.add('zindex')
             },
-            closeSubCategory() {                
-                if (event.target.nextElementSibling.classList.contains('sub-category--opened')) {
-                    event.target.nextElementSibling.classList.remove('sub-category--opened')
-                    document.querySelector('.main-content').classList.remove('zindex')
-                }
+            closeSubCategory() {   
+                // DEPRECATED, done with styles in _sidebar.sass 
+                // if (event.target.nextElementSibling.classList.contains('sub-category--opened')) {
+                //     event.target.nextElementSibling.classList.remove('sub-category--opened')
+                //     document.querySelector('.main-content').classList.remove('zindex')
+                // }
             },
             closeCatalog() {
                 document.querySelector('.main-content').style.display = "block"
@@ -172,32 +277,32 @@ Vue.component('sidebar-cut-filters', {
     `,
 })
 
-
-Vue.component('sidebar-nav', {
-    template: `
-            <div class="sidebar-nav">                            
-                <p>Личный кабинет</p>
-                <a href="../pages/orders.html">Заказы</a>
-                <a class="active-tab" href="../pages/payments.html">Платежи (85 000р)</a>
-                <a href="../pages/adresses.html">Адреса доставки (2)</a>
-                <a href="../pages/profile.html">Личная информация</a>                    
-            </div>
-    `,
-})
+// DEPRECATED
+// Vue.component('sidebar-nav', {
+//     template: `
+//             <div class="sidebar-nav">                            
+//                 <p>Личный кабинет</p>
+//                 <a href="../pages/orders.html">Заказы</a>
+//                 <a class="active-tab" href="../pages/payments.html">Платежи (85 000р)</a>
+//                 <a href="../pages/adresses.html">Адреса доставки (2)</a>
+//                 <a href="../pages/profile.html">Личная информация</a>                    
+//             </div>
+//     `,
+// })
 
 new Vue({ el: '#sidebar-container' })
 
 document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.querySelector('.wrapper')
     const main = document.querySelector('.main-content')
-    const categorys = document.querySelectorAll('.sub-category')
-    const subCategorys = document.querySelectorAll('.next-sub-category')
+    const categories = document.querySelectorAll('.sub-category')
+    const subcategories = document.querySelectorAll('.next-sub-category')
     window.addEventListener('click', () => {
         if (event.target == wrapper) {
-            categorys.forEach((item) => {
+            categories.forEach((item) => {
                 item.classList.remove('sub-category--opened')                
             })
-            subCategorys.forEach((item) => {
+            subcategories.forEach((item) => {
                 item.classList.remove('next-sub-category--opened')
             })
             main.classList.remove('zindex')

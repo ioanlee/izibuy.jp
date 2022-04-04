@@ -30,8 +30,8 @@ Vue.component("my-header", {
                                 <img src="../images/logos/logo_mobile.svg" alt="Логотип">
                             </picture>
                         </a>
-                        <form class="search-bar" method="POST" action="">
-                          <input type="search" name="" id="" placeholder="найти">
+                        <form class="search-bar" method="GET" action="../pages/yahooshopping">
+                          <input type="search" name="q" id="" placeholder="найти">
                         </form>                        
                         <div class="header__bottom-bar">
                             <a id="catalog-open" href="..pages/catalog" class="mobile-catalog-button" @click.prevent="openCatalog">
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (pageWidth > mobileWidth) {
     window.addEventListener("scroll", function () {
       if (scrollY > 100) {
-        header.style.transform = "translateY(-60px)";
+        header.style.transform = "translateY(-50px)";
         header.style.transition = "0.6s";
       } else {
         header.style.transform = "translateY(0)";

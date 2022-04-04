@@ -20,8 +20,7 @@ Vue.component('product-item', {
             <span class="item-price">6 824</span>
             <button class="mobile-zoom" @click="thumb"></button>
             <button ref="fav" class="fav" @click="addToFavs"></button>            
-        </span>
-        
+        </span>        
     </div>
 `,
     methods: {
