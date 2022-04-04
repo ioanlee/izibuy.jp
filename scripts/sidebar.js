@@ -1,4 +1,6 @@
-Vue.component('sidebar-catalog', {
+const app = Vue.createApp({})
+
+app.component('sidebar-catalog', {
     template: `
             <div>
                 <div class="closeCatalog">
@@ -26,7 +28,7 @@ Vue.component('sidebar-catalog', {
             return {
                 allcategories: {
                     yahooshopping: {
-                        path: '/izibuy/yahooshopping/search?c=',
+                        path: '/izibuy/pages/yahooshopping?c=',
                         categories: [
                             { name: 'Компьютеры',               id: '2502',  subcategories: []},
                             { name: 'Электроника',              id: '2519',  subcategories: []}, 
@@ -179,118 +181,104 @@ Vue.component('sidebar-catalog', {
         }
 })
 
-Vue.component('next-sub-category', {
-    template: `
-            <div class="next-sub-category-wrapper">
-                <a href="" class="catalog-item" href="../pages/catalog.html" @click.prevent="openNextSubCategory">Подкатегория</a>
-                <div class="next-sub-category">
-                    <a href="" class="catalog-item sub-catalog-item" href="../pages/catalog.html">Подкатегория #2</a>
-                    <a href="" class="catalog-item sub-catalog-item" href="../pages/catalog.html">Подкатегория #2</a>
-                    <a href="" class="catalog-item sub-catalog-item" href="../pages/catalog.html">Подкатегория #2</a>
-                    <a href="" class="catalog-item sub-catalog-item" href="../pages/catalog.html">Подкатегория #2</a>
-                </div>
-            </div>
-    `,
-    data: function() {
-        return {
-            
-        }
-    },
-    methods: {
-        openNextSubCategory() {                        
-            document.querySelectorAll('.next-sub-category').forEach((item) => {
-                item.classList.remove('next-sub-category--opened')
-            })            
-            event.target.nextElementSibling.classList.add('next-sub-category--opened')            
-        },
-    }
-})
-
-Vue.component('sidebar-full-filters', {
-    template: `
-            <div class="filters">
-                <h2>Сортировка</h2>
-                <select name="" id="">
-                    <option value="most-expensive">Сначала самые дорогие</option>
-                </select>
-                <h2>Фильтр</h2>
-                <h3>Цена</h3>
-                <div class="number-inputs">
-                    <input type="number" name="" id="number-min" value="2200" onchange="updateRange()">
-                    <input type="number" name="" id="number-max" value="9500" onchange="updateRange()">
-                </div>
-                <div class="double-range-input">
-                    <hr>
-                    <input type="range" name="" id="range-min" min="200" max="11500" value="2200"
-                        onmousemove="updateNumbers()">
-                    <input type="range" name="" id="range-max" min="200" max="11500" value="9500"
-                        onmousemove="updateNumbers()">
-                </div>
-                <h3>Бренд</h3>
-                <select name="" id="">
-                    <option value="1">Вариант 1</option>
-                    <option value="2">Вариант 2</option>
-                    <option value="3">Вариант 3</option>
-                </select>
-                <h3>Исполнение</h3>
-                <div class="checkboxes">
-                    <div class="checkbox-row">
-                        <input type="checkbox" name="checkboxes" id="">
-                        <label for="checkboxes">Ламповый</label>
-                    </div>
-                    <div class="checkbox-row">
-                        <input type="checkbox" name="checkboxes" id="">
-                        <label for="checkboxes">Электроника</label>
-                    </div>
-                    <div class="checkbox-row">
-                        <input type="checkbox" name="checkboxes" id="">
-                        <label for="checkboxes">Механика</label>
-                    </div>
-                    <div class="checkbox-row">
-                            <input type="checkbox" name="checkboxes" id="">
-                            <label for="checkboxes">Нанотехнологии</label>
-                    </div>
-                </div>
-            </div>
-`
-})
-
-
-Vue.component('sidebar-cut-filters', {
-    template: `
-            <div class="filters">
-                <h2>Фильтр</h2>
-                <select name="" id="">
-                    <option value="">Все</option>
-                    <option value="">Фильтр 1</option>
-                    <option value="">Фильтр 2</option>
-                    <option value="">Фильтр 3</option>
-                </select>
-                <h2>Сортировка</h2>
-                <select name="" id="">
-                    <option value="">Сначала актуальные</option>
-                    <option value="">Фильтр 1</option>
-                    <option value="">Фильтр 2</option>
-                    <option value="">Фильтр 3</option>
-                </select>
-            </div>
-    `,
-})
-
-// DEPRECATED
-// Vue.component('sidebar-nav', {
+app.mount('#sidebar-container')
+// Vue.component('next-sub-category', {
 //     template: `
-//             <div class="sidebar-nav">                            
-//                 <p>Личный кабинет</p>
-//                 <a href="../pages/orders.html">Заказы</a>
-//                 <a class="active-tab" href="../pages/payments.html">Платежи (85 000р)</a>
-//                 <a href="../pages/adresses.html">Адреса доставки (2)</a>
-//                 <a href="../pages/profile.html">Личная информация</a>                    
+//             <div class="next-sub-category-wrapper">
+//                 <a href="" class="catalog-item" href="../pages/catalog.html" @click.prevent="openNextSubCategory">Подкатегория</a>
+//                 <div class="next-sub-category">
+//                     <a href="" class="catalog-item sub-catalog-item" href="../pages/catalog.html">Подкатегория #2</a>
+//                     <a href="" class="catalog-item sub-catalog-item" href="../pages/catalog.html">Подкатегория #2</a>
+//                     <a href="" class="catalog-item sub-catalog-item" href="../pages/catalog.html">Подкатегория #2</a>
+//                     <a href="" class="catalog-item sub-catalog-item" href="../pages/catalog.html">Подкатегория #2</a>
+//                 </div>
+//             </div>
+//     `,
+//     data: function() {
+//         return {
+            
+//         }
+//     },
+//     methods: {
+//         openNextSubCategory() {                        
+//             document.querySelectorAll('.next-sub-category').forEach((item) => {
+//                 item.classList.remove('next-sub-category--opened')
+//             })            
+//             event.target.nextElementSibling.classList.add('next-sub-category--opened')            
+//         },
+//     }
+// })
+
+// Vue.component('sidebar-full-filters', {
+//     template: `
+//             <div class="filters">
+//                 <h2>Сортировка</h2>
+//                 <select name="" id="">
+//                     <option value="most-expensive">Сначала самые дорогие</option>
+//                 </select>
+//                 <h2>Фильтр</h2>
+//                 <h3>Цена</h3>
+//                 <div class="number-inputs">
+//                     <input type="number" name="" id="number-min" value="2200" onchange="updateRange()">
+//                     <input type="number" name="" id="number-max" value="9500" onchange="updateRange()">
+//                 </div>
+//                 <div class="double-range-input">
+//                     <hr>
+//                     <input type="range" name="" id="range-min" min="200" max="11500" value="2200"
+//                         onmousemove="updateNumbers()">
+//                     <input type="range" name="" id="range-max" min="200" max="11500" value="9500"
+//                         onmousemove="updateNumbers()">
+//                 </div>
+//                 <h3>Бренд</h3>
+//                 <select name="" id="">
+//                     <option value="1">Вариант 1</option>
+//                     <option value="2">Вариант 2</option>
+//                     <option value="3">Вариант 3</option>
+//                 </select>
+//                 <h3>Исполнение</h3>
+//                 <div class="checkboxes">
+//                     <div class="checkbox-row">
+//                         <input type="checkbox" name="checkboxes" id="">
+//                         <label for="checkboxes">Ламповый</label>
+//                     </div>
+//                     <div class="checkbox-row">
+//                         <input type="checkbox" name="checkboxes" id="">
+//                         <label for="checkboxes">Электроника</label>
+//                     </div>
+//                     <div class="checkbox-row">
+//                         <input type="checkbox" name="checkboxes" id="">
+//                         <label for="checkboxes">Механика</label>
+//                     </div>
+//                     <div class="checkbox-row">
+//                             <input type="checkbox" name="checkboxes" id="">
+//                             <label for="checkboxes">Нанотехнологии</label>
+//                     </div>
+//                 </div>
+//             </div>
+// `
+// })
+
+
+// Vue.component('sidebar-cut-filters', {
+//     template: `
+//             <div class="filters">
+//                 <h2>Фильтр</h2>
+//                 <select name="" id="">
+//                     <option value="">Все</option>
+//                     <option value="">Фильтр 1</option>
+//                     <option value="">Фильтр 2</option>
+//                     <option value="">Фильтр 3</option>
+//                 </select>
+//                 <h2>Сортировка</h2>
+//                 <select name="" id="">
+//                     <option value="">Сначала актуальные</option>
+//                     <option value="">Фильтр 1</option>
+//                     <option value="">Фильтр 2</option>
+//                     <option value="">Фильтр 3</option>
+//                 </select>
 //             </div>
 //     `,
 // })
-
-new Vue({ el: '#sidebar-container' })
 
 document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.querySelector('.wrapper')
