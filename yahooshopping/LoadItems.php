@@ -19,5 +19,5 @@
 
     $url = "https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch?$appid$query$start$results$category";
     $json = get_json($url);
-    if ($json["totalResultsAvailable"] == 0) {echo "<p style='margin-top: 10px;'>Не удалось найти товары.</p>";}
-    else { populate_items($json); }
+    if ($json["totalResultsAvailable"] == 0)    { echo "<p style='margin-top: 10px;'>Не удалось найти товары.</p>"; }
+    else                                        { populate_items($json); }
