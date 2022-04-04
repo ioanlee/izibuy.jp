@@ -24,7 +24,7 @@
             translate_page();
             
             get_exchangerate('JPY','RUB');
-            populate_items(request_json(build_url('')));
+            // populate_items(request_json(build_url('')));
         ?>
         </div>
         </main>

@@ -28,6 +28,13 @@
     function check_cookie(){
         if(!isset($_COOKIE["JPY/RUB"]))     { get_exchangerate('JPY','RUB'); }
     }
+    function var_name( $v ) {                                                       // RETURNS VAR NAME
+        $trace = debug_backtrace();
+        $vLine = file( __FILE__ );
+        $fLine = $vLine[ $trace[0]['line'] - 1 ];
+        preg_match( "#\\$(\w+)#", $fLine, $match );
+        return $match[1];
+    }
     function convert(){}
     function translate_page(){
         echo '
@@ -84,20 +91,38 @@
         check_cookie();
         $item = $json["ResultSet"][0]["Result"][0];
         
-        $id          = $item["Code"];
-        $url         = $item["Url"];
-        $title       = $item["Name"];
-        $headline    = $item["Headline"];
-        $condition   = $item["Condition"];
-        $description = $item["Description"];
-        $Additional3 = $item["Additional3"];
-        $rating      = $item["Review"]["Rate"];
-        $imgalt      = $item["Image"]["Id"];
-        $imgsrc      = $item["Image"]["Medium"];
-        $price       = $item["Price"]["_value"];     
-        $currfrom    = $item["Price"]["_attributes"]["currency"];// JPY
-        $currto      = "RUB";        
-        $category    = $item["ProductCategory"]["ID"];
+        $id             = $item["Code"];
+        $url            = $item["Url"];
+        $title          = $item["Name"];
+        $headline       = $item["Headline"];
+        $condition      = $item["Condition"];
+        $description    = $item["Description"];
+        $Additional3    = $item["Additional3"];
+        $rating         = $item["Review"]["Rate"];
+        $imgalt         = $item["Image"]["Id"];
+        $imgsrc         = $item["Image"]["Medium"];
+        $price          = $item["Price"]["_value"];     
+        $currency       = $item["Price"]["_attributes"]["currency"];// JPY
+        $currfrom       = $currency;
+        $currto         = "RUB";        
+        $category       = $item["ProductCategory"]["ID"];
+
+        $isbargain      = $item["IsBargain"];
+        $rating         = $item["Review"]["Rate"];
+        $ratingcount    = $item["Review"]["Count"];
+        $taxincluded    = $item["PriceLabel"]["_attributes"]["taxIncluded"];
+        if ($item["Availability"] == 'instock') {$instock = "да";}
+        else                                    {$instock = "нет";}
+        $amount         = $item["Inventories"][0]["Quantity"];
+        $paymentcode0   = $item["Payment"][0]["Code"];
+        $paymentname0   = $item["Payment"][0]["Name"];
+        $paymentcode1   = $item["Payment"][1]["Code"];
+        $paymentname1   = $item["Payment"][1]["Name"];
+        $paymentcode2   = $item["Payment"][2]["Code"];
+        $paymentname2   = $item["Payment"][2]["Name"];
+        $shippingcode   = $item["Shipping"]["Code"];
+        $shippingname   = $item["Shipping"]["Name"];
+        $isadult        = $item["IsAdult"];
 
         echo "        
             <div class='bread-crumbs'>
@@ -119,18 +144,15 @@
                 </div>
                 <div class='product-desc'>
                     <div class='text-content'>
-                            <span class='table-row'>
-                                <span class='parameter'>Количество:</span>
-                                <span class='value'>1 шт.</span>
-                            </span>
-                            <span class='table-row'>
-                                <span class='parameter'>Состояние товара:</span>
-                                <span class='value'>$condition</span>
-                            </span>                      
-                            <span class='table-row'>
-                                <span class='parameter'>Цена:</span>
-                                <span class='value'>$price JPY (".$price*$_COOKIE['JPY/RUB']." RUB)</span>
-                            </span>              
+                            <span class='table-row'><span class='parameter'>Цена:</span><span class='value'>$price JPY (".$price*$_COOKIE['JPY/RUB']." RUB)</span></span>
+                            <span class='table-row'><span class='parameter'>Состояние:</span><span class='value'>$condition</span></span>
+                            <span class='table-row'><span class='parameter'>В наличии:</span><span class='value'>$instock</span></span>
+                            <span class='table-row'><span class='parameter'>".var_name($headline).":</span><span class='value'><a href='/izibuy/yahooshopping/search?s=$headline'>$headline</a></span></span>
+                            <span class='table-row'><span class='parameter'>".var_name($condition).":</span><span class='value'>$condition</span></span>
+                            <span class='table-row'><span class='parameter'>".var_name($rating).":</span><span class='value'>$rating</span></span>
+                            <span class='table-row'><span class='parameter'>Категория:</span><span class='value'><a href='/izibuy/yahooshopping/search?c=$category'>$category</a></span></span>
+                            <span class='table-row'><span class='parameter'>".var_name($rating).":</span><span class='value'>$rating</span></span>
+                            <span class='table-row'><span class='parameter'>Количество:</span><span class='value'>$amount шт.</span></span>
                     </div>
                     <a href='$url' target='_blank'><img class='logo' src='../images/logos/yahoo.svg' alt='Yahoo logo' height='30' width='160'></a>
                     <a><button type='button' class='button make-bet' @click='makeBet();closeModal();'>Сделать ставку</button></a>

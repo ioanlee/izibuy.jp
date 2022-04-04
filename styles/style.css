@@ -3069,11 +3069,6 @@ footer .links {
 }
 
 @media screen and (min-width: 1600px) {
-  .product .thumbnails-wrapper {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
   .product .thumbnails-wrapper img {
     margin: 0;
   }
@@ -3152,6 +3147,16 @@ footer .links {
 
 .product .product-desc .text-content .table-row {
   margin: 0 0 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.product .product-desc .text-content .table-row .parameter {
+  width: 150px;
 }
 
 .product .product-desc .logo {
