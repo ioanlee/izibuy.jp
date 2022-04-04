@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/style.css" />
     <title>Document</title>
-    <script src="../scripts/vue.min.js"></script>
+    <script src="/scripts/jquery-3.6.0.js"></script>
     <script src="../scripts/index.js"></script>
   </head>
 
@@ -16,9 +16,7 @@
         <sidebar-catalog></sidebar-catalog>
       </div>
       <div class="main-content">
-        <header id="app-header">
-          <my-header></my-header>
-        </header>
+        <header></header>
         <main>
           <div id="loginPopup">
             <login-popup></login-popup>
@@ -81,9 +79,7 @@
             </div>
           </section>
         </main>
-        <footer id="app-footer">
-          <my-footer></my-footer>
-        </footer>
+        <footer></footer>
       </div>
     </div>
     <script src="../scripts/bet.js"></script>
