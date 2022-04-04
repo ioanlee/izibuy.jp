@@ -23,7 +23,7 @@
           <div id="betPopup"><bet-popup></bet-popup></div>
           
           <?php 
-            include_once '../parser/YahooShopping.php';
+            include_once 'YahooShopping.php';
             translate_page();
             $apikey = get_key_yahoo_shopping();
 
