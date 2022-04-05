@@ -1,4 +1,4 @@
-import '../scripts/my-header.js'
+// import '../scripts/my-header.js'
 // import '../scripts/product-item.js'
 import '../scripts/sidebar.js'
 // import '../scripts/login.js'
