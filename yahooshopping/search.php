@@ -6,8 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css" />
     <title>Document</title>
-    <script src="../scripts/vue.min.js"></script>
+
+    <!-- <script src="../scripts/vue.min.js"></script> -->
+    <script src="https://unpkg.com/vue@3"></script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="../scripts/main.js" type="module" defer></script>
+    <script src="../scripts/item-preview.js" defer></script>
     <script>
         results = 10;
         start   = 0;
@@ -17,6 +24,8 @@
             var temp = parts[i].split("=");
             $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
         }
+        // filters = {};
+        // filters.append()
         
         start += results;
         $.get('LoadItems.php', { results_num: 30, start_pos: start, q: $_GET['q'], c: $_GET['c']}, function(data){
@@ -86,7 +95,6 @@
         </main>
     </div>
 </div>
-<script src="../scripts/main.js" type="module"></script>
 <?php //echo get_exchangerate('JPY','RUB') ?>
 </body>
 </html>

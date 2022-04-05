@@ -868,6 +868,7 @@ header .loginOn .cart {
 
 .sidebar .catalog .sub-catalog-item {
   margin-left: 10px;
+  z-index: 20;
 }
 
 .sidebar .catalog .category {
@@ -1160,7 +1161,6 @@ header .loginOn .cart {
 }
 
 .item .item-image {
-  position: relative;
   width: 100%;
   height: 150px;
   -webkit-transition: .2s;
@@ -1169,7 +1169,7 @@ header .loginOn .cart {
   overflow: hidden;
 }
 
-.item .item-image:hover img {
+.item .item-image:hover > img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
@@ -1198,6 +1198,25 @@ header .loginOn .cart {
   background-image: url(../images/icons/icon_zoom-hover.svg);
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+.item .item-image .preview {
+  z-index: 10;
+  width: 780px;
+  height: 600px;
+  border: solid #E1BBA5;
+  background: white;
+  display: none;
+  position: absolute;
+  -webkit-transition: .3s;
+  transition: .3s;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -70%, 0);
+          transform: translate3d(-50%, -70%, 0);
+}
+
+.item .item-image .preview.active {
+  display: block;
 }
 
 .item .item-image:hover .zoom {
@@ -1401,6 +1420,7 @@ header .loginOn .cart {
 }
 
 .product-container {
+  position: relative;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
@@ -2168,7 +2188,7 @@ header .loginOn .cart {
   color: #2E6E9F;
 }
 
-.bread-crumbs a::after {
+.bread-crumbs a:not(:last-of-type)::after {
   position: absolute;
   content: "";
   width: 15px;
@@ -2180,7 +2200,7 @@ header .loginOn .cart {
 }
 
 @media screen and (max-width: 1024px) {
-  .bread-crumbs a::after {
+  .bread-crumbs a:not(:last-of-type)::after {
     bottom: -2px;
   }
 }
@@ -4077,5 +4097,108 @@ html body .wrapper > .main-content main h1 {
   html body .wrapper > .main-content main h1 {
     margin: 20px 0;
   }
+}
+
+#goog-gt-tt, .goog-te-balloon-frame {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.preview__loader {
+  display: none;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 8px solid transparent;
+  border-top-color: #E1BBA5;
+  border-radius: 50%;
+  -webkit-animation: preview-loading-spinner ease 1s infinite;
+          animation: preview-loading-spinner ease 1s infinite;
+}
+
+@-webkit-keyframes preview-loading-spinner {
+  0% {
+    -webkit-transform: rotate(0turn);
+            transform: rotate(0turn);
+  }
+  100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
+@keyframes preview-loading-spinner {
+  0% {
+    -webkit-transform: rotate(0turn);
+            transform: rotate(0turn);
+  }
+  100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
+.preview__content {
+  padding: 20px 20px 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.preview__content .bread-crumbs {
+  padding: 0;
+}
+
+.preview__content .product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.preview__content .product .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.preview__content .product .container .product-photos {
+  width: auto;
+}
+
+.preview__content .product .container .product-photos .full-wrapper > img {
+  width: 350px;
+  height: 260px;
+}
+
+.preview__content .product .container .product-desc {
+  width: 350px;
 }
 /*# sourceMappingURL=style.css.map */

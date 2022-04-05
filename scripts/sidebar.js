@@ -28,40 +28,40 @@ app.component('sidebar-catalog', {
             return {
                 allcategories: {
                     yahooshopping: {
-                        path: '/izibuy/pages/yahooshopping?c=',
+                        path: '/izibuy/yahooshopping/search.php?c=',
                         categories: [
-                            { name: 'Компьютеры',               id: '2502',  subcategories: []},
-                            { name: 'Электроника',              id: '2519',  subcategories: []}, 
-                            { name: 'Бытовая техника',          id: '2505',  subcategories: []},
-                            { name: 'Игры и игрушки',           id: '2511',  subcategories: []},
-                            { name: 'Музыка',                   id: '2516',  subcategories: [
+                            { name: 'Компьютеры',               id: '2502',       subcategories: []},
+                            { name: 'Электроника',              id: '2519',       subcategories: []}, 
+                            { name: 'Бытовая техника',          id: '2505',       subcategories: []},
+                            { name: 'Игры и игрушки',           id: '2511',       subcategories: []},
+                            { name: 'Музыка',                   id: '2516',       subcategories: [
                                 { name: 'Наушники',                 id: '2504',},   
                                 { name: 'Наушники такие же',        id: '2504',}]},
-                            { name: 'Книги и журналы',          id: '10002', subcategories: []},
-                            { name: 'Хобби и рукоделие',        id: '2503',  subcategories: []},
-                            { name: 'Спорт и отдых',            id: '2512',  subcategories: []},
-                            { name: 'Авто и мото',              id: '2514',  subcategories: []},
-                            { name: 'Аксессуары и часы',        id: '2496',  subcategories: []},
-                            { name: 'Здоровье и диета',         id: '2500',  subcategories: []},
-                            { name: 'Косметика и Парфюмерия',   id: '2501',  subcategories: []},
-                            { name: 'Еда и напитки',            id: '2498',  subcategories: []},
-                            { name: 'Дом и интерьер',           id: '2506',  subcategories: []},
-                            { name: 'Домашние питомцы',         id: '2509',  subcategories: []},
-                            { name: 'Бизнес и офис',            id: '',      subcategories: []},
-                            { name: 'Цветы и растения',         id: '2507',  subcategories: []},
-                            { name: 'Детские товары',           id: '2497',  subcategories: []},
-                            { name: 'Аниме и манга',            id: '10002', subcategories: []},
-                            { name: 'Мода',                     id: '13457', subcategories: []},
+                            { name: 'Книги и журналы',          id: '10002',      subcategories: []},
+                            { name: 'Хобби и рукоделие',        id: '2503',       subcategories: []},
+                            { name: 'Спорт и отдых',            id: '2512',       subcategories: []},
+                            { name: 'Авто и мото',              id: '2514',       subcategories: []},
+                            { name: 'Аксессуары и часы',        id: '2496',       subcategories: []},
+                            { name: 'Здоровье и диета',         id: '2500',       subcategories: []},
+                            { name: 'Косметика и Парфюмерия',   id: '2501',       subcategories: []},
+                            { name: 'Еда и напитки',            id: '2498',       subcategories: []},
+                            { name: 'Дом и интерьер',           id: '2506',       subcategories: []},
+                            { name: 'Домашние питомцы',         id: '2509',       subcategories: []},
+                            { name: 'Бизнес и офис',            id: '',           subcategories: []},
+                            { name: 'Цветы и растения',         id: '2507',       subcategories: []},
+                            { name: 'Детские товары',           id: '2497',       subcategories: []},
+                            { name: 'Аниме и манга',            id: '10002',      subcategories: []},
+                            { name: 'Мода',                     id: '13457',      subcategories: []},
                         ]
                     },
                     yahooauction: {
-                        path: '/izibuy/yahooauctions/search?c=',
+                        path: '/izibuy/yahooauctions/search.php?c=',
                         categories: [
-                            { name: 'Знаменитости',             id: '',      subcategories: []},
-                            { name: 'Антиквариат',              id: '',      subcategories: []},
-                            { name: 'AV-камеры',                id: '',      subcategories: []},
-                            { name: 'Благотворительность',      id: '',      subcategories: []},
-                            { name: 'Другое',                   id: '',      subcategories: []},
+                            { name: 'Знаменитости',             id: '',           subcategories: []},
+                            { name: 'Антиквариат',              id: '',           subcategories: []},
+                            { name: 'AV-камеры',                id: '',           subcategories: []},
+                            { name: 'Благотворительность',      id: '',           subcategories: []},
+                            { name: 'Другое',                   id: '',           subcategories: []},
 
                             { name: 'Мода',                     id: '23000',      subcategories: []},
                             { name: 'Аксессуары, часы',         id: '23140',      subcategories: []},
@@ -83,57 +83,57 @@ app.component('sidebar-catalog', {
                         ]
                     },
                     amazonjapan : {
-                        path: '/izibuy/amazon/search?c=',
+                        path: '/izibuy/amazon/search.php?c=',
                         categories: [
-                            { name: 'Сумки и чемоданы',             id: '2221077051',   subcategories: []},
-                            { name: 'Мужская одежда',               id: '2230005051',   subcategories: []},
-                            { name: 'Женская одежда',               id: '2230006051',   subcategories: []},
-                            { name: 'Ювелирные изделия',            id: '85895051',     subcategories: []},
-                            { name: 'Детские товары',               id: '2230804051',   subcategories: []},
-                            { name: 'Обувь',                        id: '2016926051',   subcategories: []},
-                            { name: 'Часы',                         id: '324025011',    subcategories: []},
-                            { name: 'Техника',                      id: '2016929051',   subcategories: []},
-                            { name: 'Аксессуары для авто',          id: '2319890051',   subcategories: []},
-                            { name: 'Аксессуары для мотоциклов',    id: '2017304051',   subcategories: []},
-                            { name: 'Здоровье и уход',              id: '2127209051',   subcategories: []},
-                            { name: 'Музыкальные инструменты',      id: '2123629051',   subcategories: []},
-                            { name: 'Кухонные принадлежности',      id: '3828871',      subcategories: []},
-                            { name: 'Косметика',                    id: '52374051',     subcategories: []},
-                            { name: 'Красота',                      id: '160384011',    subcategories: []},
-                            { name: 'Спортивные товары',            id: '14304371',     subcategories: []},
-                            { name: 'Игрушки/хобби',                id: '13299531',     subcategories: []},
-                            { name: 'Продукты питания',             id: '57239051',     subcategories: []},
+                            { name: 'Сумки и чемоданы',         id: '2221077051', subcategories: []},
+                            { name: 'Мужская одежда',           id: '2230005051', subcategories: []},
+                            { name: 'Женская одежда',           id: '2230006051', subcategories: []},
+                            { name: 'Ювелирные изделия',        id: '85895051',   subcategories: []},
+                            { name: 'Детские товары',           id: '2230804051', subcategories: []},
+                            { name: 'Обувь',                    id: '2016926051', subcategories: []},
+                            { name: 'Часы',                     id: '324025011',  subcategories: []},
+                            { name: 'Техника',                  id: '2016929051', subcategories: []},
+                            { name: 'Аксессуары для авто',      id: '2319890051', subcategories: []},
+                            { name: 'Аксессуары для мотоциклов',id: '2017304051', subcategories: []},
+                            { name: 'Здоровье и уход',          id: '2127209051', subcategories: []},
+                            { name: 'Музыкальные инструменты',  id: '2123629051', subcategories: []},
+                            { name: 'Кухонные принадлежности',  id: '3828871',    subcategories: []},
+                            { name: 'Косметика',                id: '52374051',   subcategories: []},
+                            { name: 'Красота',                  id: '160384011',  subcategories: []},
+                            { name: 'Спортивные товары',        id: '14304371',   subcategories: []},
+                            { name: 'Игрушки/хобби',            id: '13299531',   subcategories: []},
+                            { name: 'Продукты питания',         id: '57239051',   subcategories: []},
 
                         ]
                     },
                     rakuten : {
                         path: '',
                         categories: [
-                            { name: 'Женская одежда',                   id: '100371',      subcategories: []},
-                            { name: 'Мужская одежда',                   id: '551177',      subcategories: []},
-                            { name: 'Сумки/Дизайнерские вещи',          id: '216131',      subcategories: []},
-                            { name: 'Нижнее бельё',                     id: '100433',      subcategories: []},
-                            { name: 'Обувь',                            id: '558885',      subcategories: []},
-                            { name: 'Наручные часы',                    id: '558929',      subcategories: []},
-                            { name: 'Ювелирные изделия',                id: '216129',      subcategories: []},
-                            { name: 'Дети/Материнство',                 id: '100533',      subcategories: []},
-                            { name: 'Косметика/Парфюмерия',             id: '100939',      subcategories: []},
-                            { name: 'Питание',                          id: '100227',      subcategories: []},
-                            { name: 'Вода/Безалкогольные напитки',      id: '100316',      subcategories: []},
-                            { name: 'Европейские/японские сладости',    id: '551167',      subcategories: []},
-                            { name: 'Игрушки, хобби',                   id: '101164',      subcategories: []},
-                            { name: 'Товары повседневного спроса',      id: '215783',      subcategories: []},
-                            { name: 'Спорт/Активный отдых',             id: '101070',      subcategories: []},
-                            { name: 'Диета/Здоровье',                   id: '100938',      subcategories: []},
-                            { name: 'Медикаменты',                      id: '551169',      subcategories: []},
-                            { name: 'Цветы/Сад/Сделай сам',             id: '100005',      subcategories: []},
-                            { name: 'Домашние животные',                id: '101213',      subcategories: []},
-                            { name: 'Компьютеры/Периферия',             id: '100026',      subcategories: []},
-                            { name: 'Бытовая электроника',              id: '562637',      subcategories: []},
-                            { name: 'ТВ/Аудио/Камеры',                  id: '211742',      subcategories: []},
-                            { name: 'Кухонные принадлежности',          id: '558944',      subcategories: []},
-                            { name: 'Автомобили/Мотоциклы',             id: '101114',      subcategories: []},
-                            { name: 'Запчасти авто/мото',               id: '503190',      subcategories: []},
+                            { name: 'Женская одежда',                id: '100371', subcategories: []},
+                            { name: 'Мужская одежда',                id: '551177', subcategories: []},
+                            { name: 'Сумки/Дизайнерские вещи',       id: '216131', subcategories: []},
+                            { name: 'Нижнее бельё',                  id: '100433', subcategories: []},
+                            { name: 'Обувь',                         id: '558885', subcategories: []},
+                            { name: 'Наручные часы',                 id: '558929', subcategories: []},
+                            { name: 'Ювелирные изделия',             id: '216129', subcategories: []},
+                            { name: 'Дети/Материнство',              id: '100533', subcategories: []},
+                            { name: 'Косметика/Парфюмерия',          id: '100939', subcategories: []},
+                            { name: 'Питание',                       id: '100227', subcategories: []},
+                            { name: 'Вода/Безалкогольные напитки',   id: '100316', subcategories: []},
+                            { name: 'Европейские/японские сладости', id: '551167', subcategories: []},
+                            { name: 'Игрушки, хобби',                id: '101164', subcategories: []},
+                            { name: 'Товары повседневного спроса',   id: '215783', subcategories: []},
+                            { name: 'Спорт/Активный отдых',          id: '101070', subcategories: []},
+                            { name: 'Диета/Здоровье',                id: '100938', subcategories: []},
+                            { name: 'Медикаменты',                   id: '551169', subcategories: []},
+                            { name: 'Цветы/Сад/Сделай сам',          id: '100005', subcategories: []},
+                            { name: 'Домашние животные',             id: '101213', subcategories: []},
+                            { name: 'Компьютеры/Периферия',          id: '100026', subcategories: []},
+                            { name: 'Бытовая электроника',           id: '562637', subcategories: []},
+                            { name: 'ТВ/Аудио/Камеры',               id: '211742', subcategories: []},
+                            { name: 'Кухонные принадлежности',       id: '558944', subcategories: []},
+                            { name: 'Автомобили/Мотоциклы',          id: '101114', subcategories: []},
+                            { name: 'Запчасти авто/мото',            id: '503190', subcategories: []},
 
                         ]
                     },
@@ -209,76 +209,76 @@ app.mount('#sidebar-container')
 //     }
 // })
 
-// Vue.component('sidebar-full-filters', {
-//     template: `
-//             <div class="filters">
-//                 <h2>Сортировка</h2>
-//                 <select name="" id="">
-//                     <option value="most-expensive">Сначала самые дорогие</option>
-//                 </select>
-//                 <h2>Фильтр</h2>
-//                 <h3>Цена</h3>
-//                 <div class="number-inputs">
-//                     <input type="number" name="" id="number-min" value="2200" onchange="updateRange()">
-//                     <input type="number" name="" id="number-max" value="9500" onchange="updateRange()">
-//                 </div>
-//                 <div class="double-range-input">
-//                     <hr>
-//                     <input type="range" name="" id="range-min" min="200" max="11500" value="2200"
-//                         onmousemove="updateNumbers()">
-//                     <input type="range" name="" id="range-max" min="200" max="11500" value="9500"
-//                         onmousemove="updateNumbers()">
-//                 </div>
-//                 <h3>Бренд</h3>
-//                 <select name="" id="">
-//                     <option value="1">Вариант 1</option>
-//                     <option value="2">Вариант 2</option>
-//                     <option value="3">Вариант 3</option>
-//                 </select>
-//                 <h3>Исполнение</h3>
-//                 <div class="checkboxes">
-//                     <div class="checkbox-row">
-//                         <input type="checkbox" name="checkboxes" id="">
-//                         <label for="checkboxes">Ламповый</label>
-//                     </div>
-//                     <div class="checkbox-row">
-//                         <input type="checkbox" name="checkboxes" id="">
-//                         <label for="checkboxes">Электроника</label>
-//                     </div>
-//                     <div class="checkbox-row">
-//                         <input type="checkbox" name="checkboxes" id="">
-//                         <label for="checkboxes">Механика</label>
-//                     </div>
-//                     <div class="checkbox-row">
-//                             <input type="checkbox" name="checkboxes" id="">
-//                             <label for="checkboxes">Нанотехнологии</label>
-//                     </div>
-//                 </div>
-//             </div>
-// `
-// })
+Vue.component('sidebar-full-filters', {
+    template: `
+            <div class="filters">
+                <h2>Сортировка</h2>
+                <select name="" id="">
+                    <option value="most-expensive">Сначала самые дорогие</option>
+                </select>
+                <h2>Фильтр</h2>
+                <h3>Цена</h3>
+                <div class="number-inputs">
+                    <input type="number" name="" id="number-min" value="2200" onchange="updateRange()">
+                    <input type="number" name="" id="number-max" value="9500" onchange="updateRange()">
+                </div>
+                <div class="double-range-input">
+                    <hr>
+                    <input type="range" name="" id="range-min" min="200" max="11500" value="2200"
+                        onmousemove="updateNumbers()">
+                    <input type="range" name="" id="range-max" min="200" max="11500" value="9500"
+                        onmousemove="updateNumbers()">
+                </div>
+                <h3>Бренд</h3>
+                <select name="" id="">
+                    <option value="1">Вариант 1</option>
+                    <option value="2">Вариант 2</option>
+                    <option value="3">Вариант 3</option>
+                </select>
+                <h3>Исполнение</h3>
+                <div class="checkboxes">
+                    <div class="checkbox-row">
+                        <input type="checkbox" name="checkboxes" id="">
+                        <label for="checkboxes">Ламповый</label>
+                    </div>
+                    <div class="checkbox-row">
+                        <input type="checkbox" name="checkboxes" id="">
+                        <label for="checkboxes">Электроника</label>
+                    </div>
+                    <div class="checkbox-row">
+                        <input type="checkbox" name="checkboxes" id="">
+                        <label for="checkboxes">Механика</label>
+                    </div>
+                    <div class="checkbox-row">
+                            <input type="checkbox" name="checkboxes" id="">
+                            <label for="checkboxes">Нанотехнологии</label>
+                    </div>
+                </div>
+            </div>
+`
+})
 
 
-// Vue.component('sidebar-cut-filters', {
-//     template: `
-//             <div class="filters">
-//                 <h2>Фильтр</h2>
-//                 <select name="" id="">
-//                     <option value="">Все</option>
-//                     <option value="">Фильтр 1</option>
-//                     <option value="">Фильтр 2</option>
-//                     <option value="">Фильтр 3</option>
-//                 </select>
-//                 <h2>Сортировка</h2>
-//                 <select name="" id="">
-//                     <option value="">Сначала актуальные</option>
-//                     <option value="">Фильтр 1</option>
-//                     <option value="">Фильтр 2</option>
-//                     <option value="">Фильтр 3</option>
-//                 </select>
-//             </div>
-//     `,
-// })
+    Vue.component('sidebar-cut-filters', {
+        template: `
+                <div class="filters">
+                    <h2>Фильтр</h2>
+                    <select name="" id="">
+                        <option value="">Все</option>
+                        <option value="">Фильтр 1</option>
+                        <option value="">Фильтр 2</option>
+                        <option value="">Фильтр 3</option>
+                    </select>
+                    <h2>Сортировка</h2>
+                    <select name="" id="">
+                        <option value="">Сначала актуальные</option>
+                        <option value="">Фильтр 1</option>
+                        <option value="">Фильтр 2</option>
+                        <option value="">Фильтр 3</option>
+                    </select>
+                </div>
+        `,
+    })
 
 document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.querySelector('.wrapper')

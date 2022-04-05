@@ -29,13 +29,13 @@
         display: block
 
     .item-image
-        position: relative
+        // position: relative
         width: 100%
         height: 150px
         transition: .2s
         border-radius: 15px 15px 0px 0px
         overflow: hidden
-        &:hover img
+        &:hover > img
             transform: scale(1.1)
         & img
             transition: 0.2s
@@ -54,6 +54,22 @@
                 height: 70px
                 background-image: url(../images/icons/icon_zoom-hover.svg)
                 transition: 0.2s
+
+        .preview
+            z-index: 10
+            width: 780px
+            height: 600px
+            border: solid $brown
+            background: white
+            display: none
+            position: absolute
+            
+            transition: .3s
+            left: 50%
+            transform: translate3d(-50%, -70%, 0)
+
+        .preview.active            
+            display: block
 
         &:hover .zoom
             display: block
