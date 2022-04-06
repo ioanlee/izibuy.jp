@@ -54,7 +54,7 @@
             <my-header></my-header>
         </header>
         <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
-        <main>
+        <main style="position: relative;">
             <!-- // gtranslate start // -->
             <div id="google_translate_element">
                 <div class="skiptranslate goog-te-gadget" dir="ltr" style="display:none">
@@ -90,6 +90,7 @@
             <!-- <script>document.cookie = 'googtrans=/en/ru';</script> -->
             <script>document.cookie = "googtrans=/jp/ru";</script>
             <!-- // gtranslate end // -->
+            <div class="preview"><div class="preview__loader"></div></div>
             <div class="product-container">
             </div>
         </main>

@@ -29,7 +29,7 @@
         display: block
 
     .item-image
-        // position: relative
+        position: relative
         width: 100%
         height: 150px
         transition: .2s
@@ -37,6 +37,8 @@
         overflow: hidden
         &:hover > img
             transform: scale(1.1)
+        &:hover > .zoom
+            display: block
         & img
             transition: 0.2s
         .zoom
@@ -46,48 +48,15 @@
             height: 50px
             background-image: url(../images/icons/icon_zoom.svg)
             background-repeat: no-repeat
-            top: 33%
-            left: 40%
-            transition: 0.2s
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            margin: auto
+            transition: .2s 
             &:hover
-                width: 70px
-                height: 70px
+                transform: scale(1.1)
                 background-image: url(../images/icons/icon_zoom-hover.svg)
-                transition: 0.2s
-
-        .preview
-            z-index: 10
-            width: 780px
-            height: 600px
-            border: solid $brown
-            background: white
-            display: none
-            position: absolute
-            
-            transition: .3s
-            left: 50%
-            transform: translate3d(-50%, -70%, 0)
-
-        .preview.active            
-            display: block
-
-        &:hover .zoom
-            display: block
-
-        &:hover .item-preview-button
-            background: url(/images/icons/icon_preview.svg) no-repeat
-            background-size: 100%
-
-        .item-preview-button
-            // border: solid red
-            position: absolute
-            bottom: 5px
-            right: 5px
-            width: 35px
-            height: 35px
-
-            &:active
-                background-image: url(/images/icons/icon_preview_click.svg)
 
     .item-description
         width: 90%
